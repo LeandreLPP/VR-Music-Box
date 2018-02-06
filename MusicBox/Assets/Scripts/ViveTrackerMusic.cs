@@ -16,19 +16,16 @@ public class ViveTrackerMusic : MonoBehaviour {
     private AudioSource music;
 
     public AudioMixer mixer;
-
     public string pitchParameterName;
-
     public SteamVR_PlayArea playArea;
-
     public TextMesh text;
 
     // Just for debugging purpose, don't actually need them to be public
-    public Vector3[] corners;
-    public float minX;
-    public float maxX;
-    public float minZ;
-    public float maxZ;
+    private Vector3[] corners;
+    private float minX;
+    private float maxX;
+    private float minZ;
+    private float maxZ;
 
     // Use this for initialization
     void Start()
@@ -60,6 +57,45 @@ public class ViveTrackerMusic : MonoBehaviour {
         text = GetComponentInChildren<TextMesh>();
     }
 
+    private bool pointed;
+    public bool Pointed
+    {
+        get
+        {
+            return pointed;
+        }
+        set
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.gameObject.tag == "Indicator")
+                {
+                    child.gameObject.SetActive(value);
+                }
+            }
+            pointed = value;
+        }
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<SoundLoop>())
+            ResetObject(other.gameObject);
+    }
+
+    public void ChangeSound(SoundLoop newLoop)
+    {
+        var joint = newLoop.gameObject.GetComponent<SpringJoint>();
+        joint.connectedBody = GetComponent<Rigidbody>();
+        music.clip = newLoop.clip;
+        music.Play();
+    }
+
+    private void ResetObject(GameObject newLoop)
+    {
+        newLoop.GetComponent<SpringJoint>().connectedBody = newLoop.transform.parent.gameObject.GetComponent<Rigidbody>();
+        newLoop.transform.localPosition = new Vector3(0,0,0);
+    }
+
     public float RatioX
     {
         get
@@ -82,18 +118,31 @@ public class ViveTrackerMusic : MonoBehaviour {
         }
     }
 
+    // Debugging
+    private float pitch;
+    private float tempo;
+    private float correctedPitch;
+
+    private float ScaledRatio(float ratio, float min, float max, float step)
+    {
+        float ret = ratio * (max - min);
+        ret += min;
+        ret = Mathf.Round(ret / step) * step;
+        return ret;
+    }
+
     // Update is called once per frame
     void Update () {
         //music.volume = Mathf.Max(0.1f,Mathf.Min(1f, RatioX));
 
         // Pitch and tempo are codependant
-        float pitch = Mathf.Round(((RatioZ * 2f) - 1.5f) * 10f) / 10f;
+        pitch = ScaledRatio(RatioZ, -1f, 2f, 0.1f);
 
-        float tempo = Mathf.Round(((RatioX * 3f) - 1f) * 10f) / 10f;
+        tempo = ScaledRatio(RatioX, 0.5f, 2f, 0.1f);
 
         music.pitch = tempo;
 
-        float correctedPitch = pitch / tempo;
+        correctedPitch = pitch / tempo;
 
         mixer.SetFloat(pitchParameterName,Mathf.Max(-1.5f, Mathf.Min(2f, correctedPitch)));
 
