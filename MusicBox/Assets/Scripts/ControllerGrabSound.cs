@@ -48,7 +48,7 @@ public class ControllerGrabSound : MonoBehaviour {
 
     private void SetCollidingObject(Collider col)
     {
-        if (!collidingObject && col.GetComponent<Rigidbody>() && col.GetComponent<SoundLoop>())
+        if (!collidingObject && col.GetComponent<Rigidbody>())
             collidingObject = col.gameObject;
     }
 
@@ -72,6 +72,13 @@ public class ControllerGrabSound : MonoBehaviour {
         collidingObject = null;
     }
 
+    private bool SoundInHand
+    {
+        get
+        {
+            return objectInHand && objectInHand.GetComponent<SoundLoop>();
+        }
+    }
     private void GrabObject()
     {
         objectInHand = collidingObject;
@@ -101,7 +108,7 @@ public class ControllerGrabSound : MonoBehaviour {
             GetComponent<FixedJoint>().connectedBody = null;
             Destroy(GetComponent<FixedJoint>());
 
-            if (musicBox)
+            if (SoundInHand && musicBox)
                 musicBox.ChangeSound(objectInHand.GetComponent<SoundLoop>());
 
             /*objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
@@ -130,7 +137,7 @@ public class ControllerGrabSound : MonoBehaviour {
             }
         }
         
-        if (objectInHand)
+        if (SoundInHand)
         {
             RaycastHit hit;
 
