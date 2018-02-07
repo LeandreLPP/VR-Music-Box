@@ -4,7 +4,9 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-/MusicBox/Assets/SteamVR/
+/MusicBox/Assets/SteamVR/Scenes/example.unity
+/MusicBox/UnityPlayer.dll
+/MusicBox/musicbox.exe
 
 # Visual Studio 2015 cache directory
 .vs/
