@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +10,12 @@ public class ControllerGrabSound : MonoBehaviour {
     private GameObject objectInHand;
 
     public GameObject laserPrefab;
+        public GameObject stickPrefab;
     private GameObject laser;
     private Transform laserTransform;
     private Vector3 hitPoint;
 
-    public LayerMask musicBoxMask;
+    //public LayerMask musicBoxMask;
     private ViveTrackerMusic musicBox;
 
     private SteamVR_Controller.Device Controller
@@ -48,7 +50,7 @@ public class ControllerGrabSound : MonoBehaviour {
 
     private void SetCollidingObject(Collider col)
     {
-        if (!collidingObject && col.GetComponent<Rigidbody>())
+        if (!collidingObject && col.GetComponent<Rigidbody>() && col.GetComponent<Grabable>())
             collidingObject = col.gameObject;
     }
 
@@ -81,14 +83,48 @@ public class ControllerGrabSound : MonoBehaviour {
     }
     private void GrabObject()
     {
-        objectInHand = collidingObject;
+        if (collidingObject.tag.Equals("Stick"))
+        {
+            GameObject stick = Instantiate(stickPrefab);
+
+            stick.transform.position = collidingObject.transform.position;
+            stick.transform.rotation = collidingObject.transform.rotation;
+
+            objectInHand = stick;
+        }
+        else
+        {
+            objectInHand = collidingObject;
+        }
         collidingObject = null;
         objectInHand.GetComponent<Collider>().enabled = false;
+        objectInHand.GetComponent<Grabable>().Grabbed = true;
 
-        var joint = AddFixedJoint();
+        Joint joint;
+        joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
     }
 
+    private Joint AddHingeJoint()
+    {
+        HingeJoint fx = gameObject.AddComponent<HingeJoint>();
+
+        fx.useSpring = true;
+        JointSpring sp = new JointSpring
+        {
+            spring = 500,
+            damper = 0.5f
+        };
+        fx.spring = sp;
+        fx.limits = new JointLimits
+        {
+            max = 50
+        };
+
+        fx.breakForce = 20000;
+        fx.breakTorque = 20000;
+        return fx;
+    }
 
     private FixedJoint AddFixedJoint()
     {
@@ -100,22 +136,35 @@ public class ControllerGrabSound : MonoBehaviour {
 
     private void ReleaseObject()
     {
-
+        Joint joint = null;
         if (GetComponent<FixedJoint>())
+            joint = GetComponent<FixedJoint>();
+        else if (GetComponent<HingeJoint>())
+            joint = GetComponent<HingeJoint>();
+
+        Debug.Log(objectInHand.tag);
+
+        if (objectInHand.tag.Equals("Stick"))
         {
-            objectInHand.GetComponent<Collider>().enabled = true;
-
-            GetComponent<FixedJoint>().connectedBody = null;
-            Destroy(GetComponent<FixedJoint>());
-
-            if (SoundInHand && musicBox)
-                musicBox.ChangeSound(objectInHand.GetComponent<SoundLoop>());
-
-            /*objectInHand.GetComponent<Rigidbody>().velocity = Controller.velocity;
-            objectInHand.GetComponent<Rigidbody>().angularVelocity = Controller.angularVelocity;*/
+            joint.connectedBody = null;
+            Destroy(joint);
+            Destroy(objectInHand);
         }
+        else
+        {
+            if (joint != null)
+            {
+                objectInHand.GetComponent<Collider>().enabled = true;
 
-        objectInHand = null;
+                joint.connectedBody = null;
+                Destroy(joint);
+
+                if (SoundInHand && musicBox)
+                    musicBox.ChangeSound(objectInHand.GetComponent<SoundLoop>());
+            }
+            objectInHand.GetComponent<Grabable>().Grabbed = false;
+            objectInHand = null;
+        }
     }
 
     // Update is called once per frame

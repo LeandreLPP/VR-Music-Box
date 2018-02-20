@@ -7,22 +7,33 @@ public class Vibraphone : MonoBehaviour {
     // Use this for initialization
 
     AudioSource source;
-    
-    Animator animator;
+    bool onTop;
 
-    void Start () {
+
+    Animator animator;
+    GameObject right;
+
+    void Start() {
         source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
     }
 
-    void OnTriggerEnter(Collider c)
+
+    void OnTriggerEnter(Collider other)
     {
-        source.Play();
-        animator.SetTrigger("play");
+        if (!other.gameObject.tag.Equals("HeadStick"))
+            return;
+
+        if (other.attachedRigidbody.velocity.y < 0)
+        {
+            source.Play();
+            animator.SetTrigger("play");
+        }
     }
 }

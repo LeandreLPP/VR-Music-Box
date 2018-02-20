@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundLoop : MonoBehaviour {
+public class SoundLoop : Grabable {
 
     public AudioClip clip;
 
