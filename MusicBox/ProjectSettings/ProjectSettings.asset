@@ -277,7 +277,7 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
-    m_Enabled: 0
+    m_Enabled: 1
     m_Devices:
     - Oculus
   - m_BuildTarget: Metro
@@ -718,7 +718,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: a1841ec7-e08b-4275-832a-1e362e1a9bff
-  projectName: 
+  projectName: Music Box
   organizationId: enzomenegaldo
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

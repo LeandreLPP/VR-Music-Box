@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HatCymbal
+  - ClientSideOnly
+  - Indicator
+  - Vibraphone
+  - Stick
+  - SmartphoneTracker
+  - Charleston
+  - HeadStick
+  - Square
+  - Sound
   layers:
   - Default
   - TransparentFX
@@ -13,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - CanTeleport
   - 
   - 
   - 
