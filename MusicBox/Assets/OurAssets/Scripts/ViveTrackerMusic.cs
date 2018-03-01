@@ -67,33 +67,16 @@ public class ViveTrackerMusic : MonoBehaviour {
         set
         {
             foreach (Transform child in transform)
-            {
                 if (child.gameObject.tag == "Indicator")
-                {
                     child.gameObject.SetActive(value);
-                }
-            }
             pointed = value;
         }
     }
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.GetComponent<SoundLoop>())
-            ResetObject(other.gameObject);
-    }
 
-    public void ChangeSound(SoundLoop newLoop)
+    public void ChangeSound(AudioClip clip)
     {
-        var joint = newLoop.gameObject.GetComponent<SpringJoint>();
-        joint.connectedBody = GetComponent<Rigidbody>();
-        music.clip = newLoop.clip;
+        music.clip = clip;
         music.Play();
-    }
-
-    private void ResetObject(GameObject newLoop)
-    {
-        newLoop.GetComponent<SpringJoint>().connectedBody = newLoop.transform.parent.gameObject.GetComponent<Rigidbody>();
-        newLoop.transform.localPosition = new Vector3(0,0,0);
     }
 
     public float RatioX
@@ -133,19 +116,16 @@ public class ViveTrackerMusic : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //music.volume = Mathf.Max(0.1f,Mathf.Min(1f, RatioX));
-
         // Pitch and tempo are codependant
         pitch = ScaledRatio(RatioZ, -1f, 2f, 0.1f);
-
         tempo = ScaledRatio(RatioX, 0.5f, 2f, 0.1f);
 
         music.pitch = tempo;
-
         correctedPitch = pitch / tempo;
 
         mixer.SetFloat(pitchParameterName,Mathf.Max(-1.5f, Mathf.Min(2f, correctedPitch)));
 
+        // Debug
         text.text = "Pitch:" + pitch + "\nTempo:" + tempo + "\nCorrected pitch:" + correctedPitch;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TrackerGrabObject : MonoBehaviour {
 
+    /*
     // Use this for initialization
     private SteamVR_TrackedObject trackedObj;
     private GameObject collidingObject;
@@ -54,7 +55,7 @@ public class TrackerGrabObject : MonoBehaviour {
         objectInHand = stick;
         collidingObject = null;
         objectInHand.GetComponent<Collider>().enabled = false;
-        objectInHand.GetComponent<Grabable>().Grabbed = true;
+        objectInHand.GetComponent<AGrabable>().Grabbed = true;
         Joint joint;
         joint = AddFixedJoint();
         joint.connectedBody = objectInHand.GetComponent<Rigidbody>();
@@ -88,6 +89,6 @@ public class TrackerGrabObject : MonoBehaviour {
     void Update()
     {
         
-    }
+    }*/
        
 }
