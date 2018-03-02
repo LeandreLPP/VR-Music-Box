@@ -6,6 +6,7 @@ using UnityEngine;
 public class ControllerGrabber : AGrabber {
 
     private AGrabable collidingGrabable;
+    private bool createdRigidbody = false;
 
     #region SteamVR Stuff
     private SteamVR_TrackedObject trackedObj;
@@ -27,6 +28,7 @@ public class ControllerGrabber : AGrabber {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
     #endregion
+
 
     private void SetCollidingGrabable(Collider col)
     {
@@ -58,6 +60,9 @@ public class ControllerGrabber : AGrabber {
         collidingGrabable = null;
         IsGrabbing = true;
         GrabbedObject.Grab(this);
+        createdRigidbody = !(GrabbedObject.GetComponent<Rigidbody>());
+        /*if (createdRigidbody)
+            GrabbedObject.gameObject.AddComponent<Rigidbody>();*/
         joint.connectedBody = GrabbedObject.GetComponent<Rigidbody>();
     }
 
@@ -72,8 +77,11 @@ public class ControllerGrabber : AGrabber {
     private void ReleaseObject()
     {
         Joint joint = null;
+
         if (GetComponent<FixedJoint>())
             joint = GetComponent<FixedJoint>();
+
+        //if (joint && createdRigidbody) Destroy(joint.connectedBody);
 
         Destroy(joint);
         GrabbedObject.Release(this);

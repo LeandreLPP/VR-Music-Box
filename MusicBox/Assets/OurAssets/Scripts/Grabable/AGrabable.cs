@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public abstract class AGrabable : MonoBehaviour {
     
     private bool isGrabbed;
