@@ -7,7 +7,7 @@ using UnityEngine;
 public class VisualSequencer : MonoBehaviour {
 
     public float distance = 6f;
-    public float height = 0f;
+    public float heightDistance = 0.5f;
     public VisualSequencerStep stepPrefab;
     public SequencerNoteReceptacle receptaclePrefab;
 
@@ -66,7 +66,7 @@ public class VisualSequencer : MonoBehaviour {
         for (int i = 0; i < Steps; i++)
         {
             Quaternion rot = Quaternion.AngleAxis(angle * i, Vector3.up);
-            var pos = rot * (transform.forward * distance + transform.up * height);
+            var pos = rot * (transform.forward * distance);
             stepsVisu[i] = Instantiate<GameObject>(stepPrefab.gameObject, pos, rot, transform).GetComponent<VisualSequencerStep>();
             stepsVisu[i].Initialize(sequencer, i);
         }
@@ -74,7 +74,9 @@ public class VisualSequencer : MonoBehaviour {
         receptacles = new SequencerNoteReceptacle[StepSize];
         for (int i = 0; i < StepSize; i++)
         {
-            receptacles[i] = Instantiate<GameObject>(receptaclePrefab.gameObject, transform.up * i, new Quaternion(), transform).GetComponent<SequencerNoteReceptacle>();
+            var pos = transform.up * heightDistance * (i + 1);
+            var rot = new Quaternion();
+            receptacles[i] = Instantiate<GameObject>(receptaclePrefab.gameObject, pos, rot, transform).GetComponent<SequencerNoteReceptacle>();
             receptacles[i].Initialize(sequencer, i);
         }
 
@@ -85,7 +87,7 @@ public class VisualSequencer : MonoBehaviour {
     {
         if (!initialized) return;
         sequencer.PlayNextStep();
-        int i = sequencer.CurrentStep == 0 ? Steps - 1 : sequencer.CurrentStep - 1;
+        int i = sequencer.CurrentStep == Steps ? 0 : sequencer.CurrentStep;
         stepsVisu[i].PlayStep();
     }
 }

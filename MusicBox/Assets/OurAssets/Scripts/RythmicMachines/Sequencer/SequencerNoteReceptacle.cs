@@ -16,10 +16,10 @@ public class SequencerNoteReceptacle : NoteReceptacle
 
         private set
         {
-            if (!initialized || (noteHold && !value)) // Can't set new note before removing old
+            if (!initialized)
                 return;
 
-            if (!value)
+            if (value == null)
                 Sequencer.Notes[Height] = null;
             else
                 Sequencer.Notes[Height] = value.note;

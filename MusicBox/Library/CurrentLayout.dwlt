@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 2560
     height: 1357
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 97
+  controlID: 10
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,14 +393,14 @@ MonoBehaviour:
     height: 493
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 17521.06526577153
+  lastFramingTime: 7474.025440026839
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.7509494, y: 1.1595229, z: 7.7034307}
+    m_Target: {x: 0, y: 0.188, z: 0}
     speed: 2
-    m_Value: {x: 3.7509494, y: 1.1595229, z: 7.7034307}
+    m_Value: {x: 0, y: 0.188, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -426,11 +426,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: -0.7071068, y: 0, z: -0, w: -0.7071068}
+    m_Value: {x: 0.7071069, y: 0, z: 0, w: 0.7071069}
   m_Size:
-    m_Target: 1.0896739
+    m_Target: 8.859081
     speed: 2
-    m_Value: 1.0896739
+    m_Value: 8.859081
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -525,23 +525,23 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2a090000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: ecb5f7ffa0d7f7ff50f1f7ffb0fbf7ffe80af8fff40af8ff1c44fcff5a7ffdff5c7ffdff2083fdff3286fdff7a7bfeff189ffeff92fbffff9efbffff00000000086400001c650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: NoteObject(Clone)
+      m_OriginalName: NoteObject(Clone)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -525392
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -589,19 +589,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/OurAssets/Scripts/RythmicMachines/Sequencer
+    - Assets/OurAssets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/OurAssets/Scripts/RythmicMachines/Sequencer
+  - Assets/OurAssets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\musicbox\Documents\UnityWorkspace\GitProject\MusicBox
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ae300000
-    m_LastClickedID: 12462
-    m_ExpandedIDs: 00000000d42a0000802c0000662d0000842d0000b02d0000e62d00006a2f0000f42f0000283000004e300000703000005c310000a23100006437000066370000683700006a3700006c3700006e3700007037000072370000743700007637000000ca9a3bffffff7f
+    m_SelectedIDs: b22d0000
+    m_LastClickedID: 11698
+    m_ExpandedIDs: 00000000d62a0000822c0000682d0000862d0000b22d0000e82d00006c2f0000f62f00002a30000050300000723000005e310000a43100006437000066370000683700006a3700006c3700006e3700007037000072370000743700007637000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -629,7 +629,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d42a0000802c0000662d0000842d0000b02d00006a2f0000f42f0000283000004e300000703000005c310000a23100006437000066370000683700006a3700006c3700006e37000070370000723700007437000076370000
+    m_ExpandedIDs: 00000000d62a0000822c0000682d0000862d0000b22d0000e82d00006c2f0000f62f00002a30000050300000723000005e310000a43100006437000066370000683700006a3700006c3700006e37000070370000723700007437000076370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -657,7 +657,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 3a1d00006c220000c0adf4ff64220000102200001e33000022220000fc21000012a2fdff1e220000ae230000b223000014220000f221000006d4ffff08220000242200007a24000018240000b62e0000ce3000006074feff382c0000442c0000482c000030dffbff7e40fbff50300000f8330000103400000c2a00000e2a00001aedf9ff122a00002898efff3876f4ffa6e0f3ff000000004a2e0000962d00005851ffff7c0700000478feffe82d0000a22d00002297eaff7a81ffff142d0000a62e00001a2c0000502f00000c90fffff866ffff262c0000ca39000090300000b630000046aefaff6a2b0000002f0000cc300000
+    m_ExpandedInstanceIDs: 3a1d00006c220000c0adf4ff64220000102200001e33000022220000fc21000012a2fdff1e220000ae230000b223000014220000f221000006d4ffff08220000242200007a24000018240000b62e0000ce3000006074feff382c0000442c0000482c000030dffbff7e40fbff50300000f8330000103400000c2a00000e2a00001aedf9ff122a00002898efff3876f4ffa6e0f3ff000000004a2e0000962d00005851ffff7c0700000478feffe82d0000a22d00002297eaff7a81ffff142d0000a62e00001a2c0000502f00000c90fffff866ffff262c0000ca39000090300000b630000046aefaff6a2b0000002f0000cc300000f42c0000ce8efeff
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
