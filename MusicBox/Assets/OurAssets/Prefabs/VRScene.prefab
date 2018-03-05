@@ -1184,7 +1184,7 @@ GameObject:
   - component: {fileID: 82749741508906918}
   - component: {fileID: 114951844665029410}
   - component: {fileID: 114636901067956838}
-  - component: {fileID: 114684047500105036}
+  - component: {fileID: 114491038207480350}
   m_Layer: 0
   m_Name: Maracas
   m_TagString: Untagged
@@ -12908,8 +12908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3329f4d53dc8484b931068c04d88474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickPrefab: {fileID: 1127994296695772, guid: 0e542ded92115924f9227c90ef2a90f4,
-    type: 2}
 --- !u!114 &114069472714308580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13349,13 +13347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1ac571fbe6d314baa5d488dd50fb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 1016903599202536, guid: 956edfe325fff60498c91f6d36a2a30e,
-    type: 2}
-  stickPrefab: {fileID: 1127994296695772, guid: 0e542ded92115924f9227c90ef2a90f4,
-    type: 2}
-  musicBoxMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &114198794874643044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13458,6 +13449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 1645473354643668}
+  originalPos: {x: 0, y: 0, z: 0}
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114251926824571904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13653,6 +13646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 1477316471516768}
+  originalPos: {x: 0, y: 0, z: 0}
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114311062563087176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13966,6 +13961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 1478113543075494}
   clip: {fileID: 8300000, guid: 357e795b60ad77d41b8a649d15476b9f, type: 3}
+  laserPrefab: {fileID: 0}
 --- !u!114 &114404150711330354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14195,6 +14191,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 1504179447101260}
   clip: {fileID: 8300000, guid: 06282a0736e1d7344b0a0d2a4d603edb, type: 3}
+  laserPrefab: {fileID: 0}
+--- !u!114 &114491038207480350
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596191517758874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d6052e8b66455479bea5c642a3ebc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 0}
 --- !u!114 &114497074921719752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14519,7 +14528,7 @@ MonoBehaviour:
   m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 0
+  m_TransformSyncMode: 3
   m_SendInterval: 0.1
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
@@ -14653,18 +14662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a330b9ca236fe348820bf093c3f46b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114684047500105036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1596191517758874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8df0576f7a6cd5e49bdb8c978d07d1bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indicator: {fileID: 1251338023434596}
 --- !u!114 &114692018974474730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14708,13 +14705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1ac571fbe6d314baa5d488dd50fb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 1016903599202536, guid: 956edfe325fff60498c91f6d36a2a30e,
-    type: 2}
-  stickPrefab: {fileID: 1127994296695772, guid: 0e542ded92115924f9227c90ef2a90f4,
-    type: 2}
-  musicBoxMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &114702686212149954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14771,6 +14761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   steamVR: {fileID: 1172411613787342}
   cameraRig: {fileID: 1914719879326806}
+  lobbyCamera: {fileID: 0}
 --- !u!114 &114736965354173236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15238,6 +15229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 1276688483850692}
   clip: {fileID: 8300000, guid: e8fdc5e6264a428499458dfd37346bea, type: 3}
+  laserPrefab: {fileID: 0}
 --- !u!114 &114835828166933372
 MonoBehaviour:
   m_ObjectHideFlags: 1

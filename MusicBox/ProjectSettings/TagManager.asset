@@ -14,7 +14,11 @@ TagManager:
   - HeadStick
   - Square
   - Sound
+<<<<<<< HEAD
   - ServerSideOnly
+=======
+  - Grabable
+>>>>>>> 0a14a03c0d3db03440be601f107d2efdb28fd61d
   layers:
   - Default
   - TransparentFX
@@ -25,7 +29,7 @@ TagManager:
   - 
   - 
   - CanTeleport
-  - 
+  - Grabable
   - 
   - 
   - 

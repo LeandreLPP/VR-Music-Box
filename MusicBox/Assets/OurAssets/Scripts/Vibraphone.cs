@@ -4,26 +4,14 @@ using UnityEngine;
 
 public class Vibraphone : MonoBehaviour {
 
-    // Use this for initialization
-
-    AudioSource source;
-    bool onTop;
-
-
-    Animator animator;
-    GameObject right;
+    protected AudioSource source;
+    protected Animator animator;
 
     void Start() {
         source = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         
     }
-
-    // Update is called once per frame
-    void Update () {
-
-    }
-
 
     void OnTriggerEnter(Collider other)
     {
