@@ -1,38 +1,48 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.XR;
 
 public class ObjectSpawner : NetworkBehaviour {
-    
-    public GameObject steamVR;
-    public GameObject cameraRig;
-    public Camera lobbyCamera;
-    
-    SteamVR_ControllerManager controllerManager;
+
+    public GameObject GoogleVr;
+    public GameObject CameraRig;
+    public GameObject SteamVr;
+
+    private void Start()
+    {
+
+    }
 
     public override void OnStartServer()
     {
         base.OnStartServer();
         Debug.Log("On Start Server");
-        controllerManager = steamVR.GetComponent<SteamVR_ControllerManager>();
-        steamVR.SetActive(true);
-        cameraRig.SetActive(true);
-        lobbyCamera.gameObject.SetActive(false);
+        //StartCoroutine(LoadDevice("Daydream"));
+        /*CameraRig.SetActive(true);
+        SteamVr.SetActive(true);*/
     }
 
     public override void OnStartClient()
     {
         base.OnStartClient();
-
-        GameObject[] toActivate = GameObject.FindGameObjectsWithTag("ClientSideOnly");
-        foreach (var o in toActivate)
-            o.GetComponent<MeshRenderer>().enabled = true;
-        lobbyCamera.gameObject.SetActive(false);
+        //StartCoroutine(LoadDevice("Daydream"));
     }
 
     public override void OnNetworkDestroy()
     {
-        lobbyCamera.gameObject.SetActive(true);
+
     }
+
+
+    //Enable or disable VR 
+    IEnumerator LoadDevice(string newDevice)
+    {
+        XRSettings.LoadDeviceByName(newDevice);
+        yield return null;
+        XRSettings.enabled = true;
+    }
+
 
     // Update is called once per frame
     void Update () {
