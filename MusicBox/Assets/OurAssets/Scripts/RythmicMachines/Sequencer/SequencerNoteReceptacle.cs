@@ -3,26 +3,34 @@ using System.Collections;
 
 public class SequencerNoteReceptacle : NoteReceptacle
 {
+    public Material baseMaterial;
+
     public Sequencer Sequencer { get; private set; }
     public int Height { get; private set; }
 
     private NoteObject noteHold;
-    public NoteObject NoteHold
+    public override NoteObject NoteHold
     {
         get
         {
             return noteHold;
         }
 
-        private set
+        protected set
         {
             if (!initialized)
                 return;
 
             if (value == null)
+            {
                 Sequencer.Notes[Height] = null;
+                GetComponentInChildren<MeshRenderer>().material = baseMaterial;
+            }
             else
+            {
                 Sequencer.Notes[Height] = value.note;
+                GetComponentInChildren<MeshRenderer>().material = value.GetComponent<MeshRenderer>().material;
+            }
 
             noteHold = value;
         }

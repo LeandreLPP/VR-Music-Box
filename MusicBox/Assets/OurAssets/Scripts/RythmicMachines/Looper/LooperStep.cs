@@ -12,6 +12,8 @@ public class LooperStep : MonoBehaviour {
     private bool initialized = false;
     #endregion
 
+    public AnimatedLooper Looper { get; private set; }
+
     public int StepNumber { get; internal set; }
 
     public bool HasFreeSpot

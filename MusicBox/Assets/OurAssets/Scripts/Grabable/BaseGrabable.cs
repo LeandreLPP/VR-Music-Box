@@ -10,7 +10,7 @@ public class BaseGrabable : AGrabable
         indicator.SetActive(false);
     }
 
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
     }
 

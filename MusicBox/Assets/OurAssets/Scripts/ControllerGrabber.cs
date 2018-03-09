@@ -23,6 +23,22 @@ public class ControllerGrabber : AGrabber {
         }
     }
 
+    public override Vector3 AngularVelocity
+    {
+        get
+        {
+            return Controller.angularVelocity;
+        }
+    }
+
+    public override Vector3 Velocity
+    {
+        get
+        {
+            return Controller.velocity;
+        }
+    }
+
     void Awake()
     {
         trackedObj = GetComponent<SteamVR_TrackedObject>();

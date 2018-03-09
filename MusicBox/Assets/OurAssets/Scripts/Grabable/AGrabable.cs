@@ -31,7 +31,7 @@ public abstract class AGrabable : MonoBehaviour {
 
     protected abstract void OnGrabbed();
 
-    protected abstract void OnRelease();
+    protected abstract void OnRelease(AGrabber grabber);
 
     public bool Grab(AGrabber grab)
     {
@@ -50,7 +50,7 @@ public abstract class AGrabable : MonoBehaviour {
 
         isGrabbed = false;
         grabber = null;
-        OnRelease();
+        OnRelease(grab);
         return true;
     }
 

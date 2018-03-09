@@ -10,9 +10,9 @@ public class GrabableStick : BaseGrabable {
         GetComponent<Collider>().enabled = false;
     }
 
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
-        base.OnRelease();
+        base.OnRelease(grabber);
         GetComponent<Collider>().enabled = true;
     }
 }

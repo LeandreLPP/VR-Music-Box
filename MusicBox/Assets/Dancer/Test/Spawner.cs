@@ -38,7 +38,6 @@ public class Spawner : MonoBehaviour
 
             var renderer = dancer.GetComponentInChildren<Renderer>();
             renderer.material.color = Random.ColorHSV(0, 1, 0.6f, 0.8f, 0.8f, 1.0f);
-            
         }
     }
 }

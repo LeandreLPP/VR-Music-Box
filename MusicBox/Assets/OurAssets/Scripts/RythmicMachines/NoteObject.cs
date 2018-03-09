@@ -14,20 +14,11 @@ public class NoteObject : BaseGrabable
             return receptacle;
         }
 
-        private set
+        set
         {
             receptacle = value;
-            if (receptacle)
-            {
-                transform.SetParent(receptacle.transform);
-                transform.localPosition = Vector3.zero;
-                transform.localEulerAngles = Vector3.zero;
-            }
-            else transform.SetParent(null);
         }
     }
-
-    private NoteReceptacle potentialReceptacle = null;
 
     protected override void OnGrabbed()
     {
@@ -36,39 +27,30 @@ public class NoteObject : BaseGrabable
         source.clip = note.audioClip;
         source.volume = note.volume;
         source.Play();
-        potentialReceptacle = Receptacle;
-        if (Receptacle)
-            Receptacle.RemoveNote(this);
-        Receptacle = null;
+        transform.SetParent(null);
     }
 
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
-        base.OnRelease();
+        base.OnRelease(grabber);
+
         var source = GetComponent<AudioSource>();
         source.Stop();
-        if (potentialReceptacle && potentialReceptacle.SetNote(this))
-            Receptacle = potentialReceptacle;
-        else
-            GetComponent<Rigidbody>().useGravity = true;
-    }
 
-    protected override void OnTriggerEnter(Collider other)
-    {
-        base.OnTriggerEnter(other);
-        var r = other.GetComponent<NoteReceptacle>();
-        if (r && Receptacle == null)
-            potentialReceptacle = r;
-    }
-
-    protected override void OnTriggerExit(Collider other)
-    {
-        base.OnTriggerExit(other);
-        var r = other.GetComponent<NoteReceptacle>();
-        if (r && r == potentialReceptacle)
+        if (Receptacle)
         {
-            potentialReceptacle = null;
-            Receptacle = null;
+            transform.SetParent(Receptacle.transform);
+            transform.localPosition = Vector3.zero;
+            transform.localEulerAngles = Vector3.zero;
+            GetComponent<Rigidbody>().useGravity = false;
+        }
+        else
+        {
+            transform.SetParent(null);
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().velocity = grabber.Velocity;
+            GetComponent<Rigidbody>().angularVelocity = grabber.AngularVelocity;
         }
     }
+    
 }
