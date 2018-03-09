@@ -17,16 +17,15 @@ public class ObjectSpawner : NetworkBehaviour {
     public override void OnStartServer()
     {
         base.OnStartServer();
-        Debug.Log("On Start Server");
-        //StartCoroutine(LoadDevice("Daydream"));
-        /*CameraRig.SetActive(true);
-        SteamVr.SetActive(true);*/
+        CameraRig.SetActive(true);
+        SteamVr.SetActive(true);
     }
 
     public override void OnStartClient()
     {
         base.OnStartClient();
-        //StartCoroutine(LoadDevice("Daydream"));
+        GoogleVr.SetActive(true);
+        StartCoroutine(LoadDevice("Daydream"));
     }
 
     public override void OnNetworkDestroy()
