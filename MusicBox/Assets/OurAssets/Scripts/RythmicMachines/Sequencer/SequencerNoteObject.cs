@@ -14,7 +14,7 @@ public class NoteObject : BaseGrabable
             return receptacle;
         }
 
-        private set
+        set
         {
             receptacle = value;
             if (receptacle)
@@ -33,8 +33,8 @@ public class NoteObject : BaseGrabable
     {
         base.OnGrabbed();
         var source = GetComponent<AudioSource>();
-        source.clip = note.audioClip;
-        source.volume = note.volume;
+        /*source.clip = note.audioClip;
+        source.volume = note.volume;*/
         potentialReceptacle = Receptacle;
         if (Receptacle)
             Receptacle.RemoveNote(this);
@@ -44,10 +44,10 @@ public class NoteObject : BaseGrabable
     protected override void OnRelease()
     {
         base.OnRelease();
-        if (potentialReceptacle && potentialReceptacle.SetNote(this))
+        /*if (potentialReceptacle && potentialReceptacle.SetNote(this))
             Receptacle = potentialReceptacle;
         else
-            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().useGravity = true;*/
     }
 
     protected override void OnTriggerEnter(Collider other)

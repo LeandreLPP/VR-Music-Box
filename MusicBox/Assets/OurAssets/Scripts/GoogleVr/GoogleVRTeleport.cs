@@ -3,53 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Collider))]
 public class GoogleVRTeleport : MonoBehaviour
 {
-    private Vector3 startingPosition;
-    private Renderer renderer;
+    public const int TpTime = 10;
     public GameObject player;
-    public Material inactiveMaterial;
-    public Material gazedAtMaterial;
+    private int tmp;
+    private bool click;
+
 
     void Start()
     {
-        startingPosition = transform.localPosition;
-        renderer = GetComponent<Renderer>();
-        SetGazedAt(false);
+        tmp = 0;
+        click = false;
     }
 
-    public void SetGazedAt(bool gazedAt)
+    void Update()
     {
-        if (inactiveMaterial != null && gazedAtMaterial != null)
-        {
-            renderer.material = gazedAt ? gazedAtMaterial : inactiveMaterial;
-            return;
-        }
+        if(click)
+            tmp++;
     }
 
-    public void Reset()
+    public void PointerDown(BaseEventData data)
     {
-        int sibIdx = transform.GetSiblingIndex();
-        int numSibs = transform.parent.childCount;
-        for (int i = 0; i < numSibs; i++)
-        {
-            GameObject sib = transform.parent.GetChild(i).gameObject;
-            sib.transform.localPosition = startingPosition;
-            sib.SetActive(i == sibIdx);
-        }
+        click = true;
     }
 
-    public void Recenter()
+    public void PointerUp(BaseEventData data)
     {
-#if !UNITY_EDITOR
-        GvrCardboardHelpers.Recenter();
-#else
-      if (GvrEditorEmulator.Instance != null) {
-        GvrEditorEmulator.Instance.Recenter();
-      }
-#endif  // !UNITY_EDITOR
+        if (tmp >= TpTime)
+            TeleportTo(data);
+        tmp = 0;
+        click = false;
     }
+
 
     public void TeleportTo(BaseEventData data)
     {

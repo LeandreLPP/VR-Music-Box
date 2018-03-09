@@ -12,6 +12,8 @@ TagManager:
   - SmartphoneTracker
   - Vibraphone
   - Charleston
+  - ServerSideOnly
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - GvrCannotGrab
   - 
   - 
   - 

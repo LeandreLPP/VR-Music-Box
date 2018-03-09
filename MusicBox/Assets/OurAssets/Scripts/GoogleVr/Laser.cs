@@ -30,88 +30,20 @@ namespace GoogleVR.Demos
 
     public class Laser : MonoBehaviour
     {
-
-        private bool isDaydream = true;
-
-        [Tooltip("Reference to GvrControllerMain")]
-        public GameObject controllerMain;
-
         [Tooltip("Reference to GvrControllerPointer")]
         public GameObject controllerPointer;
 
-        [Tooltip("Reference to GvrReticlePointer")]
-        public GameObject reticlePointer;
+
 
         void Start()
         {
-            SetVRInputMechanism();
+            GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
         }
 
         // Runtime switching enabled only in-editor.
         void Update()
         {
-            SetVRInputMechanism();
-
-            /*GvrLaserPointer pointer =
-                controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
-            if (pointer != null)
-            {
-                GvrPointerInputModule.Pointer = pointer;
-            }*/
-        }
-
-
-        private void SetVRInputMechanism()
-        {
-            SetGazeInputActive(!isDaydream);
-            SetControllerInputActive(isDaydream);
-        }
-
-        private void SetGazeInputActive(bool active)
-        {
-            if (reticlePointer == null)
-            {
-                return;
-            }
-            reticlePointer.SetActive(active);
-
-            // Update the pointer type only if this is currently activated.
-            if (!active)
-            {
-                return;
-            }
-
-            GvrReticlePointer pointer =
-                reticlePointer.GetComponent<GvrReticlePointer>();
-            if (pointer != null)
-            {
-                GvrPointerInputModule.Pointer = pointer;
-            }
-        }
-
-        private void SetControllerInputActive(bool active)
-        {
-            if (controllerMain != null)
-            {
-                controllerMain.SetActive(active);
-            }
-            if (controllerPointer == null)
-            {
-                return;
-            }
-            controllerPointer.SetActive(active);
-
-            // Update the pointer type only if this is currently activated.
-            if (!active)
-            {
-                return;
-            }
-            GvrLaserPointer pointer =
-                controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
-            if (pointer != null)
-            {
-                GvrPointerInputModule.Pointer = pointer;
-            }
-        }
+            GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
+        }     
     }
 };
