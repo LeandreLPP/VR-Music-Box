@@ -32,7 +32,7 @@ public class ControllerGrabber : AGrabber {
 
     private void SetCollidingGrabable(Collider col)
     {
-        if (!collidingGrabable && col.GetComponent<Rigidbody>() && col.GetComponent<AGrabable>())
+        if (!collidingGrabable && col.GetComponent<AGrabable>())
             collidingGrabable = col.GetComponent<AGrabable>();
     }
 
@@ -61,8 +61,8 @@ public class ControllerGrabber : AGrabber {
         IsGrabbing = true;
         GrabbedObject.Grab(this);
         createdRigidbody = !(GrabbedObject.GetComponent<Rigidbody>());
-        /*if (createdRigidbody)
-            GrabbedObject.gameObject.AddComponent<Rigidbody>();*/
+        if (createdRigidbody)
+            GrabbedObject.gameObject.AddComponent<Rigidbody>();
         joint.connectedBody = GrabbedObject.GetComponent<Rigidbody>();
     }
 
@@ -81,7 +81,8 @@ public class ControllerGrabber : AGrabber {
         if (GetComponent<FixedJoint>())
             joint = GetComponent<FixedJoint>();
 
-        //if (joint && createdRigidbody) Destroy(joint.connectedBody);
+        if (joint && createdRigidbody)
+            Destroy(joint.connectedBody);
 
         Destroy(joint);
         GrabbedObject.Release(this);

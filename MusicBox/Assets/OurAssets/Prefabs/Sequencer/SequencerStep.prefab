@@ -141,4 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   togglePrefab: {fileID: 114892524317976910, guid: f9a072f47549a654593efc1f081da154,
     type: 2}
-  spacement: 0.5
+  spacement: 0.25
