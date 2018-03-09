@@ -31,7 +31,7 @@ public class GNote : NoteObject
         // get the Transform component of the pointer
         Transform pointerTransform = GvrPointerInputModule.Pointer.PointerTransform;
         // set the GameObject's parent to the pointer
-        transform.SetParent(pointerTransform, false);
+        transform.SetParent(pointerTransform, true);
 
         // position it in the view
         transform.localPosition = new Vector3(0, 0, 1f);

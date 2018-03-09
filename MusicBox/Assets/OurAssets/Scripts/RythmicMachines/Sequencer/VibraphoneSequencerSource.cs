@@ -3,7 +3,6 @@ using System.Collections;
 
 public class VibraphoneSequencerSource : SequencerNoteSource
 {
-
     protected Animator animator;
 
     protected override void Start()
@@ -21,7 +20,12 @@ public class VibraphoneSequencerSource : SequencerNoteSource
         if (other.GetComponent<ComputeVelocity>().velocity.y < 0)
         {
             Play();
-            animator.SetTrigger("play");
         }
+    }
+
+    protected override void Play()
+    {
+        base.Play();
+        animator.SetTrigger("play");
     }
 }

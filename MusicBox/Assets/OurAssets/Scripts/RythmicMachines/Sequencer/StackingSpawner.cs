@@ -8,7 +8,7 @@ public class StackingSpawner : SequencerNoteSpawner
     public float decalage = 0.25f;
     public float speed = 1f;
 
-    private List<NoteObject> notesHold;
+    protected List<NoteObject> notesHold;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class StackingSpawner : SequencerNoteSpawner
         notesHold.Add(noteObject);
     }
 
-    private Vector3 PositionNote(int index)
+    protected Vector3 PositionNote(int index)
     {
         return rail.transform.position + rail.transform.right * index * decalage;
     }

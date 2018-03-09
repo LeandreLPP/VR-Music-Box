@@ -320,6 +320,7 @@ a4b96e7d389c0fdb60e84e1cfcf0075d Assembly-CSharp.dll:.VisualSequencerStep
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrPointerManager
 2b5bd81c259c691324a17af9a3e97e85 Assembly-CSharp.dll:.GoogleVRTeleport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HatCymbalPedal
+ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.NoteObject
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.Interactable
@@ -329,9 +330,10 @@ e37f8b3431bbcf7f7fe68764e22765d6 Assembly-CSharp.dll:Klak.Motion.ConstantMotion
 73f9d5be89bfe8b6fe672de9550f1a0c Assembly-CSharp.dll:Valve.VR.InteractionSystem.ItemPackage
 ada54cb428213a7e0c4b986e95788f97 Assembly-CSharp.dll:.PhotonTransformView
 7dc4607ea3c4e1c57f92525553793668 Assembly-CSharp.dll:.SteamVR_Menu
+7f5051cf2f52fc01c540378f4c7bbc33 Assembly-CSharp.dll:.StackingSpawner
 314848ccc07794350e3bf9287e46b25b Assembly-CSharp.dll:.SteamVR_Teleporter
 1235609fcbaeb18ef7118947f508f7e0 Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearMapping
-40297f8d648725433a53cbd9d0bb03ba Assembly-CSharp.dll:.VisualSequencer
+b3084f2e7cf75634fb182051ded5a86a Assembly-CSharp.dll:.VisualSequencer
 c0ad1fb5d400aa83cb257e5f6c3714cf Assembly-CSharp.dll:.OnClickDestroy
 5baa9ead5a48fe99f1d68e645d817c5d Assembly-CSharp.dll:.AudioRpc
 ec7197ab43ffb42a7321b609332a9861 Assembly-CSharp.dll:.GvrTrackedController
@@ -340,6 +342,7 @@ ec7197ab43ffb42a7321b609332a9861 Assembly-CSharp.dll:.GvrTrackedController
 31e91faba2267dbf8c0fe528bca54ff7 Assembly-CSharp.dll:.GvrLaserPointer
 6aa5722444ea3486c10592141d9f4cfc Assembly-CSharp.dll:Valve.VR.InteractionSystem.DestroyOnTriggerEnter
 850bbf7a45454397c5e5856d5756baee Assembly-CSharp.dll:Valve.VR.InteractionSystem.ItemPackageSpawner
+410a078cacaf3778d6ce2bab5c98623e Assembly-CSharp.dll:.SequencerNoteSource
 30c6237931168f8b4c2f10a656a47aa8 Assembly-CSharp.dll:.PickupItem
 b9efe2a0d1c9ba7bc46e66a07a897115 Assembly-CSharp.dll:.ServerSettings
 20a64171b5e38421fc7e2a19c23f98e1 Assembly-CSharp.dll:.SteamVR_TrackedObject
@@ -476,6 +479,7 @@ ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.BaseGrabable
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OnDoubleclickDestroy
 c38ec0d21c425a274f55b7414a6e54c1 Assembly-CSharp.dll:.NetworkManagerHUD
 4b8b25ed60c1bb417f20991003ba0256 Assembly-CSharp.dll:.WorkerMenu
+410a078cacaf3778d6ce2bab5c98623e Assembly-CSharp.dll:.VibraphoneSequencerSource
 e6ff02cc730612ce1d6b592b86f6b561 Assembly-CSharp.dll:Valve.VR.InteractionSystem.FallbackCameraController
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
@@ -523,7 +527,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_GameView
 e383a25b86715cbe5743cbaaf7c494d2 Assembly-CSharp.dll:.SteamVR_Frustum
 7d05c1a36ca8db05546065b852216990 Assembly-CSharp.dll:.GvrControllerInput
-db02a1d47985a4ce67fa06cd50787703 Assembly-CSharp.dll:.VibraphoneSource
+db02a1d47985a4ce67fa06cd50787703 Assembly-CSharp.dll:.VibraphoneLooperSource
 e399fc54e753911801f12ac57c8fc414 Assembly-CSharp.dll:GoogleVR.HelloVR.HelloVRManager
 4a9845fc85f197d574f1e06a9aab77d0 Assembly-CSharp.dll:.SteamVR_Render
 f3fd3fb52070d6ee5266d0c25cb1b49f Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearDrive
@@ -568,3 +572,5 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 54a26a95db9c623b6eb6fc01ae3ef891 Assembly-CSharp.dll:.CubeExtra
+410a078cacaf3778d6ce2bab5c98623e Assembly-CSharp.dll:.GoogleVibraphone
+7f5051cf2f52fc01c540378f4c7bbc33 Assembly-CSharp.dll:.PhotonSpawner
