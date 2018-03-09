@@ -14759,9 +14759,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b556b706648483642a76b8740a7d5653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steamVR: {fileID: 1172411613787342}
-  cameraRig: {fileID: 1914719879326806}
-  lobbyCamera: {fileID: 0}
+  GoogleVr: {fileID: 0}
+  CameraRig: {fileID: 0}
+  SteamVr: {fileID: 0}
 --- !u!114 &114736965354173236
 MonoBehaviour:
   m_ObjectHideFlags: 1

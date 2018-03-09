@@ -33,14 +33,8 @@ public class NoteObject : BaseGrabable
     {
         base.OnGrabbed();
         var source = GetComponent<AudioSource>();
-<<<<<<< HEAD:MusicBox/Assets/OurAssets/Scripts/RythmicMachines/Sequencer/SequencerNoteObject.cs
         /*source.clip = note.audioClip;
         source.volume = note.volume;*/
-=======
-        source.clip = note.audioClip;
-        source.volume = note.volume;
-        source.Play();
->>>>>>> 8168ab076b90d2363792f91d1a1aa378c8231e63:MusicBox/Assets/OurAssets/Scripts/RythmicMachines/NoteObject.cs
         potentialReceptacle = Receptacle;
         if (Receptacle)
             Receptacle.RemoveNote(this);
@@ -50,13 +44,7 @@ public class NoteObject : BaseGrabable
     protected override void OnRelease()
     {
         base.OnRelease();
-<<<<<<< HEAD:MusicBox/Assets/OurAssets/Scripts/RythmicMachines/Sequencer/SequencerNoteObject.cs
-        /*if (potentialReceptacle && potentialReceptacle.SetNote(this))
-=======
-        var source = GetComponent<AudioSource>();
-        source.Stop();
-        if (potentialReceptacle && potentialReceptacle.SetNote(this))
->>>>>>> 8168ab076b90d2363792f91d1a1aa378c8231e63:MusicBox/Assets/OurAssets/Scripts/RythmicMachines/NoteObject.cs
+        /*if (potentialReceptacle && potentialReceptacle.SetNote(this))            
             Receptacle = potentialReceptacle;
         else
             GetComponent<Rigidbody>().useGravity = true;*/

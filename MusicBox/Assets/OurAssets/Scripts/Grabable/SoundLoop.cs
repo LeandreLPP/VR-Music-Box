@@ -29,7 +29,7 @@ public class SoundLoop : BaseGrabable {
 
     private ViveTrackerMusic MusicBoxAssignated { get; set; }
     
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
         if(MusicBoxTargeted)
         {

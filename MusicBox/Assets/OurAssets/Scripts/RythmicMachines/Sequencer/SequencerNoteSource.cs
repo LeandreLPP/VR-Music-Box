@@ -13,10 +13,17 @@ public class SequencerNoteSource : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    protected virtual void Play()
+
+    protected virtual NoteObject InstantiateNoteObject()
+    {
+        return Instantiate<GameObject>(noteObjectPrefab.gameObject).GetComponent<NoteObject>();
+    }
+
+    public void Play()
     {
         NoteSound note = new NoteSound { audioClip = source.clip, volume = source.volume };
-        spawner.SpawnNote(noteObjectPrefab, note);
+        NoteObject noteObject = InstantiateNoteObject();
+        spawner.SpawnNote(noteObject, note);
 
         source.Play();
     }

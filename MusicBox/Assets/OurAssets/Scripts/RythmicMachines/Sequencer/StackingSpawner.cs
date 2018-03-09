@@ -7,6 +7,7 @@ public class StackingSpawner : SequencerNoteSpawner
     public GameObject rail;
     public float decalage = 0.25f;
     public float speed = 1f;
+    public int maxNotes = 10;
 
     protected List<NoteObject> notesHold;
 
@@ -15,10 +16,19 @@ public class StackingSpawner : SequencerNoteSpawner
         notesHold = new List<NoteObject>();
     }
 
-    public override void SpawnNote(NoteObject noteObjectPrefab, NoteSound note)
+    public override void SpawnNote(NoteObject noteObject, NoteSound note)
     {
-        NoteObject noteObject = Instantiate<GameObject>(noteObjectPrefab.gameObject, PositionNote(notesHold.Count), transform.rotation, rail.transform).GetComponent<NoteObject>();
+        noteObject.transform.position = PositionNote(notesHold.Count);
+        noteObject.transform.rotation = transform.rotation;
+        noteObject.transform.SetParent(rail.transform);
         noteObject.note = note;
+        while (notesHold.Count >= maxNotes)
+        {
+            NoteObject n = notesHold[0];
+            notesHold.RemoveAt(0);
+            n.gameObject.SetActive(false);
+            Destroy(n);
+        }
         notesHold.Add(noteObject);
     }
 

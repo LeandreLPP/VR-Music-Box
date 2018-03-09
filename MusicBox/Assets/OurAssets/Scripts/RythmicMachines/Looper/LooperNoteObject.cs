@@ -60,7 +60,7 @@ public class LooperNoteObject : BaseGrabable {
         }
     }
 
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
         if (potentialReceptacle == null)
             GetComponent<Rigidbody>().useGravity = true;
