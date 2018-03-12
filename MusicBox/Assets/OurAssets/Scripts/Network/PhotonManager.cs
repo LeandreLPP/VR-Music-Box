@@ -21,13 +21,12 @@ public class PhotonManager : Photon.PunBehaviour
     
     public override void OnJoinedLobby()
     {
-        Debug.Log("Lobby");
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsVisible = false;
         roomOptions.MaxPlayers = 4;
         PhotonNetwork.JoinOrCreateRoom("MusicBox", roomOptions, TypedLobby.Default);
 
-        if (XRSettings.supportedDevices[1].Equals("daydream"))
+        if (XRSettings.supportedDevices.Length == 2 && XRSettings.supportedDevices[1].Equals("daydream"))
         {
             GoogleVr.SetActive(true);
             StartCoroutine(LoadDevice("Daydream"));

@@ -44,7 +44,7 @@ public class VisualSequencerToggle : MonoBehaviour
         initialized = true;
     }
 
-    private void Toggle()
+    public void Toggle()
     {
         if (!initialized)
             return;
