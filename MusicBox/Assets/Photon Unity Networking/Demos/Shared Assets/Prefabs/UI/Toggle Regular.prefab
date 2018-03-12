@@ -232,10 +232,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 11448462}
-  NormalOnColor: {r: 0, g: 0, b: 0, a: 1}
-  NormalOffColor: {r: 1, g: 1, b: 1, a: 1}
-  HoverOnColor: {r: 0, g: 0, b: 0, a: 1}
-  HoverOffColor: {r: 0, g: 0, b: 0, a: 1}
+  NormalOnColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  NormalOffColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  HoverOnColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
+  HoverOffColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
 --- !u!222 &22248462
 CanvasRenderer:
   m_ObjectHideFlags: 1

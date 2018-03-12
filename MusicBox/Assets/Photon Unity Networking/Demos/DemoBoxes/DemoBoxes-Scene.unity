@@ -466,6 +466,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -475,7 +476,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 2
   instantiationId: 2
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &568347506
 MeshRenderer:
@@ -1054,6 +1054,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -1063,7 +1064,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 4
   instantiationId: 4
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &1058313861
 MeshRenderer:
@@ -1614,19 +1614,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Colors:
-  - {r: 0.121107265, g: 0.47374636, b: 0.6862745, a: 1}
-  - {r: 0.6862745, g: 0.121107265, b: 0.38558665, a: 1}
-  - {r: 0.121107265, g: 0.6862745, b: 0.33206108, a: 1}
-  - {r: 0.62802607, g: 0.6862745, b: 0.121107265, a: 1}
+  - r: 0.121107265
+    g: 0.47374636
+    b: 0.6862745
+    a: 1
+  - r: 0.6862745
+    g: 0.121107265
+    b: 0.38558665
+    a: 1
+  - r: 0.121107265
+    g: 0.6862745
+    b: 0.33206108
+    a: 1
+  - r: 0.62802607
+    g: 0.6862745
+    b: 0.121107265
+    a: 1
   ShowColorLabel: 1
   ColorLabelArea:
-    serializedVersion: 2
     x: 0
     y: 80
     width: 100
     height: 200
   img: {fileID: 2800000, guid: e824c90b700b59a48bb75bf8ac3b5682, type: 3}
-  MyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  MyColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
 --- !u!1 &1415367350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +1916,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -1910,7 +1926,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 1
   instantiationId: 1
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &1750179510
 MeshRenderer:
@@ -2353,6 +2368,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -2362,7 +2378,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 6
   instantiationId: 6
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &2063809554
 MeshRenderer:
@@ -2537,6 +2552,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -2546,7 +2562,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 5
   instantiationId: 5
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &2093027609
 MeshRenderer:
@@ -2822,6 +2837,7 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
+  observed: {fileID: 0}
   synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
@@ -2831,7 +2847,6 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 3
   instantiationId: 3
-  currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!23 &2133604551
 MeshRenderer:

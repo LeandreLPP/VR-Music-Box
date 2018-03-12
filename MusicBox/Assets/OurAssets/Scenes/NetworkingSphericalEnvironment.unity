@@ -191,9 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &17347344
 Animator:
   serializedVersion: 3
@@ -557,9 +559,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &158155376
 Animator:
   serializedVersion: 3
@@ -760,7 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   modelOverride: 
-  shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 3}
+  shader: {fileID: 0}
   verbose: 0
   createComponents: 1
   updateDynamically: 1
@@ -873,9 +877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &313761759
 Animator:
   serializedVersion: 3
@@ -1109,9 +1115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &342019946
 Animator:
   serializedVersion: 3
@@ -1312,8 +1320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _head: {fileID: 1052369335}
-  _ears: {fileID: 1699499233}
+  _head: {fileID: 0}
+  _ears: {fileID: 0}
   wireframe: 0
 --- !u!124 &363886067
 Behaviour:
@@ -1438,9 +1446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &449447286
 Animator:
   serializedVersion: 3
@@ -1641,7 +1651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   modelOverride: 
-  shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 3}
+  shader: {fileID: 0}
   verbose: 0
   createComponents: 1
   updateDynamically: 1
@@ -1721,7 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: -1
+  index: 0
   origin: {fileID: 0}
 --- !u!114 &485242050
 MonoBehaviour:
@@ -1734,16 +1744,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1bd731b1543754b87abfbadfb9da8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 1016903599202536, guid: 956edfe325fff60498c91f6d36a2a30e,
-    type: 2}
-  cameraRigTransform: {fileID: 1660609812}
-  teleportReticlePrefab: {fileID: 1639319533735882, guid: b12fa60acda5208479d5474b61225b90,
-    type: 2}
-  headTransform: {fileID: 1052369335}
-  teleportReticleOffset: {x: 0, y: 0.05, z: 0}
+  laserPrefab: {fileID: 0}
+  cameraRigTransform: {fileID: 0}
+  teleportReticlePrefab: {fileID: 0}
+  headTransform: {fileID: 0}
+  teleportReticleOffset: {x: 0, y: 0, z: 0}
   teleportMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
 --- !u!1 &488390507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,9 +1897,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &525572609
 Animator:
   serializedVersion: 3
@@ -2088,9 +2098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b556b706648483642a76b8740a7d5653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoogleVr: {fileID: 1838593105}
-  CameraRig: {fileID: 1660609811}
-  SteamVr: {fileID: 2051793635}
+  GoogleVr: {fileID: 0}
+  CameraRig: {fileID: 0}
+  SteamVr: {fileID: 0}
 --- !u!114 &535223899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,9 +2211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &564179914
 Animator:
   serializedVersion: 3
@@ -2500,9 +2512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &597037742
 Animator:
   serializedVersion: 3
@@ -2832,7 +2846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dcc90c2e60c4011896c7f21fc1f557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastMode: 0
+  raycastMode: 2
   overridePointerCamera: {fileID: 0}
   drawDebugRays: 0
   maxReticleDistance: 10
@@ -2917,9 +2931,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &719402077
 Animator:
   serializedVersion: 3
@@ -3196,9 +3212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &770256075
 Animator:
   serializedVersion: 3
@@ -3432,9 +3450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &799453321
 Animator:
   serializedVersion: 3
@@ -3668,9 +3688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &802182557
 Animator:
   serializedVersion: 3
@@ -3904,9 +3926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &806706542
 Animator:
   serializedVersion: 3
@@ -4140,9 +4164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &839024317
 Animator:
   serializedVersion: 3
@@ -4345,7 +4371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67d2f7afbe96c44fa87b28044b24bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controllerPointer: {fileID: 1305952498}
+  controllerPointer: {fileID: 0}
 --- !u!120 &894408670
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4453,14 +4479,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ee199cdc1304b2090f019e4f488674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reticle: {fileID: 598302186}
-  controller: {fileID: 1994655010}
-  laserColor: {r: 0.9852941, g: 0.10867213, b: 0.10867213, a: 0.25}
+  reticle: {fileID: 0}
+  controller: {fileID: 0}
+  laserColor: {r: 1, g: 1, b: 1, a: 0.25}
   laserColorEnd: {r: 1, g: 1, b: 1, a: 0}
-  maxLaserDistance: 20
+  maxLaserDistance: 1
   lerpSpeed: 20
   lerpThreshold: 1
-  shrinkLaser: 0
+  shrinkLaser: 1
   shrunkScale: 0.2
   beginShrinkAngleDegrees: 0
   endShrinkAngleDegrees: 2
@@ -4476,7 +4502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b65678ccdd949e9a58874d2880c0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastMode: 1
+  raycastMode: 2
   overridePointerCamera: {fileID: 0}
   drawDebugRays: 0
   maxPointerDistance: 20
@@ -4592,9 +4618,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &992018469
 Animator:
   serializedVersion: 3
@@ -4811,7 +4839,7 @@ MonoBehaviour:
   MultisampleCount: 0
   BitRate: 3
   InstallApkOnRun: 1
-  InstantPreviewApk: {fileID: 102900000, guid: dc278786e6540af428ccbf7825495004, type: 3}
+  InstantPreviewApk: {fileID: 0}
 --- !u!20 &995820896
 Camera:
   m_ObjectHideFlags: 0
@@ -4927,9 +4955,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1007868015
 Animator:
   serializedVersion: 3
@@ -5125,9 +5155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdd2ca4290fc0d42b1c951e4c6e9547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 1018131160324000, guid: 198046d46d62c8546acc0e2e0bf4f37c, type: 2}
+  _prefab: {fileID: 0}
   step: 10
-  factor: 15
+  factor: 100
 --- !u!1 &1052369334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5423,9 +5453,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1115370575
 Animator:
   serializedVersion: 3
@@ -5763,9 +5795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1208344202
 Animator:
   serializedVersion: 3
@@ -5999,9 +6033,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1282697315
 Animator:
   serializedVersion: 3
@@ -6278,9 +6314,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1299723784
 Animator:
   serializedVersion: 3
@@ -6606,7 +6644,7 @@ MonoBehaviour:
   fadeDistanceFromHeadSide: 0.15
   tooltipMinDistanceFromFace: 0.45
   tooltipMaxAngleFromCamera: 80
-  isLockedToNeck: 1
+  isLockedToNeck: 0
 --- !u!114 &1305952503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6619,7 +6657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311793381eb9d45149dc1a422000a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armModel: {fileID: 1305952502}
+  armModel: {fileID: 0}
   isDeactivatedWhenDisconnected: 1
 --- !u!82 &1305952504
 AudioSource:
@@ -6793,9 +6831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1324643640
 Animator:
   serializedVersion: 3
@@ -7029,9 +7069,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1331943734
 Animator:
   serializedVersion: 3
@@ -7349,7 +7391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f931e57e3d636043bf9242b558b1406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 958083228}
+  player: {fileID: 0}
 --- !u!114 &1389500237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7439,9 +7481,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1404906242
 Animator:
   serializedVersion: 3
@@ -7675,9 +7719,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1405842657
 Animator:
   serializedVersion: 3
@@ -7911,9 +7957,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1452380072
 Animator:
   serializedVersion: 3
@@ -8069,11 +8117,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452380068}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1469521285 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1498184999284102, guid: 32abba6a76e92f54bbdabf367805946d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1965737067}
 --- !u!1 &1478478895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8152,9 +8195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1478478899
 Animator:
   serializedVersion: 3
@@ -8466,6 +8511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb63c48e0684684cab598e511f17def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 0}
 --- !u!23 &1484998858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8614,9 +8660,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1566850310
 Animator:
   serializedVersion: 3
@@ -8923,9 +8971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1607110671
 Animator:
   serializedVersion: 3
@@ -9159,9 +9209,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1643033136
 Animator:
   serializedVersion: 3
@@ -9428,9 +9480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1649636341
 Animator:
   serializedVersion: 3
@@ -9706,15 +9760,7 @@ MonoBehaviour:
   drawInGame: 1
   size: 0
   color: {r: 0, g: 1, b: 1, a: 1}
-  vertices:
-  - {x: 1.7999994, y: 0.01, z: -1.1999999}
-  - {x: -1.7999994, y: 0.01, z: -1.1999999}
-  - {x: -1.7999994, y: 0.01, z: 1.1999999}
-  - {x: 1.7999994, y: 0.01, z: 1.1999999}
-  - {x: 1.9499993, y: 0.01, z: -1.3499999}
-  - {x: -1.9499993, y: 0.01, z: -1.3499999}
-  - {x: -1.9499993, y: 0.01, z: 1.3499999}
-  - {x: 1.9499993, y: 0.01, z: 1.3499999}
+  vertices: []
 --- !u!33 &1660609814
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9770,11 +9816,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b47c2980b93bc48844a54641dab5b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 2065705359}
-  right: {fileID: 485242044}
-  objects:
-  - {fileID: 0}
-  - {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  objects: []
   assignAllBeforeIdentified: 0
 --- !u!1 &1699499232
 GameObject:
@@ -9857,7 +9901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652e466e306694b409cd7b63c11a81cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 1716300563}
+  manager: {fileID: 0}
   showGUI: 1
   offsetX: 0
   offsetY: 0
@@ -10034,9 +10078,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1765630531
 Animator:
   serializedVersion: 3
@@ -10353,7 +10399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycasterEventMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967295
   maxRaycastHits: 64
 --- !u!81 &1832962267
 AudioListener:
@@ -10494,9 +10540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1834477002
 Animator:
   serializedVersion: 3
@@ -10766,9 +10814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1839886735
 Animator:
   serializedVersion: 3
@@ -11002,9 +11052,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1857393109
 Animator:
   serializedVersion: 3
@@ -11248,9 +11300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898296d4237ce24f84a66d6f293cee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoogleVr: {fileID: 1838593105}
-  CameraRig: {fileID: 1660609811}
-  SteamVr: {fileID: 2051793635}
+  GoogleVr: {fileID: 0}
+  CameraRig: {fileID: 0}
+  SteamVr: {fileID: 0}
 --- !u!4 &1914698906
 Transform:
   m_ObjectHideFlags: 0
@@ -11342,9 +11394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &1928100260
 Animator:
   serializedVersion: 3
@@ -11521,9 +11575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80c5772369677b48bad8bdf2316fbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rail: {fileID: 1469521285}
+  rail: {fileID: 0}
   decalage: 0.25
   speed: 1
+  maxNotes: 10
 --- !u!1001 &1965737067
 Prefab:
   m_ObjectHideFlags: 0
@@ -11655,20 +11710,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa952cbcc0eb13d4ca558b6da550ff55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentPrefabs:
-  - {fileID: 1000011375678268, guid: 6e5b693d0947f4a8b85a00d3965ba64c, type: 2}
+  attachmentPrefabs: []
   touchPadColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   appButtonColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   systemButtonColor: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 1}
   readControllerState: 1
   displayState:
-    batteryLevel: -1
+    batteryLevel: 0
     batteryCharging: 0
     clickButton: 0
     appButton: 0
     homeButton: 0
     touching: 0
-    touchPos: {x: 0.5, y: 0.5}
+    touchPos: {x: 0, y: 0}
   maximumAlpha: 1
 --- !u!1 &2020328870
 GameObject:
@@ -11748,9 +11802,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114597457036155074, guid: d324f890d37edeb4c98041f4eb61f32f,
-    type: 2}
-  spawner: {fileID: 1958580866}
+  noteObjectPrefab: {fileID: 0}
+  spawner: {fileID: 0}
+  place: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  vect: {x: 0, y: 0, z: 0}
 --- !u!95 &2020328874
 Animator:
   serializedVersion: 3
@@ -12030,7 +12086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: -1
+  index: 0
   origin: {fileID: 0}
 --- !u!114 &2065705365
 MonoBehaviour:
@@ -12043,13 +12099,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1bd731b1543754b87abfbadfb9da8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 1016903599202536, guid: 956edfe325fff60498c91f6d36a2a30e,
-    type: 2}
-  cameraRigTransform: {fileID: 1660609812}
-  teleportReticlePrefab: {fileID: 1639319533735882, guid: b12fa60acda5208479d5474b61225b90,
-    type: 2}
-  headTransform: {fileID: 1052369335}
-  teleportReticleOffset: {x: 0, y: 0.05, z: 0}
+  laserPrefab: {fileID: 0}
+  cameraRigTransform: {fileID: 0}
+  teleportReticlePrefab: {fileID: 0}
+  headTransform: {fileID: 0}
+  teleportReticleOffset: {x: 0, y: 0, z: 0}
   teleportMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0

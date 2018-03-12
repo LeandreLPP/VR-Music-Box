@@ -6,6 +6,8 @@ public class NoteObject : BaseGrabable
 {
     public NoteSound note;
 
+    public Vector3 preferedEuler;
+
     private NoteReceptacle receptacle;
     public NoteReceptacle Receptacle
     {
@@ -17,55 +19,52 @@ public class NoteObject : BaseGrabable
         set
         {
             receptacle = value;
-            if (receptacle)
+            if(!IsGrabbed && receptacle != null)
             {
                 transform.SetParent(receptacle.transform);
                 transform.localPosition = Vector3.zero;
-                transform.localEulerAngles = Vector3.zero;
+                transform.localEulerAngles = preferedEuler;
+                GetComponent<Rigidbody>().useGravity = false;
             }
-            else transform.SetParent(null);
         }
     }
 
-    private NoteReceptacle potentialReceptacle = null;
+    private void Start()
+    {
+        preferedEuler = transform.localEulerAngles;
+    }
 
     protected override void OnGrabbed()
     {
         base.OnGrabbed();
         var source = GetComponent<AudioSource>();
-        /*source.clip = note.audioClip;
-        source.volume = note.volume;*/
-        potentialReceptacle = Receptacle;
+        source.clip = note.audioClip;
+        source.volume = note.volume;
+        source.Play();
+        transform.SetParent(null);
+    }
+
+    protected override void OnRelease(AGrabber grabber)
+    {
+        base.OnRelease(grabber);
+
+        var source = GetComponent<AudioSource>();
+        source.Stop();
+
         if (Receptacle)
-            Receptacle.RemoveNote(this);
-        Receptacle = null;
-    }
-
-    protected override void OnRelease()
-    {
-        base.OnRelease();
-        /*if (potentialReceptacle && potentialReceptacle.SetNote(this))            
-            Receptacle = potentialReceptacle;
-        else
-            GetComponent<Rigidbody>().useGravity = true;*/
-    }
-
-    protected override void OnTriggerEnter(Collider other)
-    {
-        base.OnTriggerEnter(other);
-        var r = other.GetComponent<NoteReceptacle>();
-        if (r && Receptacle == null)
-            potentialReceptacle = r;
-    }
-
-    protected override void OnTriggerExit(Collider other)
-    {
-        base.OnTriggerExit(other);
-        var r = other.GetComponent<NoteReceptacle>();
-        if (r && r == potentialReceptacle)
         {
-            potentialReceptacle = null;
-            Receptacle = null;
+            transform.SetParent(Receptacle.transform);
+            transform.localPosition = Vector3.zero;
+            transform.localEulerAngles = preferedEuler;
+            GetComponent<Rigidbody>().useGravity = false;
+        }
+        else
+        {
+            transform.SetParent(null);
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().velocity = grabber.Velocity;
+            GetComponent<Rigidbody>().angularVelocity = grabber.AngularVelocity;
         }
     }
+    
 }

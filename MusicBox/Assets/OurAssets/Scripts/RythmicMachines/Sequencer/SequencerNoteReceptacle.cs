@@ -5,7 +5,8 @@ public class SequencerNoteReceptacle : NoteReceptacle
 {
     public Material baseMaterial;
 
-    public Sequencer Sequencer { get; private set; }
+    //public Sequencer Sequencer { get; private set; }
+    public VisualSequencer VisualSequencer { get; private set; }
     public int Height { get; private set; }
 
     private NoteObject noteHold;
@@ -23,12 +24,12 @@ public class SequencerNoteReceptacle : NoteReceptacle
 
             if (value == null)
             {
-                Sequencer.Notes[Height] = null;
+                VisualSequencer.SetNote(Height, null);
                 GetComponentInChildren<MeshRenderer>().material = baseMaterial;
             }
             else
             {
-                Sequencer.Notes[Height] = value.note;
+                VisualSequencer.SetNote(Height, value);
                 GetComponentInChildren<MeshRenderer>().material = value.GetComponent<MeshRenderer>().material;
             }
 
@@ -37,9 +38,10 @@ public class SequencerNoteReceptacle : NoteReceptacle
     }
 
     private bool initialized = false;
-    public void Initialize(Sequencer sequencer, int height)
+    public void Initialize(Sequencer sequencer, VisualSequencer vs, int height)
     {
-        Sequencer = sequencer;
+        VisualSequencer = vs;
+        //Sequencer = sequencer;
         Height = height;
         initialized = true;
     }

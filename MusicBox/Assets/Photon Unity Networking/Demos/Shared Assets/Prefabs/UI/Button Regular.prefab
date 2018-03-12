@@ -186,8 +186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d234639538a34b8d9e3cc6362a7afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NormalColor: {r: 1, g: 1, b: 1, a: 1}
-  HoverColor: {r: 0, g: 0, b: 0, a: 1}
+  NormalColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  HoverColor:
+    r: 0
+    g: 0
+    b: 0
+    a: 1
 --- !u!222 &22294772
 CanvasRenderer:
   m_ObjectHideFlags: 1

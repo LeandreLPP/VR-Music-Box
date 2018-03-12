@@ -5,6 +5,7 @@ public class SequencerNoteSource : MonoBehaviour
 {
     public NoteObject noteObjectPrefab;
     public SequencerNoteSpawner spawner;
+    public Color colorNote;
 
     private AudioSource source;
 
@@ -13,13 +14,14 @@ public class SequencerNoteSource : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-
     protected virtual NoteObject InstantiateNoteObject()
     {
-        return Instantiate<GameObject>(noteObjectPrefab.gameObject).GetComponent<NoteObject>();
+        var ret = Instantiate<GameObject>(noteObjectPrefab.gameObject).GetComponent<NoteObject>();
+        ret.GetComponent<MeshRenderer>().material.color = colorNote;
+        return ret;
     }
 
-    public void Play()
+    public virtual void Play()
     {
         NoteSound note = new NoteSound { audioClip = source.clip, volume = source.volume };
         NoteObject noteObject = InstantiateNoteObject();

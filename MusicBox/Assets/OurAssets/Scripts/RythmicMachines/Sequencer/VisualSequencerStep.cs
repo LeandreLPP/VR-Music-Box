@@ -6,6 +6,7 @@ public class VisualSequencerStep : MonoBehaviour
     public VisualSequencerToggle togglePrefab;
     public float spacement = 0.5f;
 
+    public VisualSequencer VisualSequencer { get; private set; }
     public Sequencer Sequencer { get; private set; }
     public int StepNumber { get; private set; }
 
@@ -14,8 +15,9 @@ public class VisualSequencerStep : MonoBehaviour
     private bool initialized = false;
     #endregion
 
-    public void Initialize(Sequencer sequencer, int stepNumber)
+    public void Initialize(Sequencer sequencer, VisualSequencer vs, int stepNumber)
     {
+        VisualSequencer = vs;
         Sequencer = sequencer;
         toggles = new VisualSequencerToggle[sequencer.StepSize];
         StepNumber = stepNumber;
@@ -26,6 +28,12 @@ public class VisualSequencerStep : MonoBehaviour
             toggles[i].Initialize(Sequencer, this, i, Sequencer.Partition[StepNumber,i]);
         }
         initialized = true;
+    }
+
+    public void UpdateNote()
+    {
+        foreach (var m in toggles)
+            m.UpdateNote();
     }
 
     public void PlayStep()

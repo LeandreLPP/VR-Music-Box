@@ -45,6 +45,20 @@ public class VisualSequencer : BaseGrabable {
         }
     }
 
+    private NoteObject[] notes;
+
+    public void SetNote(int height, NoteObject no)
+    {
+        notes[height] = no;
+        sequencer.Notes[height] = no != null ? no.note : null;
+        foreach (var s in stepsVisu)
+            s.UpdateNote();
+    }
+
+    public NoteObject GetNote(int height)
+    {
+        return notes[height]; 
+    }
 
     // Use this for initialization
     void Start()
@@ -64,6 +78,7 @@ public class VisualSequencer : BaseGrabable {
     private void Initialize()
     {
         stepsVisu = new VisualSequencerStep[Steps];
+        notes = new NoteObject[StepSize];
         float angle = 360f / Steps;
 
         for (int i = 0; i < Steps; i++)
@@ -71,7 +86,7 @@ public class VisualSequencer : BaseGrabable {
             Quaternion rot = Quaternion.AngleAxis(angle * i, Vector3.up);
             var pos = rot * (root.transform.forward * distance);
             stepsVisu[i] = Instantiate<GameObject>(stepPrefab.gameObject, pos, rot, root.transform).GetComponent<VisualSequencerStep>();
-            stepsVisu[i].Initialize(sequencer, i);
+            stepsVisu[i].Initialize(sequencer, this, i);
         }
 
         receptacles = new SequencerNoteReceptacle[StepSize];
@@ -80,7 +95,7 @@ public class VisualSequencer : BaseGrabable {
             var pos = root.transform.up * heightDistance * (i + 2);
             var rot = new Quaternion();
             receptacles[i] = Instantiate<GameObject>(receptaclePrefab.gameObject, pos, rot, root.transform).GetComponent<SequencerNoteReceptacle>();
-            receptacles[i].Initialize(sequencer, i);
+            receptacles[i].Initialize(sequencer, this, i);
         }
 
         initialized = true;
