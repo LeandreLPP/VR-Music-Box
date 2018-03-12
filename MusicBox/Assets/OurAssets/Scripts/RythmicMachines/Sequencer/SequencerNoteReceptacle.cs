@@ -7,8 +7,9 @@ public class SequencerNoteReceptacle : NoteReceptacle
 
     public Sequencer Sequencer { get; private set; }
     public int Height { get; private set; }
-
+    private bool initialized = false;
     private NoteObject noteHold;
+
     public override NoteObject NoteHold
     {
         get
@@ -25,18 +26,19 @@ public class SequencerNoteReceptacle : NoteReceptacle
             {
                 Sequencer.Notes[Height] = null;
                 GetComponentInChildren<MeshRenderer>().material = baseMaterial;
+
             }
             else
             {
                 Sequencer.Notes[Height] = value.note;
+
                 GetComponentInChildren<MeshRenderer>().material = value.GetComponent<MeshRenderer>().material;
             }
-
             noteHold = value;
         }
     }
 
-    private bool initialized = false;
+
     public void Initialize(Sequencer sequencer, int height)
     {
         Sequencer = sequencer;

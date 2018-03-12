@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/OurAssets/Scenes/NetworkingSphericalEnvironment.unity
+- path: Assets/OurAssets/Scenes/NetworkEnvironnement.unity
   isLoaded: 1
   isActive: 1

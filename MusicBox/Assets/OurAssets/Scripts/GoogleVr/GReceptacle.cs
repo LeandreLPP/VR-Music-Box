@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class GReceptacle : NoteReceptacle
+public class GReceptacle : MonoBehaviour
 {
     public void ClickOnReceptacle(BaseEventData data)
     {
@@ -18,9 +18,9 @@ public class GReceptacle : NoteReceptacle
 
 
     //Set note in receptacle
-    public override bool SetNote(NoteObject note)
+    public bool SetNote(NoteObject note)
     {
-
+        GetComponent<SequencerNoteReceptacle>().SetNote(note);
         //Set the note in the receptacle
         note.gameObject.transform.SetParent(transform, true);
         note.gameObject.transform.position = transform.position;
@@ -29,20 +29,16 @@ public class GReceptacle : NoteReceptacle
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
 
         note.gameObject.transform.gameObject.GetComponent<GNote>().Release(null);
-        note.gameObject.transform.gameObject.GetComponent<GNote>().Receptacle = this;
+        note.gameObject.transform.gameObject.GetComponent<GNote>().Receptacle = GetComponent<SequencerNoteReceptacle>();
         return true;
     }
 
 
-    public override bool RemoveNote(NoteObject note)
+    public  bool RemoveNote(NoteObject note)
     {
+        GetComponent<SequencerNoteReceptacle>().RemoveNote(note);
         gameObject.layer = LayerMask.NameToLayer("Default");
         return true;
-    }
-
-    public override bool CanReceive(NoteObject note)
-    {
-        throw new System.NotImplementedException();
     }
 }
 

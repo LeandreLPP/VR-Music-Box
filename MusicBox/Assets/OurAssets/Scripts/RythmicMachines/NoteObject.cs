@@ -41,9 +41,9 @@ public class NoteObject : BaseGrabable
         Receptacle = null;
     }
 
-    protected override void OnRelease()
+    protected override void OnRelease(AGrabber grabber)
     {
-        base.OnRelease();
+        base.OnRelease(grabber);
         /*if (potentialReceptacle && potentialReceptacle.SetNote(this))            
             Receptacle = potentialReceptacle;
         else

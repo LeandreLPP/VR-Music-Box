@@ -18,6 +18,7 @@ public class StackingSpawner : SequencerNoteSpawner
 
     public override void SpawnNote(NoteObject noteObject, NoteSound note)
     {
+        Debug.Log("spawner");
         noteObject.transform.position = PositionNote(notesHold.Count);
         noteObject.transform.rotation = transform.rotation;
         noteObject.transform.SetParent(rail.transform);

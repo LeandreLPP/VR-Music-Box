@@ -37,7 +37,7 @@ public class VibraphoneSequencerSource : SequencerNoteSource
     }
 
 
-    protected override void Play()
+    public override void Play()
     {
         base.Play();
         animator.SetTrigger("play");

@@ -19,7 +19,7 @@ public class SequencerNoteSource : MonoBehaviour
         return Instantiate<GameObject>(noteObjectPrefab.gameObject).GetComponent<NoteObject>();
     }
 
-    public void Play()
+    public virtual void Play()
     {
         NoteSound note = new NoteSound { audioClip = source.clip, volume = source.volume };
         NoteObject noteObject = InstantiateNoteObject();

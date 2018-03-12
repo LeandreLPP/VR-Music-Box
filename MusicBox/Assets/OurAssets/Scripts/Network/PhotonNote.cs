@@ -36,4 +36,5 @@ public class PhotonNote : Photon.MonoBehaviour
     {
         photonView.TransferOwnership(PhotonNetwork.player.ID);
     }
+
 }

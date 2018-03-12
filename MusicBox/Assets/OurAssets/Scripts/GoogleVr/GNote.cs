@@ -6,11 +6,9 @@ using UnityEngine.EventSystems;
 
 public class GNote : NoteObject
 {
-    private PhotonNote photonNote;
 
     void Start()
     {
-        photonNote = GetComponent<PhotonNote>();
     }
 
 
@@ -20,8 +18,6 @@ public class GNote : NoteObject
         if (note)
             RemoveNote();
         Grab(null);
-        //Update position on network
-
     }
 
     protected override void OnGrabbed()
@@ -34,10 +30,9 @@ public class GNote : NoteObject
         transform.SetParent(pointerTransform, true);
 
         // position it in the view
-        transform.localPosition = new Vector3(0, 0, 1f);
-        photonNote.TransferOwnership();
-        // disable physics
-        //GetComponent<Rigidbody>().isKinematic = true;
+        transform.localPosition = new Vector3(0, 0, 0.5f);
+        GetComponent<PhotonNote>().TransferOwnership();
+
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
 
     }
