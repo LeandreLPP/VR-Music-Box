@@ -72,4 +72,10 @@ public class SequencerNoteReceptacle : NoteReceptacle
         else
             return false;
     }
+
+    public override void SwapNote(NoteObject note)
+    {
+        NoteHold = null;
+        SetNote(note);
+    }
 }

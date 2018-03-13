@@ -33,6 +33,7 @@ b027659a510ae8d01d6d5f31baf9827a Assembly-CSharp.dll:.PhotonStatsGui
 b646916c78b48f3208cda1a75aff4d8f Assembly-CSharp.dll:.ChatGui
 719a894e190b2807814eeadc070a2c6e Assembly-CSharp.dll:.ReturnBack
 237deeb93644820786130c1645d19032 Assembly-CSharp.dll:.LooperStep
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GToogle
 d4b89701147abb8c88f1fe5f34200c32 Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearAudioPitch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_CameraFlip
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ColorPerPlayerApply
@@ -187,7 +188,7 @@ c1df6bba7f7b35a48ac544b9017761dd Assembly-CSharp.dll:.PlayerDiamond
 671d62c40f947fdbe161ccd8ce53712d Assembly-CSharp.dll:Valve.VR.InteractionSystem.SpawnRenderModel
 1de5b0589e6fb98c8b8d7fcded724e3b Assembly-CSharp.dll:.CullArea
 5adc88bf7d1c618314bc1a0f0b3d6c47 Assembly-CSharp.dll:.GvrAudioSoundfield
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GReceptacle
+c4aa63ebdd4a0d5928913b82308079e3 Assembly-CSharp.dll:.GReceptacle
 fc4c581d5c780cfbc749c132df4d5008 Assembly-CSharp.dll:.NamePickGui
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PunPlayerScores
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MaracasV2
@@ -312,7 +313,6 @@ a4b96e7d389c0fdb60e84e1cfcf0075d Assembly-CSharp.dll:.VisualSequencerStep
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.IgnoreUiRaycastWhenInactive
 79faa3d65f06fd0a6111fd24966956f5 Assembly-CSharp.dll:.ChatAppIdCheckerUI
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrPointerManager
-2b5bd81c259c691324a17af9a3e97e85 Assembly-CSharp.dll:.GoogleVRTeleport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HatCymbalPedal
 ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.NoteObject
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
@@ -380,7 +380,7 @@ ea580b2edab741d1d6e6445b14097645 Assembly-CSharp.dll:.RPGCamera
 2bef41f3e91d2e75fc21d4c19b031cbe Assembly-CSharp.dll:.Looper
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrControllerTooltipsSimple
 173a033cde910692227c728d6b89fedd Assembly-CSharp.dll:.OnClickCallMethod
-92e33073e75f5148aae4aa86f164f434 Assembly-CSharp.dll:GoogleVR.Demos.Laser
+992fbb0f558775b0b03a238b7043bbef Assembly-CSharp.dll:GoogleVR.Demos.Laser
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.IELdemo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameLogic
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -560,4 +560,3 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 54a26a95db9c623b6eb6fc01ae3ef891 Assembly-CSharp.dll:.CubeExtra
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GToogle

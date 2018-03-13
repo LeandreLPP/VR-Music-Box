@@ -1260,6 +1260,12 @@ Prefab:
       propertyPath: indicator
       value: 
       objectReference: {fileID: 1744027890}
+    - target: {fileID: 114447380815845788, guid: 30b90cabf6e2da140876f58db7240e0d,
+        type: 2}
+      propertyPath: receptaclePrefab
+      value: 
+      objectReference: {fileID: 114340318086109630, guid: 6cefeb5625ee204408b37538489ae5d3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30b90cabf6e2da140876f58db7240e0d, type: 2}
   m_IsPrefabParent: 0
@@ -2261,6 +2267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerPointer: {fileID: 2118409288}
+  player: {fileID: 626243967}
 --- !u!120 &1364139458
 LineRenderer:
   m_ObjectHideFlags: 0

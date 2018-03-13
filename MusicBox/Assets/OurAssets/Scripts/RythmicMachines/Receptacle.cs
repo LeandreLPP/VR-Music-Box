@@ -9,6 +9,8 @@ public abstract class NoteReceptacle : MonoBehaviour
 
     public abstract bool SetNote(NoteObject note);
 
+    public abstract void SwapNote(NoteObject note);
+
     public abstract bool RemoveNote(NoteObject note);
 
     protected virtual void OnTriggerEnter(Collider other)

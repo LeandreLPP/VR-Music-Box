@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class GReceptacle : MonoBehaviour
+public class GReceptacle : SequencerNoteReceptacle
 {
     public void ClickOnReceptacle(BaseEventData data)
     {
@@ -18,9 +18,9 @@ public class GReceptacle : MonoBehaviour
 
 
     //Set note in receptacle
-    public bool SetNote(NoteObject note)
+    public override bool SetNote(NoteObject note)
     {
-        GetComponent<SequencerNoteReceptacle>().SetNote(note);
+        base.SetNote(note);
         //Set the note in the receptacle
         note.gameObject.transform.SetParent(transform, true);
         note.gameObject.transform.position = transform.position;
@@ -34,11 +34,12 @@ public class GReceptacle : MonoBehaviour
     }
 
 
-    public  bool RemoveNote(NoteObject note)
+    public override bool RemoveNote(NoteObject note)
     {
-        GetComponent<SequencerNoteReceptacle>().RemoveNote(note);
+        base.RemoveNote(note);
         gameObject.layer = LayerMask.NameToLayer("Default");
         return true;
     }
+
 }
 

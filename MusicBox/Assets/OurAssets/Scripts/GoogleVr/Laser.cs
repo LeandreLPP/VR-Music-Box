@@ -32,6 +32,7 @@ namespace GoogleVR.Demos
     {
         [Tooltip("Reference to GvrControllerPointer")]
         public GameObject controllerPointer;
+        public GameObject player;
 
 
 
@@ -44,6 +45,17 @@ namespace GoogleVR.Demos
         void Update()
         {
             GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
-        }     
+            if (GvrControllerInput.AppButtonUp)
+            {
+                TeleportTo();
+            }
+        }
+
+
+        public void TeleportTo()
+        {
+            Vector3 playerPos = new Vector3(GvrPointerInputModule.CurrentRaycastResult.worldPosition.x, player.transform.position.y, GvrPointerInputModule.CurrentRaycastResult.worldPosition.z);
+            player.transform.position = playerPos;
+        }
     }
 };
