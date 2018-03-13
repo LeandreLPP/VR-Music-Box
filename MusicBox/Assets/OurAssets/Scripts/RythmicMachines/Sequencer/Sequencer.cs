@@ -100,6 +100,11 @@ public class Sequencer : MonoBehaviour {
         queueSource = new Queue<AudioSource>();
     }
 
+    private void Update()
+    {
+        Tempo = tempo;
+    }
+
     public void PlayNextStep()
     {
         CurrentStep++;

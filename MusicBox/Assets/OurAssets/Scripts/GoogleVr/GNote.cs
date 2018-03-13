@@ -22,8 +22,8 @@ public class GNote : NoteObject
 
     protected override void OnGrabbed()
     {
-        Debug.Log("Grab");
         base.OnGrabbed();
+#if UNITY_ANDROID
         // get the Transform component of the pointer
         Transform pointerTransform = GvrPointerInputModule.Pointer.PointerTransform;
         // set the GameObject's parent to the pointer
@@ -34,6 +34,7 @@ public class GNote : NoteObject
         GetComponent<PhotonNote>().TransferOwnership();
 
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
+#endif
 
     }
 

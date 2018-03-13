@@ -25,6 +25,8 @@ public class NoteObject : BaseGrabable
                 transform.localPosition = Vector3.zero;
                 transform.localEulerAngles = preferedEuler;
                 GetComponent<Rigidbody>().useGravity = false;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             }
         }
     }

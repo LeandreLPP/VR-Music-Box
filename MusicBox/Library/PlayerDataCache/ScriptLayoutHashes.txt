@@ -33,6 +33,7 @@ b027659a510ae8d01d6d5f31baf9827a Assembly-CSharp.dll:.PhotonStatsGui
 b646916c78b48f3208cda1a75aff4d8f Assembly-CSharp.dll:.ChatGui
 719a894e190b2807814eeadc070a2c6e Assembly-CSharp.dll:.ReturnBack
 237deeb93644820786130c1645d19032 Assembly-CSharp.dll:.LooperStep
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GToogle
 d4b89701147abb8c88f1fe5f34200c32 Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearAudioPitch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_CameraFlip
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ColorPerPlayerApply
@@ -127,7 +128,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.GNote
+9b349e498e429dfb354490181f4dbfeb Assembly-CSharp.dll:.GNote
 3c6c89e8ff8d6e56a7645bb3dc211845 Assembly-CSharp.dll:.PhotonSpawner
 b8fe48d23e8df5a3f87b62a239a33b6b Assembly-CSharp.dll:.VisualSequencerToggle
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.InputModule
@@ -287,7 +288,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 7c439fa40722b737cdc556be8191fde8 Assembly-CSharp.dll:.ObjectSpawner
-e7ca658964d674e63c57dfc4ad9763d6 Assembly-CSharp.dll:.GoogleVibraphone
+98d461bcfea37e80bef590d7cd92b0a6 Assembly-CSharp.dll:.GoogleVibraphone
 9650139907be6d63bf3c3eaa8900f13f Assembly-CSharp.dll:.myThirdPersonController
 967776f30e617b92485a34970441596d Assembly-CSharp.dll:Valve.VR.InteractionSystem.SpawnAndAttachAfterControllerIsTracking
 2da85cb77e5468d9e881e5c9e658ca62 Assembly-CSharp.dll:Valve.VR.InteractionSystem.InteractableHoverEvents
@@ -314,7 +315,7 @@ a4b96e7d389c0fdb60e84e1cfcf0075d Assembly-CSharp.dll:.VisualSequencerStep
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrPointerManager
 2b5bd81c259c691324a17af9a3e97e85 Assembly-CSharp.dll:.GoogleVRTeleport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HatCymbalPedal
-ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.NoteObject
+9b349e498e429dfb354490181f4dbfeb Assembly-CSharp.dll:.NoteObject
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.Interactable
@@ -336,7 +337,7 @@ c4aa63ebdd4a0d5928913b82308079e3 Assembly-CSharp.dll:.SequencerNoteReceptacle
 31e91faba2267dbf8c0fe528bca54ff7 Assembly-CSharp.dll:.GvrLaserPointer
 6aa5722444ea3486c10592141d9f4cfc Assembly-CSharp.dll:Valve.VR.InteractionSystem.DestroyOnTriggerEnter
 850bbf7a45454397c5e5856d5756baee Assembly-CSharp.dll:Valve.VR.InteractionSystem.ItemPackageSpawner
-410a078cacaf3778d6ce2bab5c98623e Assembly-CSharp.dll:.SequencerNoteSource
+2686e44e6721560da342e2ce0ee75803 Assembly-CSharp.dll:.SequencerNoteSource
 30c6237931168f8b4c2f10a656a47aa8 Assembly-CSharp.dll:.PickupItem
 b9efe2a0d1c9ba7bc46e66a07a897115 Assembly-CSharp.dll:.ServerSettings
 20a64171b5e38421fc7e2a19c23f98e1 Assembly-CSharp.dll:.SteamVR_TrackedObject
@@ -470,7 +471,7 @@ ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.BaseGrabable
 c38ec0d21c425a274f55b7414a6e54c1 Assembly-CSharp.dll:.NetworkManagerHUD
 d58a04dfeb7e5c0c96cb0e3606969422 Assembly-CSharp.dll:.UIInterract
 4b8b25ed60c1bb417f20991003ba0256 Assembly-CSharp.dll:.WorkerMenu
-e7ca658964d674e63c57dfc4ad9763d6 Assembly-CSharp.dll:.VibraphoneSequencerSource
+98d461bcfea37e80bef590d7cd92b0a6 Assembly-CSharp.dll:.VibraphoneSequencerSource
 e6ff02cc730612ce1d6b592b86f6b561 Assembly-CSharp.dll:Valve.VR.InteractionSystem.FallbackCameraController
 604f5f55c1cc414f64da1990b36ff015 Assembly-CSharp.dll:.PhotonView
 b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
@@ -560,4 +561,3 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 54a26a95db9c623b6eb6fc01ae3ef891 Assembly-CSharp.dll:.CubeExtra
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GToogle

@@ -7,6 +7,8 @@ public class InstrumentPlayer : SequencerNoteSpawner {
 
     public GameObject[] instrumentsPrefabs;
     public GameObject rack;
+    public GameObject target;
+    public GameObject spawnPoint;
 
     public Button next;
     public Button previous;
@@ -49,19 +51,21 @@ public class InstrumentPlayer : SequencerNoteSpawner {
         int i = 0;
         foreach(var go in instrumentsPrefabs)
         {
-            list.Add(Instantiate(go, rack.transform.position + rack.transform.right * i * distance, rack.transform.rotation, rack.transform));
+            list.Add(Instantiate(go, rack.transform.position + -rack.transform.right * i * distance, rack.transform.rotation, rack.transform));
             i++;
         }
         instruments = list.ToArray();
         play.interactable = instruments.Length > 0;
         Index = 0;
-        rack.transform.position = transform.position + transform.right.normalized * -Index * distance;
+        rack.transform.position = transform.position + transform.right.normalized * Index * distance;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        var pos = transform.position + transform.right.normalized * -Index * distance;
+
+    // Update is called once per frame
+    void Update()
+    {
+        var pos = transform.position + transform.right.normalized * Index * distance;
         rack.transform.position = Vector3.MoveTowards(rack.transform.position, pos, distance * 2f * Time.deltaTime);
+        rack.transform.rotation = transform.rotation;
 
         if (rack.transform.localPosition == pos)
         {
@@ -72,6 +76,17 @@ public class InstrumentPlayer : SequencerNoteSpawner {
 
         if (noteHeld != null && noteHeld.IsGrabbed)
             noteHeld = null;
+
+        // Turn toward target
+        if (target != null)
+            transform.LookAt(target.transform.position);
+
+        // Remove NoteHeld once grabbed
+        if (noteHeld != null && noteHeld.IsGrabbed)
+        {
+            noteHeld.transform.SetParent(null);
+            noteHeld = null;
+        }
 	}
 
     public void Next()
@@ -101,7 +116,8 @@ public class InstrumentPlayer : SequencerNoteSpawner {
     public override void SpawnNote(NoteObject noteObject, NoteSound note)
     {
         noteObject.note = note;
-        noteObject.gameObject.transform.position = transform.position - transform.forward;
+        noteObject.transform.SetParent(spawnPoint.transform);
+        noteObject.transform.localPosition = Vector3.zero;
         if(noteHeld != null)
             Destroy(noteHeld.gameObject);
         noteHeld = noteObject;

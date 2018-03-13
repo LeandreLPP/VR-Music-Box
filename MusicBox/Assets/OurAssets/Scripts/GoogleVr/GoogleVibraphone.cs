@@ -16,7 +16,7 @@ public class GoogleVibraphone : VibraphoneSequencerSource
         var noteObject = PhotonNetwork.Instantiate(noteObjectPrefab.name, Vector3.zero, Quaternion.identity, 0, null).GetComponent<NoteObject>();
         var renderer = noteObject.gameObject.GetComponent<Renderer>();
 
-        renderer.material.color = color;
+        renderer.material.color = colorNote;
         return noteObject;
     }
 }
