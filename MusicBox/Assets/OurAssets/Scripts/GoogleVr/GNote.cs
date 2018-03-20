@@ -61,5 +61,4 @@ public class GNote : NoteObject
         Grab(null);
         tmp.gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
     }
-
 }

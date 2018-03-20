@@ -7,7 +7,7 @@ public class SequencerNoteSource : MonoBehaviour
     public SequencerNoteSpawner spawner;
     public Color colorNote;
 
-    private AudioSource source;
+    protected AudioSource source;
 
     protected virtual void Start()
     {

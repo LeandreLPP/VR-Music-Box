@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class PhotonManager : Photon.PunBehaviour
 {
@@ -8,10 +9,13 @@ public class PhotonManager : Photon.PunBehaviour
     public GameObject GoogleVr;
     public GameObject CameraRig;
     public GameObject SteamVr;
+    private GameObject canvas;
 
     // Use this for initialization
     void Start () {
         PhotonNetwork.ConnectUsingSettings("v.0.0.1");
+        PhotonNetwork.autoCleanUpPlayerObjects = false;
+        canvas = GameObject.FindGameObjectWithTag("PhotonCanvas");
     }
 	
 	// Update is called once per frame
@@ -29,13 +33,16 @@ public class PhotonManager : Photon.PunBehaviour
         if (XRSettings.supportedDevices.Length == 2 && XRSettings.supportedDevices[1].Equals("daydream"))
         {
             GoogleVr.SetActive(true);
+            canvas.GetComponent<GvrPointerGraphicRaycaster>().enabled = true;
             StartCoroutine(LoadDevice("Daydream"));
         }
         else
         {
+            canvas.GetComponent<GraphicRaycaster>().enabled = true;
             CameraRig.SetActive(true);
             SteamVr.SetActive(true);
         }
+        Debug.Log("number of player in the room "+PhotonNetwork.countOfPlayers);
     }
 
     //Enable or disable VR 
@@ -45,4 +52,5 @@ public class PhotonManager : Photon.PunBehaviour
         yield return null;
         XRSettings.enabled = true;
     }
+
 }

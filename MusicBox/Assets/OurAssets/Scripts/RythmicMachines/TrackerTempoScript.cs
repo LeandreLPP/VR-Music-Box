@@ -43,6 +43,7 @@ public class TrackerTempoScript : MonoBehaviour {
             angularVelZ += Controller.angularVelocity.z * speed;
             int result = Mathf.FloorToInt(middle + angularVelZ);
             sequencer.tempo = Mathf.Max(min, Mathf.Min(max, result));
+            sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.tempo);
         }
 	}
 }

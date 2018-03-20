@@ -43,4 +43,13 @@ MonoBehaviour:
   - RequestForPickupTimes
   - TaggedPlayer
   - UpdatePosition
+  - AddNoteSound
+  - SpawnNote
+  - UpdateNoteSound
+  - UpdateToggle
+  - UpdateNote
+  - InstantiateNoteObject
+  - AddToSpwaner
+  - RemoveToSpwaner
+  - UpdateTempo
   DisableAutoOpenWizard: 1

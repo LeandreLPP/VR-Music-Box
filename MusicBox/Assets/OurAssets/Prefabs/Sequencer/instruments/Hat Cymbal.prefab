@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136834985377196424}
   - component: {fileID: 23750211055752998}
   - component: {fileID: 82348696880249610}
-  - component: {fileID: 114976784779914862}
+  - component: {fileID: 114149153405008910}
   m_Layer: 0
   m_Name: Hat Cymbal
   m_TagString: HatCymbal
@@ -165,7 +165,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114976784779914862
+--- !u!114 &114149153405008910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3b79c8d32ee524dbcca727671edbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114332621844102702, guid: d5bddbef6a7b89d478ecd69affd3f5bd,
+  noteObjectPrefab: {fileID: 114633282865600216, guid: bef82287065f6064ab2432245785a9d6,
     type: 2}
   spawner: {fileID: 0}
-  colorNote: {r: 1, g: 0.6, b: 0, a: 0}
+  colorNote: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &136834985377196424
 CapsuleCollider:
   m_ObjectHideFlags: 1

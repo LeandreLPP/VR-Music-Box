@@ -5,17 +5,19 @@ using System;
 [RequireComponent(typeof(Collider))]
 public class VisualSequencerToggle : MonoBehaviour
 {
-    public Sequencer Sequencer { get; private set; }
-    public VisualSequencerStep Step { get; private set; }
-    public int Height { get; private set; }
-    public bool State { get; private set; }
+    public Sequencer Sequencer { get; protected set; }
+    public VisualSequencerStep Step { get; protected set; }
+    public int Height { get; protected set; }
+    public bool State { get; protected set; }
 
     public Material off;
     public Material on;
 
-    private Mesh meshInitial;
-    private MeshFilter filter;
-    private new MeshRenderer renderer;
+    protected Mesh meshInitial;
+    protected MeshFilter filter;
+    protected new MeshRenderer renderer;
+
+    protected bool initialized = false;
 
     private void Start()
     {
@@ -24,14 +26,13 @@ public class VisualSequencerToggle : MonoBehaviour
         meshInitial = filter.mesh;
     }
 
-    private bool initialized = false;
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         Toggle();
     }
 
-    public void Initialize(Sequencer sequencer, VisualSequencerStep step, int height, bool initialState)
+    public virtual void Initialize(Sequencer sequencer, VisualSequencerStep step, int height, bool initialState)
     {
         filter = GetComponent<MeshFilter>();
         renderer = GetComponent<MeshRenderer>();

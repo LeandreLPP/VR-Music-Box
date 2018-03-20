@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33296291555891800}
   - component: {fileID: 136622354907241664}
   - component: {fileID: 23175932240306270}
-  - component: {fileID: 114799193817535496}
   - component: {fileID: 82951751615190338}
+  - component: {fileID: 114993773982982614}
   m_Layer: 0
   m_Name: Bass Drum
   m_TagString: Untagged
@@ -165,7 +165,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114799193817535496
+--- !u!114 &114993773982982614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3b79c8d32ee524dbcca727671edbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114332621844102702, guid: d5bddbef6a7b89d478ecd69affd3f5bd,
+  noteObjectPrefab: {fileID: 114633282865600216, guid: bef82287065f6064ab2432245785a9d6,
     type: 2}
   spawner: {fileID: 0}
-  colorNote: {r: 0.541, g: 0.366, b: 0.241, a: 0}
+  colorNote: {r: 0, g: 0, b: 0, a: 0}
 --- !u!136 &136622354907241664
 CapsuleCollider:
   m_ObjectHideFlags: 1

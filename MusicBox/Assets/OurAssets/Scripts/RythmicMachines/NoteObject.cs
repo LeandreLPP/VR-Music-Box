@@ -64,8 +64,11 @@ public class NoteObject : BaseGrabable
         {
             transform.SetParent(null);
             GetComponent<Rigidbody>().useGravity = true;
-            GetComponent<Rigidbody>().velocity = grabber.Velocity;
-            GetComponent<Rigidbody>().angularVelocity = grabber.AngularVelocity;
+            if (grabber)
+            {
+                GetComponent<Rigidbody>().velocity = grabber.Velocity;
+                GetComponent<Rigidbody>().angularVelocity = grabber.AngularVelocity;
+            }
         }
     }
     

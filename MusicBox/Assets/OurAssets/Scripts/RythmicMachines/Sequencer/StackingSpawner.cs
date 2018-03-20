@@ -9,27 +9,28 @@ public class StackingSpawner : SequencerNoteSpawner
     public float speed = 1f;
     public int maxNotes = 10;
 
-    protected List<NoteObject> notesHold;
+
+    public List<NoteObject> NotesHold { get; set; }
 
     private void Start()
     {
-        notesHold = new List<NoteObject>();
+        NotesHold = new List<NoteObject>();
     }
 
     public override void SpawnNote(NoteObject noteObject, NoteSound note)
     {
-        noteObject.transform.position = PositionNote(notesHold.Count);
+        noteObject.transform.position = PositionNote(NotesHold.Count);
         noteObject.transform.rotation = transform.rotation;
         noteObject.transform.SetParent(rail.transform);
         noteObject.note = note;
-        while (notesHold.Count >= maxNotes)
+        while (NotesHold.Count >= maxNotes)
         {
-            NoteObject n = notesHold[0];
-            notesHold.RemoveAt(0);
+            NoteObject n = NotesHold[0];
+            NotesHold.RemoveAt(0);
             n.gameObject.SetActive(false);
-            Destroy(n);
+            Destroy(n.GetComponent<PhotonView>());
         }
-        notesHold.Add(noteObject);
+        NotesHold.Add(noteObject);
     }
 
     protected Vector3 PositionNote(int index)
@@ -37,20 +38,20 @@ public class StackingSpawner : SequencerNoteSpawner
         return rail.transform.position + rail.transform.right * index * decalage;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
-        var railPos = -transform.right * decalage / 2 * notesHold.Count;
+        var railPos = -transform.right * decalage / 2 * NotesHold.Count;
         rail.transform.localPosition = Vector3.MoveTowards(rail.transform.localPosition, railPos, speed * Time.deltaTime);
 
-        var copyList = notesHold.ToArray();
+        var copyList = NotesHold.ToArray();
         foreach (var n in copyList)
             if (n.IsGrabbed)
-                notesHold.Remove(n);
+                NotesHold.Remove(n);
 
-        for(int i = 0; i<notesHold.Count; i++)
+        for(int i = 0; i< NotesHold.Count; i++)
         {
             var notePos = transform.right * decalage * i;
-            notesHold[i].transform.localPosition = Vector3.MoveTowards(notesHold[i].transform.localPosition, notePos, speed * Time.deltaTime);
+            NotesHold[i].transform.localPosition = Vector3.MoveTowards(NotesHold[i].transform.localPosition, notePos, speed * Time.deltaTime);
         }
     }
 }

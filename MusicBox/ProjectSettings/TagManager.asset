@@ -15,6 +15,9 @@ TagManager:
   - ServerSideOnly
   - Note
   - HatCymbal
+  - Sequencer
+  - PhotonSpawnerVibraphone
+  - PhotonCanvas
   layers:
   - Default
   - TransparentFX

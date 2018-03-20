@@ -7,7 +7,8 @@ public class InstrumentPlayer : SequencerNoteSpawner {
 
     public GameObject[] instrumentsPrefabs;
     public GameObject rack;
-    public GameObject target;
+    public GameObject targetHtc;
+    public GameObject targetGoogleVr;
     public GameObject spawnPoint;
 
     public Button next;
@@ -15,11 +16,15 @@ public class InstrumentPlayer : SequencerNoteSpawner {
     public Button play;
     public Text instrumentName;
 
-    private NoteObject noteHeld;
+    protected NoteObject noteHeld;
+    protected GameObject target;
 
     public float distance = 100f;
 
-    private int index = 0;
+    protected int index = 0;
+
+    private GameObject[] instruments;
+
     public int Index
     {
         get
@@ -38,12 +43,9 @@ public class InstrumentPlayer : SequencerNoteSpawner {
             }
             next.interactable = index < instruments.Length - 1;
             previous.interactable = index > 0;
-            instrumentName.text = instruments[index].gameObject.name;
+            instrumentName.text = instruments[index].gameObject.name.Split('(')[0]; //remove (Clone) from the name
         }
     }
-
-    private GameObject[] instruments;
-
 
     // Use this for initialization
     void Start () {
@@ -51,13 +53,23 @@ public class InstrumentPlayer : SequencerNoteSpawner {
         int i = 0;
         foreach(var go in instrumentsPrefabs)
         {
-            list.Add(Instantiate(go, rack.transform.position + -rack.transform.right * i * distance, rack.transform.rotation, rack.transform));
+            GameObject o = Instantiate(go, rack.transform.position + -rack.transform.right * i * distance, go.transform.rotation, rack.transform);
+            o.GetComponent<MeshRenderer>().material.color = go.GetComponent<SequencerNoteSource>().colorNote;
+            list.Add(o);
             i++;
         }
         instruments = list.ToArray();
+
         play.interactable = instruments.Length > 0;
         Index = 0;
         rack.transform.position = transform.position + transform.right.normalized * Index * distance;
+
+#if UNITY_ANDROID
+        target = targetGoogleVr;
+#else
+        target = targetHtc;
+#endif
+
     }
 
     // Update is called once per frame
@@ -101,7 +113,7 @@ public class InstrumentPlayer : SequencerNoteSpawner {
         Index--;
     }
 
-    public void Play()
+    public virtual void Play()
     {
         Debug.Log("Play");
         SequencerNoteSource source = instruments[Index].GetComponent<SequencerNoteSource>();

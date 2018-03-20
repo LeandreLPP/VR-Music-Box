@@ -32,7 +32,6 @@ public class SequencerNoteReceptacle : NoteReceptacle
                 VisualSequencer.SetNote(Height, value);
                 GetComponentInChildren<MeshRenderer>().material = value.GetComponent<MeshRenderer>().material;
             }
-
             noteHold = value;
         }
     }

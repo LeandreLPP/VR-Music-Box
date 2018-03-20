@@ -16,7 +16,13 @@ public class VisualSequencer : BaseGrabable {
     private Sequencer sequencer;
     private VisualSequencerStep[] stepsVisu;
     private SequencerNoteReceptacle[] receptacles;
-    private bool initialized;
+
+
+    public Sequencer Sequencer { get; set; }
+    public VisualSequencerStep[] StepsVisu { get; set; }
+    public SequencerNoteReceptacle[] Receptacles { get; set; }
+
+    protected bool initialized;
     private bool paused;
 
     public virtual int Steps
@@ -45,13 +51,13 @@ public class VisualSequencer : BaseGrabable {
         }
     }
 
-    private NoteObject[] notes;
+    protected NoteObject[] notes;
 
     public void SetNote(int height, NoteObject no)
     {
         notes[height] = no;
         sequencer.Notes[height] = no != null ? no.note : null;
-        foreach (var s in stepsVisu)
+        foreach (var s in StepsVisu)
             s.UpdateNote();
     }
 
@@ -61,7 +67,7 @@ public class VisualSequencer : BaseGrabable {
     }
 
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         sequencer = GetComponent<Sequencer>();
         Initialize();
@@ -70,14 +76,14 @@ public class VisualSequencer : BaseGrabable {
     private void Reinit()
     {
         initialized = false;
-        foreach (var s in stepsVisu)
+        foreach (var s in StepsVisu)
             Destroy(s);
         Initialize();
     }
 
-    private void Initialize()
+    public virtual void Initialize()
     {
-        stepsVisu = new VisualSequencerStep[Steps];
+        StepsVisu = new VisualSequencerStep[Steps];
         notes = new NoteObject[StepSize];
         float angle = 360f / Steps;
 
@@ -85,8 +91,8 @@ public class VisualSequencer : BaseGrabable {
         {
             Quaternion rot = Quaternion.AngleAxis(angle * i, Vector3.up);
             var pos = rot * (root.transform.forward * distance);
-            stepsVisu[i] = Instantiate<GameObject>(stepPrefab.gameObject, pos, rot, root.transform).GetComponent<VisualSequencerStep>();
-            stepsVisu[i].Initialize(sequencer, this, i);
+            StepsVisu[i] = Instantiate<GameObject>(stepPrefab.gameObject, pos, rot, root.transform).GetComponent<VisualSequencerStep>();
+            StepsVisu[i].Initialize(sequencer, this, i);
         }
 
         receptacles = new SequencerNoteReceptacle[StepSize];
@@ -107,7 +113,7 @@ public class VisualSequencer : BaseGrabable {
             return;
         sequencer.PlayNextStep();
         int i = sequencer.CurrentStep == Steps ? 0 : sequencer.CurrentStep;
-        stepsVisu[i].PlayStep();
+        StepsVisu[i].PlayStep();
     }
 
     protected override void OnGrabbed()

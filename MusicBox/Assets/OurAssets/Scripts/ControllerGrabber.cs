@@ -112,7 +112,7 @@ public class ControllerGrabber : AGrabber {
         if (Controller.GetHairTriggerDown())
             if (collidingGrabable)
             {
-                var photonNote = GetComponent<PhotonNote>();
+                var photonNote = collidingGrabable.GetComponent<PhotonNote>();
                 if (photonNote)
                     photonNote.TransferOwnership();
                 GrabObject();

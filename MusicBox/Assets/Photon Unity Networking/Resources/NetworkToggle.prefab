@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33837780133729102}
   - component: {fileID: 135470372141403812}
   - component: {fileID: 23198200421845362}
-  - component: {fileID: 114674871386326452}
   - component: {fileID: 114193548614747816}
-  - component: {fileID: 114781968879423624}
   - component: {fileID: 82588584570025892}
+  - component: {fileID: 114781968879423624}
   - component: {fileID: 114918653121526500}
   - component: {fileID: 114558634774032680}
+  - component: {fileID: 54877782894398856}
   m_Layer: 0
   m_Name: NetworkToggle
   m_TagString: Note
@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 1389297944867726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4574206988424342}
   m_Father: {fileID: 0}
@@ -161,6 +161,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389297944867726}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54877782894398856
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389297944867726}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!82 &82588584570025892
 AudioSource:
   m_ObjectHideFlags: 1
@@ -298,19 +313,6 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &114674871386326452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1389297944867726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b140e4822f256c74fac406d2a9428ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  off: {fileID: 2100000, guid: f65cf632c69ce4c729fedd5849a82599, type: 2}
-  on: {fileID: 2100000, guid: da61a4a48d8e04eb8985c9abde303ec0, type: 2}
 --- !u!114 &114781968879423624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   indicator: {fileID: 1833829793319788}
+  preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114918653121526500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,7 +344,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1389297944867726}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
