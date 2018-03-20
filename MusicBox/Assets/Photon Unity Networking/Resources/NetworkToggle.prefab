@@ -25,12 +25,12 @@ GameObject:
   - component: {fileID: 114193548614747816}
   - component: {fileID: 82588584570025892}
   - component: {fileID: 114781968879423624}
-  - component: {fileID: 114918653121526500}
   - component: {fileID: 114558634774032680}
+  - component: {fileID: 114992379551978194}
   - component: {fileID: 54877782894398856}
   m_Layer: 0
   m_Name: NetworkToggle
-  m_TagString: Note
+  m_TagString: VibraphoneNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +184,7 @@ AudioSource:
   m_GameObject: {fileID: 1389297944867726}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b6d87df0a352c8246a4197a0adecad18,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 357e795b60ad77d41b8a649d15476b9f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -307,7 +306,7 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 1
   ObservedComponents:
-  - {fileID: 114918653121526500}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -326,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicator: {fileID: 1833829793319788}
   preferedEuler: {x: 0, y: 0, z: 0}
---- !u!114 &114918653121526500
+--- !u!114 &114992379551978194
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -334,7 +333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389297944867726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65717e6de412e914ba2d455114c05027, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0c8b0826b25ba4390e79b826d828c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135470372141403812

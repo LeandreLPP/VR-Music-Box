@@ -399,7 +399,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 31
 --- !u!114 &103473403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +740,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 34
 --- !u!114 &107598084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,15 +1041,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrumentsPrefabs:
-  - {fileID: 1556814910276506, guid: d6fd922db4e64a046974cca6d30f68e9, type: 2}
-  - {fileID: 1049810941144072, guid: 3e49f7f919d0ed149890ec7d10abff1a, type: 2}
-  - {fileID: 1764884844675996, guid: 6411d6b4579a471488fcd8035251f02a, type: 2}
-  - {fileID: 1035415874881684, guid: 491924049c7e8c54ea6ae491a1e9f7c2, type: 2}
-  - {fileID: 1353547117906726, guid: aa507e6bf221b244288a96719f5af068, type: 2}
-  - {fileID: 1237818099969736, guid: 67692437b2d9e704dabf10591e97c486, type: 2}
-  - {fileID: 1223590257284330, guid: bd7aec4583da45a4aaeda6165ed9c5c9, type: 2}
-  - {fileID: 1876443300766908, guid: 4560de5968a46554f97635e78fef4b35, type: 2}
-  - {fileID: 1206532226073024, guid: b3e92ced51d4b0143a1522c0643af0aa, type: 2}
+  - {fileID: 1324448595601654, guid: aa507e6bf221b244288a96719f5af068, type: 2}
+  - {fileID: 1752431576277730, guid: d6fd922db4e64a046974cca6d30f68e9, type: 2}
+  - {fileID: 1863204758644244, guid: 3e49f7f919d0ed149890ec7d10abff1a, type: 2}
+  - {fileID: 1880532200241924, guid: 6411d6b4579a471488fcd8035251f02a, type: 2}
+  - {fileID: 1823668745081626, guid: 491924049c7e8c54ea6ae491a1e9f7c2, type: 2}
+  - {fileID: 1559510344912546, guid: 67692437b2d9e704dabf10591e97c486, type: 2}
+  - {fileID: 1179134108962164, guid: bd7aec4583da45a4aaeda6165ed9c5c9, type: 2}
+  - {fileID: 1727934747526100, guid: 4560de5968a46554f97635e78fef4b35, type: 2}
+  - {fileID: 1533319641575684, guid: b3e92ced51d4b0143a1522c0643af0aa, type: 2}
   rack: {fileID: 1615348989}
   targetHtc: {fileID: 1052369334}
   targetGoogleVr: {fileID: 1696152092}
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 5
 --- !u!114 &150266138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,7 +1481,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 30
 --- !u!114 &266095000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1773,7 +1773,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 2
 --- !u!114 &283270705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +2024,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 3
 --- !u!114 &342059006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,7 +2368,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 33
 --- !u!114 &365169686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2619,7 +2619,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 12
 --- !u!114 &427444978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,7 +3047,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 23
 --- !u!114 &533750025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3365,7 +3365,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 25
 --- !u!114 &615877992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,7 +3734,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 15
 --- !u!114 &728175427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4018,7 +4018,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 21
 --- !u!114 &813946805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4482,7 +4482,7 @@ Prefab:
     - target: {fileID: 224265264164655336, guid: 0004fda5c14f0aa4cbef9d8cf8779db4,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1.4370651
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 224265264164655336, guid: 0004fda5c14f0aa4cbef9d8cf8779db4,
         type: 2}
@@ -4498,6 +4498,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224226899729838070, guid: 0004fda5c14f0aa4cbef9d8cf8779db4,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.36
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114160096487002792, guid: 0004fda5c14f0aa4cbef9d8cf8779db4, type: 2}
@@ -4696,7 +4701,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 7
 --- !u!114 &1002125826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5023,7 +5028,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 27
 --- !u!114 &1051214918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5321,7 +5326,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 19
 --- !u!114 &1070609129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5572,7 +5577,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 8
 --- !u!114 &1090765707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5958,7 +5963,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 17
 --- !u!114 &1124237276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6209,7 +6214,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 6
 --- !u!114 &1125312171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6579,7 +6584,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 35
 --- !u!114 &1164464083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7001,7 +7006,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 32
 --- !u!114 &1254754733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7252,7 +7257,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 1
 --- !u!114 &1269037439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7774,7 +7779,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 9
 --- !u!114 &1395349341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8059,7 +8064,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 36
 --- !u!114 &1461044798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8316,7 +8321,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 24
 --- !u!114 &1505277766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8567,7 +8572,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 18
 --- !u!114 &1595726297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8823,7 +8828,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 11
 --- !u!114 &1627618366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9074,7 +9079,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 26
 --- !u!114 &1652878063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9772,7 +9777,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 28
 --- !u!114 &1704275780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10023,7 +10028,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 22
 --- !u!114 &1732372883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10274,7 +10279,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 4
 --- !u!114 &1786385921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10525,7 +10530,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 16
 --- !u!114 &1802257532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10782,7 +10787,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 20
 --- !u!114 &1854350992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11504,7 +11509,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 29
 --- !u!114 &1988194894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11755,7 +11760,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 14
 --- !u!114 &2007552070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12341,7 +12346,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 10
 --- !u!114 &2070740225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12592,7 +12597,7 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 912096515}
   colorNote: {r: 0, g: 0, b: 0, a: 0}
-  place: 0
+  place: 13
 --- !u!114 &2080631794
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,21 +9,21 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1353547117906726}
+  m_RootGameObject: {fileID: 1324448595601654}
   m_IsPrefabParent: 1
---- !u!1 &1353547117906726
+--- !u!1 &1324448595601654
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4892727243945430}
-  - component: {fileID: 33549089682187320}
-  - component: {fileID: 136691368181417280}
-  - component: {fileID: 23697680811148846}
-  - component: {fileID: 82826653064173234}
-  - component: {fileID: 114146069116537908}
+  - component: {fileID: 4475392843175866}
+  - component: {fileID: 33227063602906040}
+  - component: {fileID: 136008655548850148}
+  - component: {fileID: 23164004118377044}
+  - component: {fileID: 82076017163700532}
+  - component: {fileID: 114695772097700316}
   m_Layer: 0
   m_Name: Bass Drum
   m_TagString: Untagged
@@ -31,12 +31,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4892727243945430
+--- !u!4 &4475392843175866
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -44,12 +44,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
---- !u!23 &23697680811148846
+--- !u!23 &23164004118377044
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -78,19 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33549089682187320
+--- !u!33 &33227063602906040
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &82826653064173234
+--- !u!82 &82076017163700532
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -165,12 +165,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114146069116537908
+--- !u!114 &114695772097700316
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c775cca971168843b59c89398e62efd, type: 3}
@@ -180,12 +180,12 @@ MonoBehaviour:
     type: 2}
   spawner: {fileID: 0}
   colorNote: {r: 1, g: 0.014705896, b: 0.014705896, a: 0}
---- !u!136 &136691368181417280
+--- !u!136 &136008655548850148
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1353547117906726}
+  m_GameObject: {fileID: 1324448595601654}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1

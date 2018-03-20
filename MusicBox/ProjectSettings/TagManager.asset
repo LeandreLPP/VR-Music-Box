@@ -18,6 +18,9 @@ TagManager:
   - Sequencer
   - PhotonSpawnerVibraphone
   - PhotonCanvas
+  - VibraphoneNote
+  - InstrumentNote
+  - PhotonSpawnerInstrument
   layers:
   - Default
   - TransparentFX

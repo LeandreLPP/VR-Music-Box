@@ -10,8 +10,15 @@ public class PhotonInstrumentPlayer : InstrumentPlayer {
         noteObject.note = note;
         noteObject.transform.SetParent(spawnPoint.transform);
         noteObject.transform.localPosition = Vector3.zero;
-        if (noteHeld != null)
-            PhotonNetwork.Destroy(noteHeld.gameObject);
-        noteHeld = noteObject;
+        if (NoteHeld != null)
+        {
+            PhotonView photonView = NoteHeld.GetComponent<PhotonView>();
+            if (!photonView.isMine)
+                NoteHeld.GetComponent<PhotonNote>().TransferOwnership();
+            PhotonNetwork.Destroy(NoteHeld.gameObject);
+        }
+
+        NoteHeld = noteObject;
+        noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.OthersBuffered);
     }
 }

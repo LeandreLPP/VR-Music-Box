@@ -25,12 +25,12 @@ GameObject:
   - component: {fileID: 114239396564632218}
   - component: {fileID: 82896606570489946}
   - component: {fileID: 114382818758559622}
-  - component: {fileID: 114648985636689262}
   - component: {fileID: 114567382728245840}
+  - component: {fileID: 114002533510388600}
   - component: {fileID: 54824260156560162}
   m_Layer: 0
   m_Name: NetworkInstrumentNote
-  m_TagString: Note
+  m_TagString: InstrumentNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +184,7 @@ AudioSource:
   m_GameObject: {fileID: 1073696242737008}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: b6d87df0a352c8246a4197a0adecad18,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 357e795b60ad77d41b8a649d15476b9f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -257,6 +256,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114002533510388600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073696242737008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3538f70ff4057ff4fb43b97e9cd2a22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114239396564632218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,23 +330,12 @@ MonoBehaviour:
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 1
   ObservedComponents:
-  - {fileID: 114648985636689262}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &114648985636689262
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1073696242737008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65717e6de412e914ba2d455114c05027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135603267718789724
 SphereCollider:
   m_ObjectHideFlags: 1

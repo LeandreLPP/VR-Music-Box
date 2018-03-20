@@ -52,4 +52,6 @@ MonoBehaviour:
   - AddToSpwaner
   - RemoveToSpwaner
   - UpdateTempo
+  - SetHeldNote
+  - SetSpawnerHeldNote
   DisableAutoOpenWizard: 1

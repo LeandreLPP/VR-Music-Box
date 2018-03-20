@@ -16,7 +16,7 @@ public class InstrumentPlayer : SequencerNoteSpawner {
     public Button play;
     public Text instrumentName;
 
-    protected NoteObject noteHeld;
+    public NoteObject NoteHeld { get; set; }
     protected GameObject target;
 
     public float distance = 100f;
@@ -86,18 +86,18 @@ public class InstrumentPlayer : SequencerNoteSpawner {
                     instruments[i].SetActive(false);
         }
 
-        if (noteHeld != null && noteHeld.IsGrabbed)
-            noteHeld = null;
+        if (NoteHeld != null && NoteHeld.IsGrabbed)
+            NoteHeld = null;
 
         // Turn toward target
         if (target != null)
             transform.LookAt(target.transform.position);
 
         // Remove NoteHeld once grabbed
-        if (noteHeld != null && noteHeld.IsGrabbed)
+        if (NoteHeld != null && NoteHeld.IsGrabbed)
         {
-            noteHeld.transform.SetParent(null);
-            noteHeld = null;
+            NoteHeld.transform.SetParent(null);
+            NoteHeld = null;
         }
 	}
 
@@ -130,8 +130,8 @@ public class InstrumentPlayer : SequencerNoteSpawner {
         noteObject.note = note;
         noteObject.transform.SetParent(spawnPoint.transform);
         noteObject.transform.localPosition = Vector3.zero;
-        if(noteHeld != null)
-            Destroy(noteHeld.gameObject);
-        noteHeld = noteObject;
+        if(NoteHeld != null)
+            Destroy(NoteHeld.gameObject);
+        NoteHeld = noteObject;
     }
 }
