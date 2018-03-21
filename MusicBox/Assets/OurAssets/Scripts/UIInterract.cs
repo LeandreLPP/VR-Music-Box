@@ -101,6 +101,7 @@ public class UIInterract : MonoBehaviour {
 
     private void Update()
     {
+
         RaycastHit hit;
         if (Physics.Raycast(trackedObj.transform.position, trackedObj.transform.forward, out hit, 500f, UILayer.value))
         {

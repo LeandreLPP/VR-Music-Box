@@ -54,4 +54,7 @@ MonoBehaviour:
   - UpdateTempo
   - SetHeldNote
   - SetSpawnerHeldNote
+  - RemoveSpawnerHeldNote
+  - Grab
+  - UpdateIsGrabbed
   DisableAutoOpenWizard: 1

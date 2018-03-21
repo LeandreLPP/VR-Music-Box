@@ -8,22 +8,24 @@ public class PhotonNote : Photon.PunBehaviour
 
     public Vector3 CorrectNotePos { get; set; }
 
-   
 
-    void Start()
+
+    protected void Start()
     {
         CorrectNotePos = new Vector3(1, 1, 1);
 
     }
 
-    void Update()
+    protected void Update()
     {
        // Lerping smooths the movement
        if(!photonView.isMine)
-            transform.position = Vector3.Lerp(transform.position, CorrectNotePos, Time.deltaTime * 5);   
+            transform.position = Vector3.Lerp(transform.position, CorrectNotePos, Time.deltaTime * 5);
+        if (transform.position.y < -10)
+            PhotonNetwork.Destroy(this.gameObject);
     }
 
-    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    protected void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)
         {
@@ -46,12 +48,19 @@ public class PhotonNote : Photon.PunBehaviour
     [PunRPC]
     public void UpdateNote(string clip, float volume, float r, float g, float b)
     {
-        NoteSound note = GetComponent<GNote>().note;
-        note = new NoteSound { audioClip = AudioClipDictionnary.audioClips[clip], volume = volume };
+        NoteObject noteObject = GetComponent<GNote>();
+        noteObject.note = new NoteSound { audioClip = AudioClipDictionnary.audioClips[clip], volume = volume };
         GetComponent<MeshRenderer>().material.color = new Color(r, g, b);
         AudioSource source = GetComponent<AudioSource>(); 
-        source.clip = note.audioClip;
-        source.volume = note.volume;
+        source.clip = noteObject.note.audioClip;
+        source.volume = noteObject.note.volume;
         source.Play();
+    }
+
+    //Call on every client when someone grab a note. Forbid a client to grab a note already held by another one
+    [PunRPC]
+    public void UpdateIsGrabbed()
+    {
+        GetComponent<GNote>().IsGrabbed = !GetComponent<GNote>().IsGrabbed;
     }
 }

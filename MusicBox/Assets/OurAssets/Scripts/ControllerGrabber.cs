@@ -109,13 +109,14 @@ public class ControllerGrabber : AGrabber {
     // Update is called once per frame
     void Update()
     {
+
         if (Controller.GetHairTriggerDown())
-            if (collidingGrabable)
+            if (collidingGrabable && !collidingGrabable.IsGrabbed)
             {
                 var photonNote = collidingGrabable.GetComponent<PhotonNote>();
                 if (photonNote)
                     photonNote.TransferOwnership();
-                GrabObject();
+                GrabObject();     
             }
                 
         if (Controller.GetHairTriggerUp())

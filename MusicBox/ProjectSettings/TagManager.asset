@@ -21,6 +21,9 @@ TagManager:
   - VibraphoneNote
   - InstrumentNote
   - PhotonSpawnerInstrument
+  - ConnectionText
+  - GoogleController
+  - HTCViveController
   layers:
   - Default
   - TransparentFX

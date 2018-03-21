@@ -7,6 +7,21 @@ using UnityEngine.EventSystems;
 public class GNote : NoteObject
 {
 
+    public override bool IsGrabbed
+    {
+        get
+        {
+            return isGrabbed;
+        }
+        set
+        {
+            isGrabbed = value;
+            PhotonView photonView = GetComponent<PhotonView>();
+            if (photonView && photonView.isMine)
+                photonView.RPC("UpdateIsGrabbed", PhotonTargets.OthersBuffered);
+        }
+    }
+
     void Start()
     {
     }
@@ -14,7 +29,12 @@ public class GNote : NoteObject
 
     public void ClickOnNote(BaseEventData data)
     {
+        if (IsGrabbed)
+            return;
         NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
+        var photonNote = GetComponent<PhotonNote>();
+        if (photonNote)
+            photonNote.TransferOwnership();
         if (note && Receptacle)
             SwapNotes(note);
         else if (note)
@@ -31,7 +51,6 @@ public class GNote : NoteObject
 #endif
 
         base.OnGrabbed();
-
 #if UNITY_ANDROID
         // get the Transform component of the pointer
         Transform pointerTransform = GvrPointerInputModule.Pointer.PointerTransform;

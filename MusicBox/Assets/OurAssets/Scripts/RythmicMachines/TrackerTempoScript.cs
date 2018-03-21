@@ -9,10 +9,11 @@ public class TrackerTempoScript : MonoBehaviour {
 
     public int min = 10;
     public int max = 200;
-    public float speed = 10f;
+    public float speed = 1f;
 
     private int middle;
-    
+    private float leftover = 0f;
+
     #region SteamVR Stuff
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device Controller
@@ -40,8 +41,10 @@ public class TrackerTempoScript : MonoBehaviour {
         
         if (sequencer != null)
         {
-            angularVelZ += Controller.angularVelocity.z * speed;
-            int result = Mathf.FloorToInt(middle + angularVelZ);
+            angularVelZ = Controller.angularVelocity.z * speed;
+            float sum = sequencer.tempo + angularVelZ + leftover;
+            int result = Mathf.RoundToInt(sum);
+            leftover = sum - result;
             sequencer.tempo = Mathf.Max(min, Mathf.Min(max, result));
             sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.tempo);
         }

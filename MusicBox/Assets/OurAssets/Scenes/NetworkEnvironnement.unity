@@ -1971,6 +1971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &325742479 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1890766390881896, guid: 79328a69efc990c4ea29014c363aa14a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855031638}
 --- !u!1 &342059003
 GameObject:
   m_ObjectHideFlags: 0
@@ -7455,92 +7460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b23c80636ef4184a9beb7309e2701a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1284666580
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1989133711865600, guid: 0fff68ea18e3bbb4baa0e69260c80081,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1284666581}
-  - component: {fileID: 1284666583}
-  - component: {fileID: 1284666582}
-  m_Layer: 2
-  m_Name: GvrReticlePointer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1284666581
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4387876775986150, guid: 0fff68ea18e3bbb4baa0e69260c80081,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284666580}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1696152093}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1284666582
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 23825639479972800, guid: 0fff68ea18e3bbb4baa0e69260c80081,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284666580}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 4cb1460f617514a888f47071314ccdae, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!114 &1284666583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114746915127314934, guid: 0fff68ea18e3bbb4baa0e69260c80081,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1284666580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7dcc90c2e60c4011896c7f21fc1f557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastMode: 0
-  overridePointerCamera: {fileID: 0}
-  drawDebugRays: 0
-  maxReticleDistance: 10
-  reticleSegments: 20
-  reticleGrowthSpeed: 8
-  reticleSortingOrder: 32767
 --- !u!1 &1364139455
 GameObject:
   m_ObjectHideFlags: 0
@@ -7630,7 +7549,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 20
+    widthMultiplier: 5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -7699,7 +7618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reticle: {fileID: 1899527067}
   controller: {fileID: 1163963718}
-  laserColor: {r: 0.9852941, g: 0.10867213, b: 0.10867213, a: 0.25}
+  laserColor: {r: 1, g: 1, b: 1, a: 0.25}
   laserColorEnd: {r: 1, g: 1, b: 1, a: 0}
   maxLaserDistance: 20
   lerpSpeed: 20
@@ -9465,8 +9384,7 @@ MonoBehaviour:
   left: {fileID: 2065705359}
   right: {fileID: 485242044}
   objects:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 325742479}
   assignAllBeforeIdentified: 0
 --- !u!1 &1669023652
 GameObject:
@@ -9589,8 +9507,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1284666581}
+  m_Children: []
   m_Father: {fileID: 626243968}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11023,6 +10940,16 @@ Prefab:
     - target: {fileID: 4122696615969536, guid: 79328a69efc990c4ea29014c363aa14a, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114104646402865568, guid: 79328a69efc990c4ea29014c363aa14a,
+        type: 2}
+      propertyPath: sequencer
+      value: 
+      objectReference: {fileID: 2124121942}
+    - target: {fileID: 114104646402865568, guid: 79328a69efc990c4ea29014c363aa14a,
+        type: 2}
+      propertyPath: speed
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 79328a69efc990c4ea29014c363aa14a, type: 2}
@@ -12814,7 +12741,7 @@ GameObject:
   - component: {fileID: 2118409290}
   m_Layer: 0
   m_Name: GvrControllerPointer
-  m_TagString: Untagged
+  m_TagString: GoogleController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12872,3 +12799,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armModel: {fileID: 2118409290}
   isDeactivatedWhenDisconnected: 1
+--- !u!114 &2124121942 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114334829829123452, guid: 8a19020dd463cf449956909d9566f16c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1903669039}
+  m_Script: {fileID: 11500000, guid: d8d4e6df827e0834bb0c95de9ad2a747, type: 3}

@@ -2919,7 +2919,8 @@ public static class PhotonNetwork
     }
 
     /// <summary>
-    /// Internal to send an RPC on given PhotonView. Do not call this directly but use: PhotonView.RPC!
+    /// Internal to send an RPC on given PhotonView. Do not call this directly but use: PhotonView
+    /// !
     /// </summary>
     internal static void RPC(PhotonView view, string methodName, PhotonTargets target, bool encrypt, params object[] parameters)
     {

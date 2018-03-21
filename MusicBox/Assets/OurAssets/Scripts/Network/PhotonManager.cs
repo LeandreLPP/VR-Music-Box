@@ -30,19 +30,24 @@ public class PhotonManager : Photon.PunBehaviour
         roomOptions.MaxPlayers = 4;
         PhotonNetwork.JoinOrCreateRoom("MusicBox", roomOptions, TypedLobby.Default);
 
-        if (XRSettings.supportedDevices.Length == 2 && XRSettings.supportedDevices[1].Equals("daydream"))
-        {
-            GoogleVr.SetActive(true);
-            canvas.GetComponent<GvrPointerGraphicRaycaster>().enabled = true;
-            StartCoroutine(LoadDevice("Daydream"));
-        }
-        else
-        {
-            canvas.GetComponent<GraphicRaycaster>().enabled = true;
+    }
+
+    public override void OnJoinedRoom()
+    {
+
+#if UNITY_ANDROID
+        GoogleVr.SetActive(true);
+        canvas.GetComponent<GvrPointerGraphicRaycaster>().enabled = true;
+        StartCoroutine(LoadDevice("Daydream"));
+#else
+        canvas.GetComponent<GraphicRaycaster>().enabled = true;
+        if(!CameraRig.activeInHierarchy)
             CameraRig.SetActive(true);
+        if(!SteamVr.activeInHierarchy)
             SteamVr.SetActive(true);
-        }
-        Debug.Log("number of player in the room "+PhotonNetwork.countOfPlayers);
+#endif
+
+        Debug.Log("number of player in the room " + PhotonNetwork.countOfPlayers);
     }
 
     //Enable or disable VR 

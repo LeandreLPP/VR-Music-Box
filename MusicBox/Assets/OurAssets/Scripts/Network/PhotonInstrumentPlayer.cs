@@ -21,4 +21,30 @@ public class PhotonInstrumentPlayer : InstrumentPlayer {
         NoteHeld = noteObject;
         noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.OthersBuffered);
     }
+
+    protected override void Update()
+    {
+        var pos = transform.position + transform.right.normalized * Index * distance;
+        rack.transform.position = Vector3.MoveTowards(rack.transform.position, pos, distance * 2f * Time.deltaTime);
+        rack.transform.rotation = transform.rotation;
+
+        if (rack.transform.localPosition == pos)
+        {
+            for (int i = 0; i < instruments.Length; i++)
+                if (Index != i)
+                    instruments[i].SetActive(false);
+        }
+
+        // Turn toward target
+        if (target != null)
+            transform.LookAt(target.transform.position);
+
+
+        // Remove NoteHeld once grabbed
+        if (NoteHeld != null && NoteHeld.IsGrabbed)
+        {
+            NoteHeld.GetComponent<PhotonView>().RPC("RemoveSpawnerHeldNote", PhotonTargets.OthersBuffered);
+            NoteHeld = null;
+        }
+    }
 }

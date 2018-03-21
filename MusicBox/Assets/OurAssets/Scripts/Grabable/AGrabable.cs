@@ -2,14 +2,14 @@
 
 public abstract class AGrabable : MonoBehaviour {
     
-    private bool isGrabbed;
-    public bool IsGrabbed
+    protected bool isGrabbed;
+    public virtual bool IsGrabbed
     {
         get
         {
             return isGrabbed;
         }
-        protected set
+        set
         {
             isGrabbed = value;
         }
@@ -37,7 +37,7 @@ public abstract class AGrabable : MonoBehaviour {
     {
         if (!CanGrab(grab))
             return false;
-        isGrabbed = true;
+        IsGrabbed = true;
         grabber = grab;
         OnGrabbed();
         return true;
@@ -48,7 +48,7 @@ public abstract class AGrabable : MonoBehaviour {
         if (grabber != grab)
             return false;
 
-        isGrabbed = false;
+        IsGrabbed = false;
         grabber = null;
         OnRelease(grab);
         return true;

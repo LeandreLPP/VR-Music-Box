@@ -23,7 +23,7 @@ public class InstrumentPlayer : SequencerNoteSpawner {
 
     protected int index = 0;
 
-    private GameObject[] instruments;
+    protected GameObject[] instruments;
 
     public int Index
     {
@@ -73,7 +73,7 @@ public class InstrumentPlayer : SequencerNoteSpawner {
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         var pos = transform.position + transform.right.normalized * Index * distance;
         rack.transform.position = Vector3.MoveTowards(rack.transform.position, pos, distance * 2f * Time.deltaTime);
@@ -85,9 +85,6 @@ public class InstrumentPlayer : SequencerNoteSpawner {
                 if (Index != i)
                     instruments[i].SetActive(false);
         }
-
-        if (NoteHeld != null && NoteHeld.IsGrabbed)
-            NoteHeld = null;
 
         // Turn toward target
         if (target != null)
