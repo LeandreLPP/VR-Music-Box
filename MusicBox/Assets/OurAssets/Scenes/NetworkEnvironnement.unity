@@ -233,6 +233,8 @@ MonoBehaviour:
   GoogleVr: {fileID: 1441652295}
   CameraRig: {fileID: 1660609811}
   SteamVr: {fileID: 2051793635}
+  playerPrefab: {fileID: 1879193425090962, guid: cf0cfd7ef18115740a7fa7c50a45a263,
+    type: 2}
 --- !u!4 &61061904
 Transform:
   m_ObjectHideFlags: 0
@@ -6348,7 +6350,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1111011327
 Transform:
   m_ObjectHideFlags: 0

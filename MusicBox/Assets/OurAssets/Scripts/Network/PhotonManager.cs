@@ -11,6 +11,8 @@ public class PhotonManager : Photon.PunBehaviour
     public GameObject SteamVr;
     private GameObject canvas;
 
+    public GameObject playerPrefab;
+
     // Use this for initialization
     void Start () {
         PhotonNetwork.ConnectUsingSettings("v.0.0.1");
@@ -48,6 +50,8 @@ public class PhotonManager : Photon.PunBehaviour
 #endif
 
         Debug.Log("number of player in the room " + PhotonNetwork.countOfPlayers);
+
+        PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1f, 0f), Quaternion.identity, 0);
     }
 
     //Enable or disable VR 

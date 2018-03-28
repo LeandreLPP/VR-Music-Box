@@ -24,6 +24,8 @@ TagManager:
   - ConnectionText
   - GoogleController
   - HTCViveController
+  - HTCCamera
+  - GoogleCamera
   layers:
   - Default
   - TransparentFX

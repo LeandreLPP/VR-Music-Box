@@ -21,7 +21,7 @@ public class PhotonNote : Photon.PunBehaviour
        // Lerping smooths the movement
        if(!photonView.isMine)
             transform.position = Vector3.Lerp(transform.position, CorrectNotePos, Time.deltaTime * 5);
-        if (transform.position.y < -10)
+        if (photonView.isMine && transform.position.y < -10)
             PhotonNetwork.Destroy(this.gameObject);
     }
 
