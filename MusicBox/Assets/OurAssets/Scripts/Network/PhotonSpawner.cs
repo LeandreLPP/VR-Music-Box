@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PhotonSpawner : StackingSpawner
 {
-
-
     public override void SpawnNote(NoteObject noteObject, NoteSound note)
     {
         noteObject.transform.position = PositionNote(NotesHold.Count);

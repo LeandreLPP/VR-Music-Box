@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PhotonDemoMenu : AGrabber {
@@ -18,14 +20,12 @@ public class PhotonDemoMenu : AGrabber {
             return transform.forward;
         }
     }
-
     public override Vector3 AngularVelocity
     {
         get {
             return Vector3.zero;
         }
     }
-
     public override Vector3 Velocity
     {
         get
@@ -34,6 +34,10 @@ public class PhotonDemoMenu : AGrabber {
         }
     }
 
+    public SequencerNoteSource[] noteSources;
+    public int[] partition;
+
+    private Dictionary<SequencerNoteReceptacle, SequencerNoteSpawner> spawners;
     // Use this for initialization
     void Start () {
 #if UNITY_ANDROID
@@ -41,7 +45,9 @@ public class PhotonDemoMenu : AGrabber {
 #else
         target = targetHtc;
 #endif
-    }
+
+     spawners = new Dictionary<SequencerNoteReceptacle, SequencerNoteSpawner>();
+}
 
     // Update is called once per frame
     void Update () {
@@ -61,7 +67,7 @@ public class PhotonDemoMenu : AGrabber {
             {
                 var rb = noteObject.GetComponent<Rigidbody>();
                 rb.useGravity = true;
-                float random = Random.Range(0, 360);
+                float random = UnityEngine.Random.Range(0, 360);
                 var vel = Quaternion.AngleAxis(random,Vector3.up) * Vector3.forward * 3f;
                 rb.velocity = vel;
             }
@@ -72,7 +78,7 @@ public class PhotonDemoMenu : AGrabber {
             foreach(var toggle in toggleStep.Toggles)
             {
                 if (toggle.State)
-                    (toggle as PhotonToggle).ClickOn(null);
+                    toggle.Toggle();
             }
         }
     }
@@ -83,5 +89,78 @@ public class PhotonDemoMenu : AGrabber {
 
         Clear();
 
+        for (int i = 0; i < sequencer.StepSize && i < noteSources.Length; i++)
+        {
+            var exSpawner = noteSources[i].spawner;
+            noteSources[i].spawner = GetSpawner(sequencer.Receptacles[i]);
+            noteSources[i].Play();
+            noteSources[i].spawner = exSpawner;
+        }
+
+        for (int i = 0; i < partition.Length && i < sequencer.Steps; i++)
+        {
+            var step = sequencer.StepsVisu[i];
+            var boolArray = partition[i].ToBooleanArray(step.Toggles.Length).Reverse().ToArray();
+            for (int j = 0; j < step.Toggles.Length; j++)
+                if (boolArray[j])
+                    step.Toggles[j].Toggle();
+        }
+    }
+
+    private SequencerNoteSpawner GetSpawner(SequencerNoteReceptacle receptacle)
+    {
+        SequencerNoteSpawner ret;
+        if(!spawners.TryGetValue(receptacle, out ret))
+        {
+            ret = new MySpawner(receptacle);
+            spawners.Add(receptacle, ret);
+        }
+
+        return ret;
+    }
+
+    private class MySpawner : SequencerNoteSpawner
+    {
+        private SequencerNoteReceptacle receptacle;
+        private NoteObject noteObject;
+
+        public MySpawner(SequencerNoteReceptacle receptacle)
+        {
+            this.receptacle = receptacle;
+        }
+
+        public override void SpawnNote(NoteObject noteObject, NoteSound note)
+        {
+            noteObject.transform.position = new Vector3(0,-10,0);
+            noteObject.note = note;
+        }
+
+        private void Update()
+        {
+            if (receptacle == null || 
+                noteObject == null || 
+                receptacle.NoteHold == null) return;
+
+            noteObject.transform.position = receptacle.transform.position;
+        }
+    }
+}
+
+public static class Int32Extensions
+{
+    public static bool[] ToBooleanArray(this int i, int size)
+    {
+        var ret = Convert.ToString(i, 2 /*for binary*/).Select(s => s.Equals('1')).ToArray();
+        int fillSize = size - ret.Length;
+        for(int j = 0; j<fillSize; j++)
+        {
+            var z = new bool[ret.Length + 1];
+            bool[] y = { false };
+            ret.CopyTo(z, 0);
+            y.CopyTo(z, ret.Length);
+            ret = z;
+        }
+        
+        return ret;
     }
 }

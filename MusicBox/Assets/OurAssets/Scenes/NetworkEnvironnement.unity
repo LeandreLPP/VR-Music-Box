@@ -3759,7 +3759,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4820721507871400, guid: 3fbee0e36728dae4b87f1fff2262259b, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fbee0e36728dae4b87f1fff2262259b, type: 2}
@@ -3780,7 +3780,7 @@ GameObject:
   - component: {fileID: 687257400}
   - component: {fileID: 687257398}
   m_Layer: 5
-  m_Name: PhotonDemo
+  m_Name: PhotonDemoMenu
   m_TagString: PhotonCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3800,6 +3800,11 @@ MonoBehaviour:
   sequencer: {fileID: 1903669040}
   targetHtc: {fileID: 1052369334}
   targetGoogleVr: {fileID: 1696152092}
+  noteSources:
+  - {fileID: 615877991}
+  - {fileID: 1051214917}
+  - {fileID: 1988194893}
+  partition: 01000000020000000400000007000000
 --- !u!114 &687257400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,7 +3908,7 @@ RectTransform:
   - {fileID: 2039725165}
   - {fileID: 721050368}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: -30, y: -90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8371,7 +8376,7 @@ Transform:
   - {fileID: 2041120642}
   - {fileID: 626243968}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461044795
 GameObject:
@@ -9740,7 +9745,7 @@ Transform:
   - {fileID: 485242045}
   - {fileID: 2020696159}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1660609813
 MonoBehaviour:
@@ -12667,7 +12672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2051793637
 MonoBehaviour:

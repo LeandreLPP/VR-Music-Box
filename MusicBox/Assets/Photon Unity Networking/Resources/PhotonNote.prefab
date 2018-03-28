@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114992379551978194}
   - component: {fileID: 54877782894398856}
   m_Layer: 0
-  m_Name: NetworkToggle
+  m_Name: PhotonNote
   m_TagString: VibraphoneNote
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
