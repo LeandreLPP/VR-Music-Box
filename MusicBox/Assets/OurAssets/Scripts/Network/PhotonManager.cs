@@ -51,7 +51,7 @@ public class PhotonManager : Photon.PunBehaviour
 
         Debug.Log("number of player in the room " + PhotonNetwork.countOfPlayers);
 
-        PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 1f, 0f), Quaternion.identity, 0);
+        PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0f, 0f, 0f), Quaternion.identity, 0);
     }
 
     //Enable or disable VR 
