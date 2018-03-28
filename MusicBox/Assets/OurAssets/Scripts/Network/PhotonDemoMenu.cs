@@ -131,18 +131,8 @@ public class PhotonDemoMenu : AGrabber {
 
         public override void SpawnNote(NoteObject noteObject, NoteSound note)
         {
-            noteObject.transform.position = new Vector3(0,-10,0);
-            noteObject.note = note;
-        }
-
-        private void Update()
-        {
-            if (receptacle == null || 
-                noteObject == null || 
-                receptacle.NoteHold != null) return;
-            Debug.Log("Update Spawner called");
-
             noteObject.transform.position = receptacle.transform.position;
+            noteObject.note = note;
         }
     }
 }

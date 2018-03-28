@@ -23,6 +23,11 @@ public abstract class NoteReceptacle : MonoBehaviour
         }
     }
 
+    protected virtual void OnTriggerStay(Collider other)
+    {
+        OnTriggerEnter(other);
+    }
+
     protected virtual void OnTriggerExit(Collider other)
     {
         var noteObject = other.GetComponent<NoteObject>();
