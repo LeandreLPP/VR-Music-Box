@@ -16,5 +16,4 @@ public class PhotonToggle : GToggle {
         base.OnTriggerEnter(other);
         transform.parent.parent.parent.GetComponent<PhotonView>().RPC("UpdateToggle", PhotonTargets.OthersBuffered, Step.StepNumber, Height);
     }
-
 }

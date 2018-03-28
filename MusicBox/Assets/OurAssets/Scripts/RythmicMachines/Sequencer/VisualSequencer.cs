@@ -17,11 +17,6 @@ public class VisualSequencer : BaseGrabable {
     private VisualSequencerStep[] stepsVisu;
     private SequencerNoteReceptacle[] receptacles;
 
-
-    public Sequencer Sequencer { get; set; }
-    public VisualSequencerStep[] StepsVisu { get; set; }
-    public SequencerNoteReceptacle[] Receptacles { get; set; }
-
     protected bool initialized;
     private bool paused;
 
@@ -48,6 +43,45 @@ public class VisualSequencer : BaseGrabable {
         {
             sequencer.StepSize = value;
             Reinit();
+        }
+    }
+
+    public Sequencer Sequencer
+    {
+        get
+        {
+            return sequencer;
+        }
+
+        private set
+        {
+            sequencer = value;
+        }
+    }
+
+    public VisualSequencerStep[] StepsVisu
+    {
+        get
+        {
+            return stepsVisu;
+        }
+
+        private set
+        {
+            stepsVisu = value;
+        }
+    }
+
+    public SequencerNoteReceptacle[] Receptacles
+    {
+        get
+        {
+            return receptacles;
+        }
+
+        private set
+        {
+            receptacles = value;
         }
     }
 
