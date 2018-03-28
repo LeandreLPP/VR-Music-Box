@@ -139,7 +139,8 @@ public class PhotonDemoMenu : AGrabber {
         {
             if (receptacle == null || 
                 noteObject == null || 
-                receptacle.NoteHold == null) return;
+                receptacle.NoteHold != null) return;
+            Debug.Log("Update Spawner called");
 
             noteObject.transform.position = receptacle.transform.position;
         }
@@ -155,9 +156,7 @@ public static class Int32Extensions
         for(int j = 0; j<fillSize; j++)
         {
             var z = new bool[ret.Length + 1];
-            bool[] y = { false };
-            ret.CopyTo(z, 0);
-            y.CopyTo(z, ret.Length);
+            ret.CopyTo(z, 1);
             ret = z;
         }
         

@@ -8,7 +8,7 @@ public class PhotonVisualSequencer : Photon.PunBehaviour {
     [PunRPC]
     public void UpdateToggle(int stepNumber, int height)
     {
-        GetComponent<VisualSequencer>().StepsVisu[stepNumber].Toggles[height].Toggle();
+        (GetComponent<VisualSequencer>().StepsVisu[stepNumber].Toggles[height] as VisualSequencerToggle).Toggle();
     }
 
 
