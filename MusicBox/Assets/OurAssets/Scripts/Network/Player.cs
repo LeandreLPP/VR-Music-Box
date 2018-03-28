@@ -12,11 +12,10 @@ public class Player : Photon.PunBehaviour {
 
     protected void Start()
     {
-        CorrectNotePos = new Vector3(0, 0, 0);
-        Camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        if (!photonView.isMine)
+        if (photonView.isMine)
         {
-            transform.SetParent(Camera);
+            Camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+            transform.SetParent(Camera,false);
             transform.rotation = Camera.rotation;
         }
     }
