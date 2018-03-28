@@ -32,3 +32,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+MusicBox/Library/assetDatabase3
+MusicBox/Library/ScriptAssemblies/Assembly-CSharp.dll
+MusicBox/.vs/MusicBox/v15/sqlite3/storage.ide
+MusicBox/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+MusicBox/Library/CurrentLayout.dwlt
