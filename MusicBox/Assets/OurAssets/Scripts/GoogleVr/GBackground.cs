@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GBackground : MonoBehaviour {
@@ -9,7 +7,7 @@ public class GBackground : MonoBehaviour {
     {
         NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
         note.gameObject.layer = LayerMask.NameToLayer("Default");
-        note.Release(null);
+        note.TryRelease(null);
         if (note)
             note.transform.SetParent(null, true);
         else

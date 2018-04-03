@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PhotonVisualSequencer : Photon.PunBehaviour {
+﻿public class PhotonVisualSequencer : Photon.PunBehaviour {
 
     //Method called by the client who change a toggle on all the others clients
     [PunRPC]
-    public void UpdateToggle(int stepNumber, int height)
+    public void UpdateToggle(int stepNumber, int height, bool state)
     {
-        (GetComponent<VisualSequencer>().StepsVisu[stepNumber].Toggles[height] as VisualSequencerToggle).Toggle();
+        var toggle = GetComponent<VisualSequencer>().StepsVisu[stepNumber].Toggles[height];
+        if (toggle.State != state)
+            toggle.Toggle();
     }
 
 

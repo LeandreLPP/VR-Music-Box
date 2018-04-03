@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VibraphoneLooperSource : LooperNoteSource {
     
@@ -18,7 +16,7 @@ public class VibraphoneLooperSource : LooperNoteSource {
         if (!other.gameObject.tag.Equals("HeadStick"))
             return;
 
-        if (other.GetComponent<ComputeVelocity>().velocity.y < 0)
+        if (other.GetComponent<ComputeVelocity>().Velocity.y < 0)
         {
             Play();
             animator.SetTrigger("play");

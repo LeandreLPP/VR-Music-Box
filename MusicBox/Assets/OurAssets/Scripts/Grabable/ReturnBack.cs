@@ -1,16 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ReturnBack : BaseGrabable {
-
-    // Use this for initialization
-
+    
     public Vector3 originalPos;
     public Quaternion originalRot;
-
-    /*float minDist = 0.2f;
-    float maxDist = 2f;*/
 
     void Awake ()
     {
@@ -19,7 +12,6 @@ public class ReturnBack : BaseGrabable {
         originalPos = transform.position;
     }
 	
-	// Update is called once per frame
 	void Update () {
         if (IsGrabbed)
             return;

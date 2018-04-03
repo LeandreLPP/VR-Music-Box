@@ -1,7 +1,5 @@
-﻿using UnityEngine.XR;
-using UnityEngine.Networking;
+﻿using UnityEngine.Networking;
 using UnityEngine;
-using System.Collections;
 
 [AddComponentMenu("Network/NetworkManagerHUD")]
 [RequireComponent(typeof(NetworkManager))]

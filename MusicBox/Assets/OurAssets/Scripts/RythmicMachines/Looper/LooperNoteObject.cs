@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class LooperNoteObject : BaseGrabable {
@@ -60,7 +57,7 @@ public class LooperNoteObject : BaseGrabable {
         }
     }
 
-    protected override void OnRelease(AGrabber grabber)
+    protected override void OnRelease(IGrabber grabber)
     {
         if (potentialReceptacle == null)
             GetComponent<Rigidbody>().useGravity = true;
