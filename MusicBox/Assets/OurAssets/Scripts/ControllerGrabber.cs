@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ControllerGrabber : AGrabber {
+public class ControllerGrabber : MonoBehaviour, IGrabber {
 
-    private AGrabable collidingGrabable;
+    private IGrabable collidingGrabable;
     private bool createdRigidbody = false;
 
     #region SteamVR Stuff
@@ -13,30 +10,6 @@ public class ControllerGrabber : AGrabber {
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
-    }
-
-    public override Vector3 Forward
-    {
-        get
-        {
-            return trackedObj.transform.forward;
-        }
-    }
-
-    public override Vector3 AngularVelocity
-    {
-        get
-        {
-            return Controller.angularVelocity;
-        }
-    }
-
-    public override Vector3 Velocity
-    {
-        get
-        {
-            return Controller.velocity;
-        }
     }
 
     void Awake()
@@ -48,8 +21,8 @@ public class ControllerGrabber : AGrabber {
 
     private void SetCollidingGrabable(Collider col)
     {
-        if (!collidingGrabable && col.GetComponent<AGrabable>())
-            collidingGrabable = col.GetComponent<AGrabable>();
+        if (collidingGrabable == null && col.GetComponent<IGrabable>() != null)
+            collidingGrabable = col.GetComponent<IGrabable>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -64,22 +37,8 @@ public class ControllerGrabber : AGrabber {
 
     public void OnTriggerExit(Collider other)
     {
-        if (collidingGrabable && other.GetComponent<AGrabable>() == collidingGrabable)
+        if (collidingGrabable != null && other.GetComponent<IGrabable>() == collidingGrabable)
             collidingGrabable = null;
-    }
-
-    private void GrabObject()
-    {
-        Joint joint;
-        joint = AddFixedJoint();
-        GrabbedObject = collidingGrabable.GetComponent<AGrabable>();
-        collidingGrabable = null;
-        IsGrabbing = true;
-        GrabbedObject.Grab(this);
-        createdRigidbody = !(GrabbedObject.GetComponent<Rigidbody>());
-        if (createdRigidbody)
-            GrabbedObject.gameObject.AddComponent<Rigidbody>();
-        joint.connectedBody = GrabbedObject.GetComponent<Rigidbody>();
     }
 
     private FixedJoint AddFixedJoint()
@@ -90,8 +49,61 @@ public class ControllerGrabber : AGrabber {
         return fx;
     }
 
+#region Grabber implementation
+    public Vector3 Forward
+    {
+        get
+        {
+            return trackedObj.transform.forward;
+        }
+    }
+
+    public Vector3 AngularVelocity
+    {
+        get
+        {
+            return Controller.angularVelocity;
+        }
+    }
+
+    public Vector3 Velocity
+    {
+        get
+        {
+            return Controller.velocity;
+        }
+    }
+
+    public bool IsGrabbing
+    {
+        get { return GrabbedObject != null; }
+    }
+
+    public IGrabable GrabbedObject { get; protected set; }
+
+    private void GrabObject()
+    {
+        var grabable = collidingGrabable;
+        if(grabable != null && grabable.TryGrab(this))
+        {
+            GrabbedObject = grabable;
+
+            Joint joint;
+            joint = AddFixedJoint();
+
+            collidingGrabable = null;
+
+            createdRigidbody = !((GrabbedObject as MonoBehaviour).GetComponent<Rigidbody>());
+            if (createdRigidbody)
+                (GrabbedObject as MonoBehaviour).gameObject.AddComponent<Rigidbody>();
+            joint.connectedBody = (GrabbedObject as MonoBehaviour).GetComponent<Rigidbody>();
+        }
+    }
+
     private void ReleaseObject()
     {
+        GrabbedObject.TryRelease(this);
+        GrabbedObject = null;
         Joint joint = null;
 
         if (GetComponent<FixedJoint>())
@@ -101,26 +113,24 @@ public class ControllerGrabber : AGrabber {
             Destroy(joint.connectedBody);
 
         Destroy(joint);
-        GrabbedObject.Release(this);
-        IsGrabbing = false;
-        GrabbedObject = null;
     }
+#endregion
 
     // Update is called once per frame
     void Update()
     {
 
         if (Controller.GetHairTriggerDown())
-            if (collidingGrabable && !collidingGrabable.IsGrabbed)
+            if (collidingGrabable != null && !collidingGrabable.IsGrabbed)
             {
-                var photonNote = collidingGrabable.GetComponent<PhotonNote>();
+                var photonNote = (collidingGrabable as MonoBehaviour).GetComponent<PhotonNote>();
                 if (photonNote)
                     photonNote.TransferOwnership();
                 GrabObject();     
             }
                 
         if (Controller.GetHairTriggerUp())
-            if (GrabbedObject)
+            if (GrabbedObject != null)
                 ReleaseObject();
     }
 }

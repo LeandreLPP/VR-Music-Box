@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GrabableStick : BaseGrabable {
 
@@ -10,7 +8,7 @@ public class GrabableStick : BaseGrabable {
         GetComponent<Collider>().enabled = false;
     }
 
-    protected override void OnRelease(AGrabber grabber)
+    protected override void OnRelease(IGrabber grabber)
     {
         base.OnRelease(grabber);
         GetComponent<Collider>().enabled = true;

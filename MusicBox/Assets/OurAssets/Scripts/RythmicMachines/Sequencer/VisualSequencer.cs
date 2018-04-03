@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Sequencer))]
 public class VisualSequencer : BaseGrabable {
@@ -158,7 +155,7 @@ public class VisualSequencer : BaseGrabable {
         root.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
-    protected override void OnRelease(AGrabber grabber)
+    protected override void OnRelease(IGrabber grabber)
     {
         base.OnGrabbed();
         paused = false;

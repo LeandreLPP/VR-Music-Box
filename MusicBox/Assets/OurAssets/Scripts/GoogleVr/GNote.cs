@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GNote : NoteObject
@@ -39,7 +36,7 @@ public class GNote : NoteObject
             SwapNotes(note);
         else if (note)
             RemoveNote();
-        Grab(null);
+        TryGrab(null);
             
     }
 
@@ -77,7 +74,7 @@ public class GNote : NoteObject
     {
         NoteReceptacle tmp = Receptacle;
         Receptacle.SwapNote(note);
-        Grab(null);
+        TryGrab(null);
         tmp.gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
     }
 }

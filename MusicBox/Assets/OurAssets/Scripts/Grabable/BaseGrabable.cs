@@ -1,31 +1,104 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class BaseGrabable : AGrabable
+/// <summary>
+/// A basic implementation of the <see cref="IGrabable"/> interface.
+/// </summary>
+public class BaseGrabable : MonoBehaviour, IGrabable
 {
     public GameObject indicator;
+    protected bool isGrabbed;
+    public virtual bool IsGrabbed
+    {
+        get
+        {
+            return isGrabbed;
+        }
+        set
+        {
+            isGrabbed = value;
+        }
+    }
 
-    protected override void OnGrabbed()
+    private IGrabber grabber;
+    public IGrabber Grabber
+    {
+        get
+        {
+            return grabber;
+        }
+
+        protected set
+        {
+            grabber = value;
+        }
+    }
+
+    public bool TryGrab(IGrabber grab)
+    {
+        if (!CanGrab(grab))
+            return false;
+        IsGrabbed = true;
+        grabber = grab;
+        OnGrabbed();
+        return true;
+    }
+
+    public bool TryRelease(IGrabber grab)
+    {
+        if (grabber != grab)
+            return false;
+
+        IsGrabbed = false;
+        grabber = null;
+        OnRelease(grab);
+        return true;
+    }
+
+    public virtual bool CanGrab(IGrabber grabber)
+    {
+        return !IsGrabbed;
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        var grabber = other.GetComponent<IGrabber>();
+        if (grabber != null)
+        {
+            if (CanGrab(grabber))
+                OnValidGrabberEnter(grabber);
+            else
+                OnInvalidGrabberEnter(grabber);
+        }
+    }
+
+    protected virtual void OnTriggerExit(Collider other)
+    {
+        var grabber = other.GetComponent<IGrabber>();
+        if (grabber != null)
+            OnGrabberExit(grabber);
+    }
+
+    protected virtual void OnGrabbed()
     {
         indicator.SetActive(false);
     }
 
-    protected override void OnRelease(AGrabber grabber)
+    protected virtual void OnRelease(IGrabber grabber)
     {
     }
 
-    protected override void OnValidGrabberEnter(AGrabber grabber)
+    protected virtual void OnValidGrabberEnter(IGrabber grabber)
     {
         indicator.SetActive(true);
     }
 
-    protected override void OnGrabberExit(AGrabber grabber)
+    protected virtual void OnGrabberExit(IGrabber grabber)
     {
         if (!IsGrabbed)
             indicator.SetActive(false);
     }
 
-    protected override void OnInvalidGrabberEnter(AGrabber grabber)
+    protected virtual void OnInvalidGrabberEnter(IGrabber grabber)
     {
     }
 }

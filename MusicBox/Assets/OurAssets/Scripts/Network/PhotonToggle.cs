@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
-
-public class PhotonToggle : GToggle {
+﻿public class PhotonToggle : GToggle {
 
     /*public override void ClickOn(BaseEventData data)
     {
@@ -20,6 +15,6 @@ public class PhotonToggle : GToggle {
     public override void Toggle()
     {
         base.Toggle();
-        transform.parent.parent.parent.GetComponent<PhotonView>().RPC("UpdateToggle", PhotonTargets.OthersBuffered, Step.StepNumber, Height);
+        transform.parent.parent.parent.GetComponent<PhotonView>().RPC("UpdateToggle", PhotonTargets.OthersBuffered, Step.StepNumber, Height, State);
     }
 }

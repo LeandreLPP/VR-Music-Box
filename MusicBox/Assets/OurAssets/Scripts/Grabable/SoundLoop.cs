@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SoundLoop : BaseGrabable {
 
@@ -29,7 +27,7 @@ public class SoundLoop : BaseGrabable {
 
     private ViveTrackerMusic MusicBoxAssignated { get; set; }
     
-    protected override void OnRelease(AGrabber grabber)
+    protected override void OnRelease(IGrabber grabber)
     {
         if(MusicBoxTargeted)
         {

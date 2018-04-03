@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GReceptacle : SequencerNoteReceptacle
@@ -28,7 +25,7 @@ public class GReceptacle : SequencerNoteReceptacle
         note.gameObject.transform.gameObject.layer = LayerMask.NameToLayer("Default");
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
 
-        note.gameObject.transform.gameObject.GetComponent<GNote>().Release(null);
+        note.gameObject.transform.gameObject.GetComponent<GNote>().TryRelease(null);
         note.gameObject.transform.gameObject.GetComponent<GNote>().Receptacle = GetComponent<SequencerNoteReceptacle>();
         return true;
     }

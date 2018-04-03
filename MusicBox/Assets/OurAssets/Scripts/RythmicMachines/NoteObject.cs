@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(AudioSource))]
 public class NoteObject : BaseGrabable
@@ -46,7 +45,7 @@ public class NoteObject : BaseGrabable
         transform.SetParent(null);
     }
 
-    protected override void OnRelease(AGrabber grabber)
+    protected override void OnRelease(IGrabber grabber)
     {
         base.OnRelease(grabber);
 
@@ -64,7 +63,7 @@ public class NoteObject : BaseGrabable
         {
             transform.SetParent(null);
             GetComponent<Rigidbody>().useGravity = true;
-            if (grabber)
+            if (grabber != null)
             {
                 GetComponent<Rigidbody>().velocity = grabber.Velocity;
                 GetComponent<Rigidbody>().angularVelocity = grabber.AngularVelocity;

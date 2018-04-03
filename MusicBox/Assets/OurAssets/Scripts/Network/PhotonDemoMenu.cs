@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PhotonDemoMenu : AGrabber {
+public class PhotonDemoMenu : MonoBehaviour {
 
     public VisualSequencer sequencer;
 
@@ -12,27 +11,6 @@ public class PhotonDemoMenu : AGrabber {
     public GameObject targetGoogleVr;
 
     protected GameObject target;
-
-    public override Vector3 Forward
-    {
-        get
-        {
-            return transform.forward;
-        }
-    }
-    public override Vector3 AngularVelocity
-    {
-        get {
-            return Vector3.zero;
-        }
-    }
-    public override Vector3 Velocity
-    {
-        get
-        {
-            return Vector3.zero;
-        }
-    }
 
     public SequencerNoteSource[] noteSources;
     public int[] partition;

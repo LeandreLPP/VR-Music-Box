@@ -19,11 +19,8 @@
 namespace GoogleVR.Demos
 {
     using UnityEngine;
-    using UnityEngine.UI;
-    using System;
 
 #if UNITY_2017_2_OR_NEWER
-    using UnityEngine.XR;
 #else
   using XRSettings = UnityEngine.VR.VRSettings;
 #endif  // UNITY_2017_2_OR_NEWER
