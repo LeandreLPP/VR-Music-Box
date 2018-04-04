@@ -3,9 +3,8 @@
 public class SequencerNoteReceptacle : NoteReceptacle
 {
     public Material baseMaterial;
-
-    //public Sequencer Sequencer { get; private set; }
-    public VisualSequencer VisualSequencer { get; private set; }
+    
+    public SequencerUI VisualSequencer { get; private set; }
     public int Height { get; private set; }
 
     private NoteObject noteHold;
@@ -36,7 +35,7 @@ public class SequencerNoteReceptacle : NoteReceptacle
     }
 
     private bool initialized = false;
-    public void Initialize(Sequencer sequencer, VisualSequencer vs, int height)
+    public void Initialize(Sequencer sequencer, SequencerUI vs, int height)
     {
         VisualSequencer = vs;
         //Sequencer = sequencer;

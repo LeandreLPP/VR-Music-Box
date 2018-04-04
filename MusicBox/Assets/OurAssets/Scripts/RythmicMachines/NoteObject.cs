@@ -3,7 +3,7 @@
 [RequireComponent(typeof(AudioSource))]
 public class NoteObject : BaseGrabable
 {
-    public NoteSound note;
+    public Note note;
 
     public Vector3 preferedEuler;
 

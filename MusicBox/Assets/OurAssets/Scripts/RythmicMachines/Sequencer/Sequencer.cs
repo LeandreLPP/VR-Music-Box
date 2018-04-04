@@ -62,8 +62,8 @@ public class Sequencer : MonoBehaviour {
         }
     }
     
-    private NoteSound[] notes;
-    public virtual NoteSound[] Notes
+    private Note[] notes;
+    public virtual Note[] Notes
     {
         get
         {
@@ -94,7 +94,7 @@ public class Sequencer : MonoBehaviour {
     void Awake()
     {
         Partition = new bool[steps, stepSize];
-        Notes = new NoteSound[stepSize];
+        Notes = new Note[stepSize];
         Tempo = tempo;
         queueSource = new Queue<AudioSource>();
     }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.EventSystems;
 
-public class GToggle : VisualSequencerToggle {
+public class GToggle : SequencerToggleUI {
 
     public virtual void ClickOn(BaseEventData data)
     {
