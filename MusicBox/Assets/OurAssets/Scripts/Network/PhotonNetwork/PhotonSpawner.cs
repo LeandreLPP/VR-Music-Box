@@ -16,7 +16,7 @@ public class PhotonSpawner : StackingSpawner
             n.GetComponent<PhotonView>().RPC("RemoveToSpwaner", PhotonTargets.OthersBuffered,0);
             PhotonView photonView = n.GetComponent<PhotonView>();
             if (!photonView.isMine)
-                photonView.GetComponent<PhotonNote>().TransferOwnership();
+                photonView.GetComponent<PhotonNoteSynchro>().TransferOwnership();
             PhotonNetwork.Destroy(photonView);
         }
         noteObject.GetComponent<PhotonView>().RPC("AddToSpwaner", PhotonTargets.OthersBuffered);

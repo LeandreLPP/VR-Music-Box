@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 23012117107895932}
   - component: {fileID: 114239396564632218}
   - component: {fileID: 82896606570489946}
-  - component: {fileID: 114382818758559622}
   - component: {fileID: 114567382728245840}
+  - component: {fileID: 114113608555558200}
   - component: {fileID: 114002533510388600}
   - component: {fileID: 54824260156560162}
   m_Layer: 0
@@ -267,6 +267,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3538f70ff4057ff4fb43b97e9cd2a22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114113608555558200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073696242737008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65717e6de412e914ba2d455114c05027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 0}
+  preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114239396564632218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,7 +296,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114382818758559622}
+        - m_Target: {fileID: 114113608555558200}
           m_MethodName: ClickOnNote
           m_Mode: 0
           m_Arguments:
@@ -297,19 +310,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114382818758559622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1073696242737008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b018c52b989bf949be3dfee743bd88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indicator: {fileID: 1503205397378260}
-  preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114567382728245840
 MonoBehaviour:
   m_ObjectHideFlags: 1

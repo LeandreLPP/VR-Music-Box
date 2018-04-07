@@ -123,9 +123,6 @@ public class ControllerGrabber : MonoBehaviour, IGrabber {
         if (Controller.GetHairTriggerDown())
             if (collidingGrabable != null && !collidingGrabable.IsGrabbed)
             {
-                var photonNote = (collidingGrabable as MonoBehaviour).GetComponent<PhotonNote>();
-                if (photonNote)
-                    photonNote.TransferOwnership();
                 GrabObject();     
             }
                 

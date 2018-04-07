@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class PhotonVNote : PhotonNote {
+public class PhotonVNote : PhotonNoteSynchro
+{
 
     private PhotonSpawner spawner;
 
