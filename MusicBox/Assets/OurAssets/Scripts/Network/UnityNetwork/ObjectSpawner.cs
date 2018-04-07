@@ -6,8 +6,9 @@ public class ObjectSpawner : NetworkBehaviour {
     public GameObject steamVR;
     public GameObject cameraRig;
     public Camera lobbyCamera;
-    
+        
     SteamVR_ControllerManager controllerManager;
+
 
     public override void OnStartServer()
     {

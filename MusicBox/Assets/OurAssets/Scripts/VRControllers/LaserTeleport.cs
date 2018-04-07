@@ -10,10 +10,10 @@ public class LaserTeleport : MonoBehaviour {
 
     public Transform cameraRigTransform;
     public GameObject teleportReticlePrefab;
-    private GameObject reticle;
     private Transform teleportReticleTransform;
     public Transform headTransform;
     public Vector3 teleportReticleOffset;
+    private GameObject reticle;
     public LayerMask teleportMask;
     private bool shouldTeleport;
 

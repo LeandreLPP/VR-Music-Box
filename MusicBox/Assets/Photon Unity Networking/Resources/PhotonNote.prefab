@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65717e6de412e914ba2d455114c05027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 0}
+  indicator: {fileID: 1833829793319788}
   preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114193548614747816
 MonoBehaviour:
