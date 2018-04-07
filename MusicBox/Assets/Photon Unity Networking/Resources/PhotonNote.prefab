@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 23198200421845362}
   - component: {fileID: 114193548614747816}
   - component: {fileID: 82588584570025892}
-  - component: {fileID: 114781968879423624}
   - component: {fileID: 114558634774032680}
+  - component: {fileID: 114117046681804002}
   - component: {fileID: 114992379551978194}
   - component: {fileID: 54877782894398856}
   m_Layer: 0
@@ -256,6 +256,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114117046681804002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1389297944867726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65717e6de412e914ba2d455114c05027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicator: {fileID: 0}
+  preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114193548614747816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,23 +285,12 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114781968879423624}
+        - m_Target: {fileID: 114117046681804002}
           m_MethodName: ClickOnNote
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 114992379551978194}
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -323,19 +325,6 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &114781968879423624
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1389297944867726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b018c52b989bf949be3dfee743bd88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  indicator: {fileID: 1833829793319788}
-  preferedEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &114992379551978194
 MonoBehaviour:
   m_ObjectHideFlags: 1

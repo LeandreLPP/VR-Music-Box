@@ -12,7 +12,7 @@ public class PhotonInstrumentPlayer : UISoundChooser {
         {
             PhotonView photonView = NoteHeld.GetComponent<PhotonView>();
             if (!photonView.isMine)
-                NoteHeld.GetComponent<PhotonNote>().TransferOwnership();
+                NoteHeld.GetComponent<PhotonNoteSynchro>().TransferOwnership();
             PhotonNetwork.Destroy(NoteHeld.gameObject);
         }
 

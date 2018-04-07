@@ -24,7 +24,7 @@ namespace GoogleVR.Demos
 #else
   using XRSettings = UnityEngine.VR.VRSettings;
 #endif  // UNITY_2017_2_OR_NEWER
-
+    //Manage the teleportation and the realese of notes
     public class Laser : MonoBehaviour
     {
         [Tooltip("Reference to GvrControllerPointer")]
@@ -42,9 +42,22 @@ namespace GoogleVR.Demos
         void Update()
         {
             GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
+            GameObject gameObjectHit = GvrPointerInputModule.Pointer.CurrentRaycastResult.gameObject;
+
             if (GvrControllerInput.AppButtonUp)
             {
                 TeleportTo();
+            }
+            //only if we click on something which is not a note
+            if (GvrControllerInput.ClickButton && gameObjectHit.GetComponent<NoteObject>() == null)
+            {
+                NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
+                if (note)
+                {
+                    note.gameObject.layer = LayerMask.NameToLayer("Default");
+                    note.TryRelease(null);
+                    note.transform.SetParent(null, true);
+                }
             }
         }
 

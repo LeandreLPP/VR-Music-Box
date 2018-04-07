@@ -9,7 +9,7 @@ public class PhotonManager : Photon.PunBehaviour
     public GameObject GoogleVr;
     public GameObject CameraRig;
     public GameObject SteamVr;
-    private GameObject canvas;
+    private GameObject[] canvas;
 
     public GameObject playerPrefab;
 
@@ -17,7 +17,7 @@ public class PhotonManager : Photon.PunBehaviour
     void Start () {
         PhotonNetwork.ConnectUsingSettings("v.0.0.1");
         PhotonNetwork.autoCleanUpPlayerObjects = false;
-        canvas = GameObject.FindGameObjectWithTag("PhotonCanvas");
+        canvas = GameObject.FindGameObjectsWithTag("PhotonCanvas");
     }
 	
 	// Update is called once per frame
@@ -39,10 +39,12 @@ public class PhotonManager : Photon.PunBehaviour
 
 #if UNITY_ANDROID
         GoogleVr.SetActive(true);
-        canvas.GetComponent<GvrPointerGraphicRaycaster>().enabled = true;
+        foreach(GameObject go in canvas)
+            go.GetComponent<GvrPointerGraphicRaycaster>().enabled = true;
         StartCoroutine(LoadDevice("Daydream"));
 #else
-        canvas.GetComponent<GraphicRaycaster>().enabled = true;
+        foreach (GameObject go in canvas)
+            go.GetComponent<GraphicRaycaster>().enabled = true;
         if(!CameraRig.activeInHierarchy)
             CameraRig.SetActive(true);
         if(!SteamVr.activeInHierarchy)

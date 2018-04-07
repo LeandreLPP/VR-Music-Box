@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/OurAssets/Scenes/NetworkingSphericalEnvironment.unity
-    guid: 64077140156b29a4981575f837db4a34
+    path: Assets/OurAssets/Scenes/ForestPlayground.unity
+    guid: 00302f0852cec784f981dbfd9785ddf7
   - enabled: 1
-    path: Assets/OurAssets/Scenes/NetworkEnvironnement.unity
+    path: Assets/OurAssets/Scenes/NetworkedSequencer.unity
     guid: 68b6007e788e8fa4d97c43e5ce472388

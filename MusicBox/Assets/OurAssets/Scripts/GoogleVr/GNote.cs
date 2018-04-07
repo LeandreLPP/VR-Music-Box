@@ -4,34 +4,17 @@ using UnityEngine.EventSystems;
 public class GNote : NoteObject
 {
 
-    public override bool IsGrabbed
-    {
-        get
-        {
-            return isGrabbed;
-        }
-        set
-        {
-            isGrabbed = value;
-            PhotonView photonView = GetComponent<PhotonView>();
-            if (photonView && photonView.isMine)
-                photonView.RPC("UpdateIsGrabbed", PhotonTargets.OthersBuffered);
-        }
-    }
 
     void Start()
     {
     }
 
-
+    //Handle when we detect a click on a note
     public void ClickOnNote(BaseEventData data)
     {
         if (IsGrabbed)
             return;
         NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
-        var photonNote = GetComponent<PhotonNote>();
-        if (photonNote)
-            photonNote.TransferOwnership();
         if (note && Receptacle)
             SwapNotes(note);
         else if (note)
@@ -62,11 +45,12 @@ public class GNote : NoteObject
 #endif
     }
 
-    private void RemoveNote()
+    //Remove a holding note
+    protected virtual void RemoveNote()
     {
         NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
         note.transform.SetParent(null);
-        PhotonNetwork.Destroy(note.GetComponent<PhotonView>());
+        Destroy(note.GetComponent<PhotonView>());
     }
 
     //Click on a note which is in a receptacle and holding in the same time a note. Swap notes.

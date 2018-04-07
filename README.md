@@ -3,16 +3,16 @@ The project allows the users to play and create music in a multiplayer VR applic
 The application disposes of two scenes.
 
 ## First basic scene
-This scene is a singleplayer scene. You can't interact this others users.
-You can play different instruments : Vibraphone / Drums / Cello
+This scene is a singleplayer scene. You can't interact with others users.
+You can play different instruments : Vibraphone / Drums / Cello and manipulate three predefined musics represented by three spheres. You can change the tempo and the frequency by associating a sphere to a HTC tracker and by moving this one in the environment.
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Alt text](Pictures/forest.png "First scene")
 
 ## Second scene
 This scene allows several users to play together. The application can run on two different technologies : a HTC Vive or a smartphone using Google VR Daydream.
 The users can create music by playing instruments and then add and manipulate notes in a networked sequencer.
 
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Alt text](Pictures/Sequencer.png "Multiplayer scene")
 
 ## Technologies
 ### Unity
@@ -26,11 +26,13 @@ To use it, you need a device supporting Google Daydream. Click here to see all t
 
 You also need a Daydream View. If you don't have one, you can use a Google Cardboard to replace the headset. 
 
-To subsitute the controller, you can use a typical smartphone and install an emulator on it. Check the link below to configure the controller.
+To substitute the controller, you can use a typical smartphone and install an emulator on it. Check the link below to configure the controller.
 https://developers.google.com/vr/daydream/controller-emulator
 
 ### Photon Pun
-To network the application, we used the Photon Pun framework. Check this link for further informations : https://www.photonengine.com/en/PUN
+To network the application, we used the Photon Pun framework. Check on this link for further information : https://www.photonengine.com/en/PUN
 
 
-A LTU Computer Science project.
+
+
+![alt-text-1](Pictures/logo_insa.png) ![alt-text-2](Pictures/logo_ltu.png)

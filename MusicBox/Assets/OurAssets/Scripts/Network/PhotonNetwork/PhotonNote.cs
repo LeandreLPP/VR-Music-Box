@@ -1,64 +1,35 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PhotonNote : Photon.PunBehaviour
+public class PhotonNote : GNote
 {
-    private Vector3 correctNotePos;
-
-    public Vector3 CorrectNotePos { get; set; }
-
-
-
-    protected void Start()
+    public override bool IsGrabbed
     {
-        CorrectNotePos = new Vector3(1, 1, 1);
-
-    }
-
-    protected void Update()
-    {
-       // Lerping smooths the movement
-       if(!photonView.isMine)
-            transform.position = Vector3.Lerp(transform.position, CorrectNotePos, Time.deltaTime * 5);
-        if (photonView.isMine && transform.position.y < -10)
-            PhotonNetwork.Destroy(this.gameObject);
-    }
-
-    protected void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.isWriting)
+        get
         {
-            stream.SendNext(transform.position);
+            return isGrabbed;
         }
-        else
+        set
         {
-            CorrectNotePos = (Vector3)stream.ReceiveNext();
+            isGrabbed = value;
+            PhotonView photonView = GetComponent<PhotonView>();
+            if (photonView && photonView.isMine)
+                photonView.RPC("UpdateIsGrabbed", PhotonTargets.OthersBuffered);
         }
     }
 
-    public void TransferOwnership()
+    protected override void OnGrabbed()
     {
-        photonView.TransferOwnership(PhotonNetwork.player.ID);
+        base.OnGrabbed();
+        var photonNote = GetComponent<PhotonNoteSynchro>();
+        if (photonNote)
+            photonNote.TransferOwnership();
     }
 
-
-
-    //When we create a note, we have to call this nethod on the others clients to update the audioclip and the material of the note, we have just created and we play its sound
-    [PunRPC]
-    public void UpdateNote(string clip, float volume, float r, float g, float b)
+    protected override void RemoveNote()
     {
-        NoteObject noteObject = GetComponent<GNote>();
-        noteObject.note = new Note { audioClip = AudioClipDictionnary.audioClips[clip], volume = volume };
-        GetComponent<MeshRenderer>().material.color = new Color(r, g, b);
-        AudioSource source = GetComponent<AudioSource>(); 
-        source.clip = noteObject.note.audioClip;
-        source.volume = noteObject.note.volume;
-        source.Play();
-    }
-
-    //Call on every client when someone grab a note. Forbid a client to grab a note already held by another one
-    [PunRPC]
-    public void UpdateIsGrabbed()
-    {
-        GetComponent<GNote>().IsGrabbed = !GetComponent<GNote>().IsGrabbed;
+        NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
+        note.transform.SetParent(null);
+        PhotonNetwork.Destroy(note.GetComponent<PhotonView>());
     }
 }
