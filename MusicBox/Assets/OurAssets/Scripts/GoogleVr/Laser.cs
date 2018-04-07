@@ -48,17 +48,6 @@ namespace GoogleVR.Demos
             {
                 TeleportTo();
             }
-            //only if we click on something which is not a note
-            if (GvrControllerInput.ClickButton && gameObjectHit.GetComponent<NoteObject>() == null)
-            {
-                NoteObject note = GvrPointerInputModule.Pointer.PointerTransform.GetComponentInChildren<NoteObject>();
-                if (note)
-                {
-                    note.gameObject.layer = LayerMask.NameToLayer("Default");
-                    note.TryRelease(null);
-                    note.transform.SetParent(null, true);
-                }
-            }
         }
 
 

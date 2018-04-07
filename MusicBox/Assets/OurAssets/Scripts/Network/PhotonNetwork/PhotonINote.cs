@@ -7,7 +7,7 @@ public class PhotonINote : PhotonNoteSynchro
 
     private void Awake()
     {
-        spawner = GameObject.FindGameObjectWithTag("PhotonCanvas").GetComponent<PhotonInstrumentPlayer>();
+        spawner = GameObject.Find("PhotonCanvas").GetComponent<PhotonInstrumentPlayer>();
     }
 
     //Call on each client when someone create a note to add this note to the spawner

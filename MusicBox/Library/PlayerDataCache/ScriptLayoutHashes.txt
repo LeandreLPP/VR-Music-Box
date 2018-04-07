@@ -301,6 +301,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 4ce2b1853c9a392b036a6a654be90ccb Assembly-CSharp.dll:.OnClickInstantiate
 a7a85e3660316548e6df72942099a49d Assembly-CSharp.dll:.MessageOverlay
 03f12694d8815c5c1846b514244afecc Assembly-CSharp.dll:.GvrAllEventsTrigger
+d58a04dfeb7e5c0c96cb0e3606969422 Assembly-CSharp.dll:.UIInteraction
 ec6d41aa4dc2b0ae150cc6362a74b809 Assembly-CSharp.dll:.SequencerStepUI
 293b3d08f8607df9b4483b0dc4d8d5d6 Assembly-CSharp.dll:.ColorPerPlayer
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NetworkCharacter
@@ -391,6 +392,7 @@ ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.BaseGrabable
 cb9b23bb8d8552626640cca26addf6f1 Assembly-CSharp.dll:.FriendItem
 bbd738e0c1a3685c56b4c8ec7f2d4cd5 Assembly-CSharp.dll:.SteamVR_RenderModel
 79ccd1cf653627abcd79a5fa180dc8bf Assembly-CSharp.dll:.PhotonSequencerSource
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PhotonNoteSynchro
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 abe32a93cd37b12375c9475f8f38bec3 Assembly-CSharp.dll:.PunTurnManager
 acca8d2985f2c7e9482325a2a083cea6 Assembly-CSharp.dll:.SteamVR_PlayArea
@@ -443,7 +445,7 @@ aa336d6fedf2162670a2a20eb551b9b7 Assembly-CSharp.dll:.SteamVR_ExternalCamera
 298901e5fd6ccf8cd5b55cb6018e6abe Assembly-CSharp.dll:.PickupItemSimple
 d52aee9c83b781e1b0ef02aef63ecb20 Assembly-CSharp.dll:Valve.VR.InteractionSystem.IgnoreHovering
 9681432a053f6f3bdefa91723ec011a7 Assembly-CSharp.dll:.PhotonManager
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PhotonNote
+9b349e498e429dfb354490181f4dbfeb Assembly-CSharp.dll:.PhotonNote
 3345f5c6ab28380d7e86daea80607a9c Assembly-CSharp.dll:.UISoundChooser
 b8fe48d23e8df5a3f87b62a239a33b6b Assembly-CSharp.dll:.PhotonToggle
 08712033bfb8d4fd2842041f9a20ded7 Assembly-CSharp.dll:.ManualPhotonViewAllocator

@@ -176,9 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c775cca971168843b59c89398e62efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteObjectPrefab: {fileID: 114382818758559622, guid: 4bde943953b7ae541863b5eb228ef168,
+  noteObjectPrefab: {fileID: 114820764102321872, guid: e7aa950eac1094f41ad25f0112d00cc6,
     type: 2}
-  spawner: {fileID: 0}
   colorNote: {r: 0.07136679, g: 0.9705882, b: 0.48686916, a: 0}
 --- !u!136 &136955351706605336
 CapsuleCollider:

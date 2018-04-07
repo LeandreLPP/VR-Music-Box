@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class PhotonInstrumentPlayer : UISoundChooser {
+public class PhotonInstrumentPlayer : UISoundChooser
+{
 
 
     public override void HandleNewNote(NoteObject noteObject, Note note)

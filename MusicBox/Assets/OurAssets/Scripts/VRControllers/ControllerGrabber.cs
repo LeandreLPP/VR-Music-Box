@@ -22,7 +22,9 @@ public class ControllerGrabber : MonoBehaviour, IGrabber {
     private void SetCollidingGrabable(Collider col)
     {
         if (collidingGrabable == null && col.GetComponent<IGrabable>() != null)
+        {
             collidingGrabable = col.GetComponent<IGrabable>();
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -121,11 +123,11 @@ public class ControllerGrabber : MonoBehaviour, IGrabber {
     {
 
         if (Controller.GetHairTriggerDown())
+        {
             if (collidingGrabable != null && !collidingGrabable.IsGrabbed)
-            {
-                GrabObject();     
-            }
-                
+                GrabObject();
+        }
+                       
         if (Controller.GetHairTriggerUp())
             if (GrabbedObject != null)
                 ReleaseObject();

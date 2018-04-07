@@ -41,7 +41,6 @@ public class GNote : NoteObject
         transform.localPosition = new Vector3(0, 0, 0.5f);
 
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
-        GetComponent<PhotonNote>().TransferOwnership();
 #endif
     }
 

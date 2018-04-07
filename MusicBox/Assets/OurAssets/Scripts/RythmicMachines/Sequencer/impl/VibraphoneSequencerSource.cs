@@ -19,6 +19,7 @@ public class VibraphoneSequencerSource : SequencerNoteSource
         colorNote = new Color(r, g, b);
 
         GetComponent<Renderer>().material.color = colorNote;
+        spawner = GameObject.FindGameObjectWithTag("PhotonSpawnerVibraphone").GetComponent<ISequencerNoteHandler>();
     }
 
     void OnTriggerEnter(Collider other)
