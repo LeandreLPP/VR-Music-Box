@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhotonDemoMenu : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class PhotonDemoMenu : MonoBehaviour {
 
     public GameObject targetHtc;
     public GameObject targetGoogleVr;
+
+    public Text tempoText;
 
     protected GameObject target;
 
@@ -32,6 +35,9 @@ public class PhotonDemoMenu : MonoBehaviour {
         // Turn toward target
         if (target != null)
             transform.LookAt(target.transform.position);
+
+        // Update tempo text
+        tempoText.text = "Tempo " + sequencer.Sequencer.Tempo + " bpm";
     }
 
     public void Clear()
@@ -85,6 +91,18 @@ public class PhotonDemoMenu : MonoBehaviour {
         }
     }
 
+    public void TempoPlus()
+    {
+        sequencer.Sequencer.Tempo++;
+        sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.Sequencer.Tempo);
+    }
+
+    public void TempoMinus()
+    {
+        sequencer.Sequencer.Tempo--;
+        sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.Sequencer.Tempo);
+    }
+
     private ISequencerNoteHandler GetSpawner(SequencerNoteReceptacle receptacle)
     {
         ISequencerNoteHandler ret;
@@ -113,6 +131,7 @@ public class PhotonDemoMenu : MonoBehaviour {
             noteObject.note = note;
         }
     }
+
 }
 
 public static class Int32Extensions
