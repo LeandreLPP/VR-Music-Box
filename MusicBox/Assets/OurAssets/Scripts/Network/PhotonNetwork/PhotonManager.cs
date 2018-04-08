@@ -66,4 +66,59 @@ public class PhotonManager : Photon.PunBehaviour
         XRSettings.enabled = true;
     }
 
+
+    //When a play join the game, the masterClient will give him all the statements of the objects
+    public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+    {
+        
+        if (PhotonNetwork.player.IsMasterClient)
+        {
+
+            GameObject sequencer = GameObject.Find("PhotonSequencer");
+            //Update the switches
+            var sequencerUI = sequencer.GetComponent<SequencerUI>().StepsVisu;
+            for (int i = 0; i < sequencerUI.Length; i++)
+            {
+                for (int j = 0; j < sequencerUI[i].Toggles.Length; j++)
+                {
+                    if (sequencerUI[i].Toggles[j].State)
+                        sequencer.GetComponent<PhotonView>().RPC("UpdateToggle", newPlayer, i, j, true);
+                }
+            }
+
+            //Update the notes
+            NoteObject[] notes = FindObjectsOfType<NoteObject>();
+            foreach(NoteObject noteObject in notes)
+            {
+                //Update the sound and the color
+                Color color = noteObject.gameObject.GetComponent<Renderer>().material.color;
+                noteObject.GetComponent<PhotonView>().RPC("UpdateNote", newPlayer,noteObject.note.audioClip.name, noteObject.note.volume, color.r, color.g, color.b);
+
+                //Update IsGrabbed
+                if (noteObject.GetComponent<PhotonNote>().IsGrabbed)
+                    noteObject.GetComponent<PhotonView>().RPC("UpdateIsGrabbed", newPlayer);
+            }
+
+            //Update the current tempo
+            sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.GetComponent<SequencerUI>().Sequencer.Tempo);
+
+            //Update instrument spawner
+            var instrumentSpawner = FindObjectOfType<PhotonInstrumentPlayer>();
+            if(instrumentSpawner.NoteHeld != null)
+                instrumentSpawner.NoteHeld.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", newPlayer);
+
+            //Update vibraphone spawner
+            var vibraphoneSpawner = FindObjectOfType<PhotonSpawner>();
+            if(vibraphoneSpawner.NotesHold.Count != 0)
+            {
+                foreach (NoteObject noteObject in vibraphoneSpawner.NotesHold)
+                {
+                    noteObject.GetComponent<PhotonView>().RPC("AddToSpwaner", newPlayer);
+                }
+            }
+
+        }
+    }
+
+
 }

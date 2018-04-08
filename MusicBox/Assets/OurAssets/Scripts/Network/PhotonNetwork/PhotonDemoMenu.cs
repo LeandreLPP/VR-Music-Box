@@ -17,7 +17,7 @@ public class PhotonDemoMenu : MonoBehaviour {
 
     protected GameObject target;
 
-    public SequencerNoteSource[] noteSources;
+    public PhotonVibraphoneSequencerSource[] noteSources;
     public int[] partition;
 
     private Dictionary<SequencerNoteReceptacle, ISequencerNoteHandler> spawners;
@@ -52,6 +52,9 @@ public class PhotonDemoMenu : MonoBehaviour {
             var noteObject = receptacle.NoteHold;
             if(noteObject)
             {
+                var photonView = noteObject.GetComponent<PhotonView>();
+                if (!photonView.isMine)
+                    photonView.GetComponent<PhotonNoteSynchro>().TransferOwnership();
                 var rb = noteObject.GetComponent<Rigidbody>();
                 rb.useGravity = true;
                 float random = UnityEngine.Random.Range(0, 360);

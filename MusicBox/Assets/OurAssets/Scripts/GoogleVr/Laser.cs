@@ -16,45 +16,42 @@
 #define RUNNING_ON_ANDROID_DEVICE
 #endif  // UNITY_ANDROID && !UNITY_EDITOR
 
-namespace GoogleVR.Demos
-{
-    using UnityEngine;
+
+using UnityEngine;
 
 #if UNITY_2017_2_OR_NEWER
 #else
-  using XRSettings = UnityEngine.VR.VRSettings;
+using XRSettings = UnityEngine.VR.VRSettings;
 #endif  // UNITY_2017_2_OR_NEWER
-    //Manage the teleportation and the realese of notes
-    public class Laser : MonoBehaviour
+//Manage the teleportation
+public class Laser : MonoBehaviour
+{
+    [Tooltip("Reference to GvrControllerPointer")]
+    public GameObject controllerPointer;
+    public GameObject player;
+
+
+
+    void Start()
     {
-        [Tooltip("Reference to GvrControllerPointer")]
-        public GameObject controllerPointer;
-        public GameObject player;
+        GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
+    }
 
+    // Runtime switching enabled only in-editor.
+    void Update()
+    {
+        GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
 
-
-        void Start()
+        if (GvrControllerInput.AppButtonUp)
         {
-            GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
-        }
-
-        // Runtime switching enabled only in-editor.
-        void Update()
-        {
-            GvrPointerInputModule.Pointer = controllerPointer.GetComponentInChildren<GvrLaserPointer>(true);
-            GameObject gameObjectHit = GvrPointerInputModule.Pointer.CurrentRaycastResult.gameObject;
-
-            if (GvrControllerInput.AppButtonUp)
-            {
-                TeleportTo();
-            }
-        }
-
-
-        public void TeleportTo()
-        {
-            Vector3 playerPos = new Vector3(GvrPointerInputModule.CurrentRaycastResult.worldPosition.x, player.transform.position.y, GvrPointerInputModule.CurrentRaycastResult.worldPosition.z);
-            player.transform.position = playerPos;
+            TeleportTo();
         }
     }
-};
+
+
+    public void TeleportTo()
+    {
+        Vector3 playerPos = new Vector3(GvrPointerInputModule.CurrentRaycastResult.worldPosition.x, player.transform.position.y, GvrPointerInputModule.CurrentRaycastResult.worldPosition.z);
+        player.transform.position = playerPos;
+    }
+}
