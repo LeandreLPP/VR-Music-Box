@@ -19,6 +19,7 @@ public class Sequencer : MonoBehaviour {
         set
         {
             GetComponent<Animator>().SetFloat("tempoMultiplier", value);
+            tempo = value;
         }
     }
     
