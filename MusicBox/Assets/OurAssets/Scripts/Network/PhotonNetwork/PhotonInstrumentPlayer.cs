@@ -18,7 +18,7 @@ public class PhotonInstrumentPlayer : UISoundChooser
         }
 
         NoteHeld = noteObject;
-        noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.OthersBuffered);
+        noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.AllBufferedViaServer);
     }
 
     protected override void Update()

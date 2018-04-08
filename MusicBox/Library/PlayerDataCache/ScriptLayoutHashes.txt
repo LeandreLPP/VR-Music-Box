@@ -382,7 +382,7 @@ ea580b2edab741d1d6e6445b14097645 Assembly-CSharp.dll:.RPGCamera
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Valve.VR.InteractionSystem.DestroyOnDetachedFromHand
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrControllerTooltipsSimple
 173a033cde910692227c728d6b89fedd Assembly-CSharp.dll:.OnClickCallMethod
-992fbb0f558775b0b03a238b7043bbef Assembly-CSharp.dll:GoogleVR.Demos.Laser
+992fbb0f558775b0b03a238b7043bbef Assembly-CSharp.dll:.Laser
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.IELdemo
 ed04a035da254571628bc3530461a283 Assembly-CSharp.dll:.BaseGrabable
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameLogic

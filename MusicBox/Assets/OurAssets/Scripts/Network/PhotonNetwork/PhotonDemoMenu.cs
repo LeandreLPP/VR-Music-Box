@@ -38,11 +38,16 @@ public class PhotonDemoMenu : MonoBehaviour {
     {
         if (sequencer == null) return;
 
+        //Reset buffered RPC calls
+        //PhotonNetwork.RemoveRPCsInGroup();
         foreach(var receptacle in sequencer.Receptacles)
         {
             var noteObject = receptacle.NoteHold;
             if(noteObject)
             {
+                var photonView = noteObject.GetComponent<PhotonView>();
+                if (!photonView.isMine)
+                    photonView.GetComponent<PhotonNoteSynchro>().TransferOwnership();
                 var rb = noteObject.GetComponent<Rigidbody>();
                 rb.useGravity = true;
                 float random = UnityEngine.Random.Range(0, 360);

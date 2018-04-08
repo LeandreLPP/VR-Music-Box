@@ -16,6 +16,7 @@ public class Player : Photon.PunBehaviour {
             Camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
             transform.SetParent(Camera);
             transform.rotation = Camera.rotation;
+            transform.position = Camera.position;
         }
     }
 
@@ -26,7 +27,15 @@ public class Player : Photon.PunBehaviour {
             transform.position = Vector3.Lerp(transform.position, CorrectNotePos, Time.deltaTime * 5);
             transform.rotation = Quaternion.Lerp(transform.rotation, CorrectNoteRot, Time.deltaTime * 5);
         }
+        else
+        {
+            //When a player disconnect, we just want to destroy his playerPrefab, so we check when the owner field becomes null
+            if (GetComponent<PhotonView>().owner == null)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
 
+        }
     }
 
     protected void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
