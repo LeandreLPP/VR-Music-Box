@@ -11,9 +11,10 @@ public class PhotonNote : GNote
         }
         set
         {
+            isGrabbed = value;
             PhotonView photonView = GetComponent<PhotonView>();
             if (photonView && photonView.isMine)
-                photonView.RPC("UpdateIsGrabbed", PhotonTargets.AllBufferedViaServer);
+                photonView.RPC("UpdateIsGrabbed", PhotonTargets.Others);
 
         }
     }

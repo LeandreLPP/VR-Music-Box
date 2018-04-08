@@ -15,7 +15,7 @@ public class PhotonDemoMenu : MonoBehaviour {
 
     protected GameObject target;
 
-    public SequencerNoteSource[] noteSources;
+    public PhotonVibraphoneSequencerSource[] noteSources;
     public int[] partition;
 
     private Dictionary<SequencerNoteReceptacle, ISequencerNoteHandler> spawners;
@@ -44,8 +44,6 @@ public class PhotonDemoMenu : MonoBehaviour {
     {
         if (sequencer == null) return;
 
-        //Reset buffered RPC calls
-        //PhotonNetwork.RemoveRPCsInGroup();
         foreach(var receptacle in sequencer.Receptacles)
         {
             var noteObject = receptacle.NoteHold;

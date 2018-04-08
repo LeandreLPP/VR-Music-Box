@@ -34,7 +34,7 @@ b646916c78b48f3208cda1a75aff4d8f Assembly-CSharp.dll:.ChatGui
 d4b89701147abb8c88f1fe5f34200c32 Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearAudioPitch
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_CameraFlip
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ColorPerPlayerApply
-f94ef436cb3fb1e7f096a058fda77586 Assembly-CSharp.dll:.PhotonDemoMenu
+bf72bdbd2817767fcc539fa19e2ec280 Assembly-CSharp.dll:.PhotonDemoMenu
 500c57c07393ea623562c2c51fa6d174 Assembly-CSharp.dll:.ShowInfoOfPlayer
 8c61d79ddb4f14cf3827a19ea5adbb59 Assembly-CSharp.dll:Valve.VR.InteractionSystem.TeleportArc
 ae088e0c3b5caefc991448bd4ac9b5f8 Assembly-CSharp.dll:.LaserTeleport

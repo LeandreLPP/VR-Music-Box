@@ -13,13 +13,13 @@ public class PhotonSpawner : StackingSpawner
             NoteObject n = NotesHold[0];
             NotesHold.RemoveAt(0);
             n.gameObject.SetActive(false);
-            n.GetComponent<PhotonView>().RPC("RemoveToSpwaner", PhotonTargets.OthersBuffered,0);
+            n.GetComponent<PhotonView>().RPC("RemoveToSpwaner", PhotonTargets.Others,0);
             PhotonView photonView = n.GetComponent<PhotonView>();
             if (!photonView.isMine)
                 photonView.GetComponent<PhotonNoteSynchro>().TransferOwnership();
             PhotonNetwork.Destroy(photonView);
         }
-        noteObject.GetComponent<PhotonView>().RPC("AddToSpwaner", PhotonTargets.OthersBuffered);
+        noteObject.GetComponent<PhotonView>().RPC("AddToSpwaner", PhotonTargets.Others);
         NotesHold.Add(noteObject);
     }
 
@@ -32,7 +32,7 @@ public class PhotonSpawner : StackingSpawner
         foreach (var n in copyList)
             if (n.IsGrabbed)
             {
-                n.GetComponent<PhotonView>().RPC("RemoveToSpwaner", PhotonTargets.OthersBuffered, NotesHold.IndexOf(n));
+                n.GetComponent<PhotonView>().RPC("RemoveToSpwaner", PhotonTargets.Others, NotesHold.IndexOf(n));
                 NotesHold.Remove(n);
             }
 
@@ -46,9 +46,9 @@ public class PhotonSpawner : StackingSpawner
 
     public void AddRPCNote(NoteObject noteObject)
     {
-        noteObject.transform.position = PositionNote(NotesHold.Count);
-        noteObject.transform.rotation = transform.rotation;
-        noteObject.transform.SetParent(rail.transform);
+        //noteObject.transform.position = PositionNote(NotesHold.Count);
+        //noteObject.transform.rotation = transform.rotation;
         NotesHold.Add(noteObject);
+        noteObject.transform.SetParent(rail.transform);
     }
 }

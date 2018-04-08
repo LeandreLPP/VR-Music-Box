@@ -18,7 +18,7 @@ public class PhotonInstrumentPlayer : UISoundChooser
         }
 
         NoteHeld = noteObject;
-        noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.AllBufferedViaServer);
+        noteObject.GetComponent<PhotonView>().RPC("SetSpawnerHeldNote", PhotonTargets.Others);
     }
 
     protected override void Update()
@@ -42,7 +42,7 @@ public class PhotonInstrumentPlayer : UISoundChooser
         // Remove NoteHeld once grabbed
         if (NoteHeld != null && NoteHeld.IsGrabbed)
         {
-            NoteHeld.GetComponent<PhotonView>().RPC("RemoveSpawnerHeldNote", PhotonTargets.OthersBuffered);
+            NoteHeld.GetComponent<PhotonView>().RPC("RemoveSpawnerHeldNote", PhotonTargets.Others);
             NoteHeld = null;
         }
     }

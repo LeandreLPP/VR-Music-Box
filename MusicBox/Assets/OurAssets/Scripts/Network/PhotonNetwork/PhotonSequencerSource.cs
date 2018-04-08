@@ -17,7 +17,7 @@ public class PhotonSequencerSource : SequencerNoteSource {
         Note note = new Note { audioClip = source.clip, volume = source.volume };
         NoteObject noteObject = InstantiateNoteObject();
         spawner.HandleNewNote(noteObject, note);
-        noteObject.GetComponent<PhotonView>().RPC("UpdateNote", PhotonTargets.OthersBuffered, note.audioClip.name, note.volume, colorNote.r, colorNote.g, colorNote.b); //Use PhotonTargets.OthersBuffered to execute this method on the new players when they join the room
+        noteObject.GetComponent<PhotonView>().RPC("UpdateNote", PhotonTargets.Others, note.audioClip.name, note.volume, colorNote.r, colorNote.g, colorNote.b); 
         source.Play();
     }
 }
