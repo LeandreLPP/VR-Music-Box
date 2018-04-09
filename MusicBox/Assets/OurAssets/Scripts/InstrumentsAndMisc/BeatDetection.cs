@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Basic detection of descending collision with a stick. Used by drums and vibraphone at the beginning of the project.
+/// Basic detection of descending collision with a stick. Used by drums at the beginning of the project.
 /// </summary>
 public class BeatDetection : MonoBehaviour {
 
@@ -15,8 +15,12 @@ public class BeatDetection : MonoBehaviour {
     {
         if (!other.gameObject.tag.Equals("HeadStick"))
             return;
-        
-        if (other.attachedRigidbody.velocity.y < 0)
+
+        var vel = other.GetComponent<ComputeVelocity>().Velocity;
+        var rot = transform.rotation;
+        vel = rot * vel;
+
+        if (vel.y < 0)
         {
             source.Play();
         }

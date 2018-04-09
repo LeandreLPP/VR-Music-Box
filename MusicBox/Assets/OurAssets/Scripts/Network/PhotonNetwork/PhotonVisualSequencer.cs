@@ -10,7 +10,7 @@
     }
 
 
-    //Method called by the HTC Vive client when someone change the tempo by rotating the tracker
+    //Method called by the HTC Vive client when someone change the tempo
     [PunRPC]
     public void UpdateTempo(float tempo)
     {

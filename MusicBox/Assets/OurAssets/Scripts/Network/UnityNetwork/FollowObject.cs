@@ -14,7 +14,7 @@ public class FollowObject : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //if (!isServer) return;
+        if (!isServer) return;
 
         transform.position = target.transform.position + offsetPosition;
         transform.eulerAngles = target.transform.eulerAngles + offsetRotation;

@@ -16,7 +16,7 @@ public class Vibraphone : MonoBehaviour {
         if (!other.gameObject.tag.Equals("HeadStick"))
             return;
 
-        if (other.attachedRigidbody.velocity.y < 0)
+        if (other.GetComponent<ComputeVelocity>().Velocity.y < 0)
         {
             source.Play();
             animator.SetTrigger("play");

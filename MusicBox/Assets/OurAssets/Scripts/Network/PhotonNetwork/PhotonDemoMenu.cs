@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PhotonDemoMenu : MonoBehaviour {
@@ -12,6 +13,7 @@ public class PhotonDemoMenu : MonoBehaviour {
     public GameObject targetGoogleVr;
 
     public Text tempoText;
+    public Button buttonSwitch;
 
     protected GameObject target;
 
@@ -25,6 +27,7 @@ public class PhotonDemoMenu : MonoBehaviour {
         target = targetGoogleVr;
 #else
         target = targetHtc;
+        buttonSwitch.interactable = true;
 #endif
 
      spawners = new Dictionary<SequencerNoteReceptacle, ISequencerNoteHandler>();
@@ -104,6 +107,11 @@ public class PhotonDemoMenu : MonoBehaviour {
     {
         sequencer.Sequencer.Tempo--;
         sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.Sequencer.Tempo);
+    }
+
+    public void Switch()
+    {
+        SceneManager.LoadScene("ForestPlayground");
     }
 
     private ISequencerNoteHandler GetSpawner(SequencerNoteReceptacle receptacle)
