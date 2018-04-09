@@ -52,7 +52,6 @@ public class PhotonNoteSynchro : Photon.PunBehaviour
         AudioSource source = GetComponent<AudioSource>();
         source.clip = noteObject.note.audioClip;
         source.volume = noteObject.note.volume;
-        source.Play();
     }
 
     //Call on every client when someone grab a note. Forbid a client to grab a note already held by another one
@@ -60,6 +59,13 @@ public class PhotonNoteSynchro : Photon.PunBehaviour
     public void UpdateIsGrabbed()
     {
         GetComponent<GNote>().IsGrabbed = !GetComponent<GNote>().IsGrabbed;
+    }
+
+    //Call on a client when he joins the game
+    [PunRPC]
+    public void SetCorrectPosition(Vector3 position)
+    {
+        CorrectNotePos = position;
     }
 }
 

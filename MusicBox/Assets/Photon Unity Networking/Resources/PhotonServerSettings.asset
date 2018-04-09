@@ -57,4 +57,5 @@ MonoBehaviour:
   - RemoveSpawnerHeldNote
   - Grab
   - UpdateIsGrabbed
+  - SetCorrectPosition
   DisableAutoOpenWizard: 1

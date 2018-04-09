@@ -233,7 +233,7 @@ MonoBehaviour:
   GoogleVr: {fileID: 1441652295}
   CameraRig: {fileID: 1660609811}
   SteamVr: {fileID: 2051793635}
-  playerPrefab: {fileID: 1879193425090962, guid: cf0cfd7ef18115740a7fa7c50a45a263,
+  playerPrefab: {fileID: 1761540375833466, guid: cf0cfd7ef18115740a7fa7c50a45a263,
     type: 2}
 --- !u!4 &61061904
 Transform:
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 363886066}
   m_Layer: 0
   m_Name: Camera (eye)
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1316,7 +1316,7 @@ GameObject:
   - component: {fileID: 626243968}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

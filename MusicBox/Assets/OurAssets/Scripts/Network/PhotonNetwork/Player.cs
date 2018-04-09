@@ -17,7 +17,7 @@ public class Player : Photon.PunBehaviour {
             transform.SetParent(Camera);
             transform.rotation = Camera.rotation;
             transform.position = Camera.position;
-            transform.localPosition = new Vector3(0, 0, -1);
+            transform.localPosition = new Vector3(0, 0.1f, 0);
         }
     }
 

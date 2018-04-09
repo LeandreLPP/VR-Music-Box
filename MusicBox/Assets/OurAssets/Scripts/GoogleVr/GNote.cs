@@ -38,7 +38,7 @@ public class GNote : NoteObject
         transform.SetParent(pointerTransform, true);
 
         // position it in the view
-        transform.localPosition = new Vector3(0, 0, 0.5f);
+        transform.localPosition = new Vector3(0, 0, 0.25f);
 
         gameObject.layer = LayerMask.NameToLayer("GvrCannotGrab");
 #endif

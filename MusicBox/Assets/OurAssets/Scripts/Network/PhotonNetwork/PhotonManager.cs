@@ -97,7 +97,9 @@ public class PhotonManager : Photon.PunBehaviour
                 //Update IsGrabbed
                 if (noteObject.GetComponent<PhotonNote>().IsGrabbed)
                     noteObject.GetComponent<PhotonView>().RPC("UpdateIsGrabbed", newPlayer);
+
             }
+
 
             //Update the current tempo
             sequencer.GetComponent<PhotonView>().RPC("UpdateTempo", PhotonTargets.Others, sequencer.GetComponent<SequencerUI>().Sequencer.Tempo);
