@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PhotonSpawner : StackingSpawner
+public class PhotonSpawner : StackingNoteHandler
 {
     public override void HandleNewNote(NoteObject noteObject, Note note)
     {
