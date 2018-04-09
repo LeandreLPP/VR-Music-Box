@@ -9,19 +9,19 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1325089425502410}
+  m_RootGameObject: {fileID: 1086727742531736}
   m_IsPrefabParent: 1
---- !u!1 &1325089425502410
+--- !u!1 &1086727742531736
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4127571217604648}
-  - component: {fileID: 114110642401733668}
-  - component: {fileID: 114705212741751038}
-  - component: {fileID: 95261677434548746}
+  - component: {fileID: 4045312112074562}
+  - component: {fileID: 114680508372499872}
+  - component: {fileID: 114302559602945066}
+  - component: {fileID: 95474666181519848}
   m_Layer: 0
   m_Name: Sequencer
   m_TagString: Untagged
@@ -29,26 +29,55 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4127571217604648
+--- !u!1 &1159870546932480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4214606291539738}
+  m_Layer: 0
+  m_Name: root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4045312112074562
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325089425502410}
+  m_GameObject: {fileID: 1086727742531736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4214606291539738}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4214606291539738
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1159870546932480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4045312112074562}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95261677434548746
+--- !u!95 &95474666181519848
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325089425502410}
+  m_GameObject: {fileID: 1086727742531736}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 09586289b93e2a5449015346c8183902, type: 2}
@@ -59,12 +88,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114110642401733668
+--- !u!114 &114302559602945066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325089425502410}
+  m_GameObject: {fileID: 1086727742531736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f142187545eaa4b9877f3f48e4a841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 6
+  heightDistance: 0.5
+  stepPrefab: {fileID: 114266424429159634, guid: 2546bde01d9f68a4787e0e4b5b7ef8ba,
+    type: 2}
+  receptaclePrefab: {fileID: 114211117504135486, guid: 9e4e3eecee22f1948bfdd10658106648,
+    type: 2}
+  root: {fileID: 1159870546932480}
+--- !u!114 &114680508372499872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1086727742531736}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8d4e6df827e0834bb0c95de9ad2a747, type: 3}
@@ -74,20 +121,4 @@ MonoBehaviour:
   maxSource: 20
   stepSize: 5
   tempo: 60
---- !u!114 &114705212741751038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325089425502410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f142187545eaa4b9877f3f48e4a841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 6
-  height: 0
-  stepPrefab: {fileID: 114654715476196696, guid: 2546bde01d9f68a4787e0e4b5b7ef8ba,
-    type: 2}
-  receptaclePrefab: {fileID: 114351116381277500, guid: 9e4e3eecee22f1948bfdd10658106648,
-    type: 2}
+  currentStep: 0
