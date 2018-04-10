@@ -33,7 +33,7 @@ public class BaseGrabable : MonoBehaviour, IGrabable
         }
     }
 
-    public bool TryGrab(IGrabber grab)
+    public virtual bool TryGrab(IGrabber grab)
     {
         if (!CanGrab(grab))
             return false;
@@ -43,13 +43,13 @@ public class BaseGrabable : MonoBehaviour, IGrabable
         return true;
     }
 
-    public bool TryRelease(IGrabber grab)
+    public  bool TryRelease(IGrabber grab)
     {
-        if (grabber != grab)
+        if (Grabber != grab)
             return false;
 
         IsGrabbed = false;
-        grabber = null;
+        Grabber = null;
         OnRelease(grab);
         return true;
     }

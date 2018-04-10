@@ -19,13 +19,22 @@ public class PhotonNote : GNote
         }
     }
 
-    protected override void OnGrabbed()
+    public override bool TryGrab(IGrabber grab)
     {
-        base.OnGrabbed();
+        if (!CanGrab(grab))
+            return false;
+
         var photonNote = GetComponent<PhotonNoteSynchro>();
         if (photonNote)
             photonNote.TransferOwnership();
+
+        IsGrabbed = true;
+        Grabber = grab;
+        OnGrabbed();
+        return true;
     }
+
+
 
     protected override void RemoveNote()
     {
