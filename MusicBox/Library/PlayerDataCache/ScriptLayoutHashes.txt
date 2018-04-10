@@ -1,6 +1,6 @@
 WindowsStandalone
 SceneListBegin?
-Assets/OurAssets/Scenes/NetworkedSequencer.unity
+Assets/OurAssets/Scenes/ForestPlayground.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmartphoneVR
 82c8c8940439d24517b71a242f62fbc3 Assembly-CSharp.dll:.HighlightOwnedGameObj
@@ -467,7 +467,7 @@ bd391be401e6d3724720058620cce6e5 Assembly-CSharp.dll:.ToHubButton
 a8b185f93b85036e13e3f553c802615a Assembly-CSharp.dll:.GvrTooltip
 6475769091568e8685a22e493bb5795b Assembly-CSharp.dll:.GUIFriendFinding
 34432f4f93eff2972d50431a6934e96a Assembly-CSharp.dll:.GUIConnectServer
-10c32ba36561a1ca72a590641425f10a Assembly-CSharp.dll:.ObjectSpawner
+6bb16417ea62f5b7a7a20a28f9c18a35 Assembly-CSharp.dll:.ObjectSpawner
 676d9ee9f050d1064e9e308848904d5a Assembly-CSharp.dll:Valve.VR.InteractionSystem.CircularDrive
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OnClickRightDestroy
 47d4dbb91b8073a64be47276b7d4f29a Assembly-CSharp.dll:ExitGames.Demos.DemoAnimator.GameManager
@@ -523,6 +523,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SteamVR_GameView
 e383a25b86715cbe5743cbaaf7c494d2 Assembly-CSharp.dll:.SteamVR_Frustum
 7d05c1a36ca8db05546065b852216990 Assembly-CSharp.dll:.GvrControllerInput
+7a0f48fb129e472af6552a847bfd13a8 Assembly-CSharp.dll:.TrackerGrabber
 4a9845fc85f197d574f1e06a9aab77d0 Assembly-CSharp.dll:.SteamVR_Render
 f3fd3fb52070d6ee5266d0c25cb1b49f Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearDrive
 b2945430dfd6bbdb5d77043b47bf85e7 Assembly-CSharp.dll:.GvrControllerReticleVisual
