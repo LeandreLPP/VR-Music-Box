@@ -1,4 +1,4 @@
-Android
+WindowsStandalone
 SceneListBegin?
 Assets/OurAssets/Scenes/NetworkedSequencer.unity
 SceneListEnd?
