@@ -559,6 +559,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 54a26a95db9c623b6eb6fc01ae3ef891 Assembly-CSharp.dll:.CubeExtra
+<<<<<<< HEAD
 851793e9360494c7ecb100f146124c4b Assembly-CSharp.dll:.ResonanceAudioListener
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ResonanceAudioMaterialMapperUpdater
 03bbed44bf0809da9eb453e702673301 Assembly-CSharp.dll:.ResonanceAudioRoom
@@ -568,3 +569,5 @@ ea5135acd18df1583230a645d24ef192 Assembly-CSharp.dll:.DemoPlayerController
 9546f843cb3e33d7d1be22017cd7858d Assembly-CSharp.dll:.ResonanceAudioReverbProbe
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ResonanceAudioDemoCubeController
 47a3d0e1b8e9e598795ae81717eb2f87 Assembly-CSharp.dll:.ResonanceAudioSource
+=======
+>>>>>>> 221b4422e3844d8a8b9685af87695c7eb26b780f
