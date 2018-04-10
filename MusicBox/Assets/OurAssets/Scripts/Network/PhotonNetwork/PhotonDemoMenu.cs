@@ -111,6 +111,7 @@ public class PhotonDemoMenu : MonoBehaviour {
 
     public void Switch()
     {
+        PhotonNetwork.Disconnect();
         SceneManager.LoadScene("ForestPlayground");
     }
 
