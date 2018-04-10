@@ -1,6 +1,5 @@
 Android
 SceneListBegin?
-Assets/OurAssets/Scenes/ForestPlayground.unity
 Assets/OurAssets/Scenes/NetworkedSequencer.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SmartphoneVR
@@ -328,6 +327,7 @@ e37f8b3431bbcf7f7fe68764e22765d6 Assembly-CSharp.dll:Klak.Motion.ConstantMotion
 73f9d5be89bfe8b6fe672de9550f1a0c Assembly-CSharp.dll:Valve.VR.InteractionSystem.ItemPackage
 ada54cb428213a7e0c4b986e95788f97 Assembly-CSharp.dll:.PhotonTransformView
 7dc4607ea3c4e1c57f92525553793668 Assembly-CSharp.dll:.SteamVR_Menu
+3c6c89e8ff8d6e56a7645bb3dc211845 Assembly-CSharp.dll:.StackingNoteHandler
 314848ccc07794350e3bf9287e46b25b Assembly-CSharp.dll:.SteamVR_Teleporter
 1235609fcbaeb18ef7118947f508f7e0 Assembly-CSharp.dll:Valve.VR.InteractionSystem.LinearMapping
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PhotonVNote

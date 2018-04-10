@@ -69,6 +69,9 @@ public class LaserTeleport : MonoBehaviour {
                 ShowLaser(hit);
                 reticle.SetActive(true);
                 teleportReticleTransform.position = hitPoint + teleportReticleOffset;
+                teleportReticleTransform.LookAt(transform);
+                var euler = teleportReticleTransform.eulerAngles;
+                teleportReticleTransform.eulerAngles = new Vector3(0, euler.y, 0);
                 shouldTeleport = true;
             }
         }
